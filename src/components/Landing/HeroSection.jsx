@@ -1,39 +1,35 @@
 import React from 'react'
 import { Button } from '../ui/button'
-import { Card, CardContent } from '../ui/card'
-import { Badge } from '../ui/badge'
 import { GlowCard } from '../ui/spotlight-card'
 import { HeroSectionWithShader } from '../ui/hero-section-with-smooth-bg-shader'
-import { 
-  GithubOutlined, 
-  PlayCircleOutlined, 
-  RocketOutlined,
-  CheckCircleOutlined,
-  StarOutlined 
+import { MorphingText } from '../ui/morphing-text'
+import {
+  GithubOutlined
 } from '@ant-design/icons'
 
 const HeroSection = ({ onGetStarted, onViewDemo }) => {
 
+  const introTexts = [
+    "introducing",
+    "Crisp!"
+  ]
+
   const features = [
     {
-      title: "Resume Upload & Quick Extraction",
-      description: "Easily upload your resume in PDF or DOCX format. The system pulls out important details like your name, email, and phone number so you don't have to fill everything in manually.",
-      icon: <RocketOutlined className="w-7 h-7" />
+      title: "Resume Upload",
+      description: "Upload your resume in PDF and get your details auto filled.",
     },
     {
-      title: "Interactive Interview Experience", 
-      description: "Answer a series of carefully structured questions for a Full Stack role. Each question has a timer to keep things realistic, and your responses are automatically saved.",
-      icon: <PlayCircleOutlined className="w-7 h-7" />
+      title: "Timed Q&A",
+      description: "Answer structured questions with realistic timers.",
     },
     {
-      title: "Clear and Organized Dashboard",
-      description: "For interviewers, all candidate information is neatly presented in one place from scores and summaries to the full chat history. Reviewing and comparing candidates becomes effortless.",
-      icon: <CheckCircleOutlined className="w-7 h-7" />
+      title: "Interviewer Dashboard",
+      description: "View scores, summaries, and chat history in one place.",
     },
     {
-      title: "Pick Up Where You Left Off",
-      description: "If you close or refresh the page, your progress isn't lost. A \"Welcome Back\" prompt helps you continue right where you stopped.",
-      icon: <StarOutlined className="w-7 h-7" />
+      title: "Progress Sync",
+      description: "Pick up right where you left off with the “Welcome Back” feature.",
     }
   ]
 
@@ -46,70 +42,61 @@ const HeroSection = ({ onGetStarted, onViewDemo }) => {
       offsetX={0.1}
       veilOpacity="bg-black/20"
     >
-      <div className="container mx-auto px-4 pt-20 pb-16 max-w-7xl">
+      <div className="container mx-auto pl-4 lg:pl-0 pr-0 py-4 max-w-full h-screen flex items-center justify-center">
 
-        {/* Hero Content */}
-        <div className="flex items-center justify-center min-h-[60vh]">
-          {/* Hero Text */}
-          <div className="space-y-8 text-center max-w-6xl mx-auto w-full px-4">
-            <div className="space-y-6">
-            <h1 className="text-5xl lg:text-6xl font-bold text-black leading-tight archivo-black-regular flex flex-col text-center items-center">
-              <span>Smarter Interviews.</span>
-              <span>Fairer Evaluations.</span>
-            </h1>
-            
-            <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto text-center">
-              Master technical interviews with AI-powered feedback, realistic simulations, 
-              and comprehensive performance analytics.
-            </p>
-            </div>
+        {/* Hero Content - Two Column Layout */}
+        <div className="grid lg:grid-cols-[1fr,2fr] gap-64 items-center w-full">
 
-            {/* Feature Cards with Spotlight Effect */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-              {features.map((feature, index) => {
-                const colors = ['blue', 'purple', 'green', 'orange'];
-                return (
-                  <GlowCard 
-                    key={index} 
-                    glowColor={colors[index % colors.length]}
-                    customSize={true} 
-                    className="w-full h-80 bg-white/5 border-white/10 !block"
-                  >
-                    <div className="absolute inset-0 z-10 p-6 flex flex-col text-white justify-start items-center text-center">
-                      <div className="space-y-4 h-full flex flex-col">
-                        <h3 className="text-lg font-bold text-gray-700 leading-tight">{feature.title}</h3>
-                        <p className="text-white/90 text-sm leading-relaxed font-normal flex-1">
-                          {feature.description}
-                        </p>
-                      </div>
-                    </div>
-                  </GlowCard>
-                );
-              })}
+          {/* Left Column - Main Content */}
+          <div className="space-y-10 text-left -ml-12 lg:-ml-20">
+            <div className="space-y-8">
+
+              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-black leading-tight archivo-black-regular flex flex-col items-start max-w-xl">
+                <div className="flex flex-wrap items-center gap-2 mb-2.2">
+                  <span className="text-lg font-bold text-white leading-tight drop-shadow-lg [text-shadow:_0_2px_4px_rgb(0_0_0_/_40%)]">
+                    *introducing, Crisp!
+                  </span>
+                  <MorphingText
+                    texts={["͙͘͡★"]}
+                    className="!h-10 !text-2xl !font-bold !text-yellow-300 !leading-tight !max-w-xl !mx-0 !text-left !relative !w-auto drop-shadow-xl [text-shadow:_0_4px_8px_rgb(0_0_0_/_60%)] animate-pulse"
+                  />
+                </div>
+                <span>Smarter</span>
+                <span>Interviews,</span>
+                <span style={{ color: '#2d5085' }}>Fairer Evaluations.</span>
+              </h1>
+
+              <p className="text-xl lg:text-2xl text-white/90 leading-relaxed max-w-xl">
+                Master technical interviews with AI-powered feedback, realistic simulations,
+                and comprehensive performance analytics.
+              </p>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
-              <Button 
-                size="lg" 
-                onClick={onGetStarted}
-                className="bg-white text-black hover:bg-white/90 shadow-lg"
-              >
-                <PlayCircleOutlined className="w-4 h-4 mr-2" />
-                Try it out
-              </Button>
-              
-              <Button 
-                variant="outline" 
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <Button
+                variant="outline"
                 size="lg"
                 onClick={onViewDemo}
-                className="border-white/50 text-white hover:bg-white/10 backdrop-blur-sm"
+                className="bg-black/80 border-black/80 text-white hover:bg-black hover:border-black shadow-lg rounded-full"
               >
                 <GithubOutlined className="w-4 h-4 mr-2" />
                 Star on GitHub
               </Button>
+
+              <Button
+                size="lg"
+                onClick={onGetStarted}
+                className="bg-white text-black hover:bg-white/90 shadow-lg rounded-full"
+              >
+                Try it out
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Button>
             </div>
           </div>
+
 
         </div>
 

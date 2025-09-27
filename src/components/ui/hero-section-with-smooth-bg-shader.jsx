@@ -45,7 +45,7 @@ export function HeroSectionWithShader({
   }
 
   return (
-    <section className={`relative w-full min-h-screen overflow-hidden bg-background flex items-center justify-center ${className}`}>
+    <section className={`relative w-full h-screen overflow-hidden bg-background flex items-center justify-center ${className}`}>
       <div className="fixed inset-0 w-screen h-screen">
         {mounted && (
           <>

@@ -60,7 +60,7 @@ const App = () => {
         },
       }}
     >
-      <div className="min-h-screen bg-background">
+      <div className={`min-h-screen bg-background ${activeTab === 'home' ? 'h-screen overflow-hidden' : ''}`}>
         {activeTab !== 'home' && (
           <TopNav 
             activeTab={activeTab} 
