@@ -2,6 +2,7 @@ import React from 'react'
 import { Button } from '../ui/button'
 import { Card, CardContent } from '../ui/card'
 import { Badge } from '../ui/badge'
+import { HeroSectionWithShader } from '../ui/hero-section-with-smooth-bg-shader'
 import { 
   GithubOutlined, 
   PlayCircleOutlined, 
@@ -11,16 +12,6 @@ import {
 } from '@ant-design/icons'
 
 const HeroSection = ({ onGetStarted, onViewDemo }) => {
-  const companies = [
-    { name: 'Google', logo: '🔍' },
-    { name: 'Meta', logo: '📘' },
-    { name: 'Apple', logo: '🍎' },
-    { name: 'Amazon', logo: '📦' },
-    { name: 'Microsoft', logo: '🪟' },
-    { name: 'Netflix', logo: '🎬' },
-    { name: 'Tesla', logo: '⚡' },
-    { name: 'Spotify', logo: '🎵' }
-  ]
 
   const features = [
     {
@@ -36,27 +27,22 @@ const HeroSection = ({ onGetStarted, onViewDemo }) => {
   ]
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-100">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-blue-200/30" />
-      </div>
-      
-      {/* Geometric Pattern Overlay */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-1/4 right-0 w-96 h-96 bg-gradient-to-l from-blue-200/40 to-transparent transform rotate-45 translate-x-1/2" />
-        <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-gradient-to-r from-purple-200/40 to-transparent transform -rotate-45 -translate-x-1/2" />
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 pt-20 pb-16 max-w-7xl">
+    <HeroSectionWithShader
+      colors={["#3b82f6", "#1d4ed8", "#6366f1", "#8b5cf6", "#a855f7", "#c084fc"]}
+      distortion={1.2}
+      swirl={0.8}
+      speed={0.5}
+      offsetX={0.1}
+      veilOpacity="bg-black/20"
+    >
+      <div className="container mx-auto px-4 pt-20 pb-16 max-w-7xl">
         {/* Header */}
         <div className="flex items-center justify-between mb-16">
           <div className="flex items-center space-x-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground">
               <RocketOutlined className="h-5 w-5" />
             </div>
-            <span className="text-lg font-bold text-foreground tracking-wide">
+            <span className="text-lg font-bold text-white tracking-wide">
               AI INTERVIEW ASSISTANT
             </span>
           </div>
@@ -74,17 +60,17 @@ const HeroSection = ({ onGetStarted, onViewDemo }) => {
           {/* Left Column - Hero Text */}
           <div className="space-y-8">
             <div className="space-y-6">
-              <h1 className="text-5xl lg:text-6xl font-bold text-slate-800 leading-tight">
-                Elevate your{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-                  tech interviews.
-                </span>
-              </h1>
-              
-              <p className="text-xl text-slate-600 leading-relaxed max-w-lg">
-                Master technical interviews with AI-powered feedback, realistic simulations, 
-                and comprehensive performance analytics.
-              </p>
+            <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
+              Elevate your{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-purple-300">
+                tech interviews.
+              </span>
+            </h1>
+            
+            <p className="text-xl text-white/90 leading-relaxed max-w-lg">
+              Master technical interviews with AI-powered feedback, realistic simulations, 
+              and comprehensive performance analytics.
+            </p>
             </div>
 
             {/* Feature Cards */}
@@ -115,7 +101,7 @@ const HeroSection = ({ onGetStarted, onViewDemo }) => {
               <Button 
                 size="lg" 
                 onClick={onGetStarted}
-                className="bg-slate-800 hover:bg-slate-700 text-white px-8 py-3 text-base"
+                className="bg-white text-black hover:bg-white/90 px-8 py-3 text-base shadow-lg"
               >
                 <PlayCircleOutlined className="w-4 h-4 mr-2" />
                 Try it out
@@ -125,7 +111,7 @@ const HeroSection = ({ onGetStarted, onViewDemo }) => {
                 variant="outline" 
                 size="lg"
                 onClick={onViewDemo}
-                className="border-slate-300 text-slate-700 hover:bg-slate-50 px-8 py-3 text-base"
+                className="border-white/50 text-white hover:bg-white/10 px-8 py-3 text-base backdrop-blur-sm"
               >
                 <GithubOutlined className="w-4 h-4 mr-2" />
                 Star on GitHub
@@ -205,23 +191,8 @@ const HeroSection = ({ onGetStarted, onViewDemo }) => {
           </div>
         </div>
 
-        {/* Companies Section */}
-        <div className="pt-16 border-t border-slate-200/60">
-          <p className="text-center text-sm text-slate-500 mb-8 font-medium">
-            Interview questions from
-          </p>
-          
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-            {companies.map((company, index) => (
-              <div key={index} className="flex items-center space-x-2 text-slate-600">
-                <span className="text-xl">{company.logo}</span>
-                <span className="font-medium text-sm">{company.name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
-    </div>
+    </HeroSectionWithShader>
   )
 }
 
