@@ -61,10 +61,12 @@ const App = () => {
       }}
     >
       <div className="min-h-screen bg-background">
-        <TopNav 
-          activeTab={activeTab} 
-          onTabChange={(tab) => dispatch(setActiveTab(tab))} 
-        />
+        {activeTab !== 'home' && (
+          <TopNav 
+            activeTab={activeTab} 
+            onTabChange={(tab) => dispatch(setActiveTab(tab))} 
+          />
+        )}
 
         <main className={activeTab === 'home' ? '' : 'container mx-auto px-4 py-8 max-w-7xl'}>
           {activeTab === 'home' ? <LandingPage /> :
