@@ -16,14 +16,24 @@ const HeroSection = ({ onGetStarted, onViewDemo }) => {
 
   const features = [
     {
-      title: "AI-Powered Assessment",
-      description: "Get detailed feedback on your interview performance with our advanced scoring algorithm.",
-      icon: <RocketOutlined className="w-5 h-5" />
+      title: "Resume Upload & Quick Extraction",
+      description: "Easily upload your resume in PDF or DOCX format. The system pulls out important details like your name, email, and phone number so you don't have to fill everything in manually.",
+      icon: <RocketOutlined className="w-7 h-7" />
     },
     {
-      title: "Real Interview Experience", 
-      description: "Practice with timed questions that simulate actual technical interviews.",
-      icon: <PlayCircleOutlined className="w-5 h-5" />
+      title: "Interactive Interview Experience", 
+      description: "Answer a series of carefully structured questions for a Full Stack role. Each question has a timer to keep things realistic, and your responses are automatically saved.",
+      icon: <PlayCircleOutlined className="w-7 h-7" />
+    },
+    {
+      title: "Clear and Organized Dashboard",
+      description: "For interviewers, all candidate information is neatly presented in one place from scores and summaries to the full chat history. Reviewing and comparing candidates becomes effortless.",
+      icon: <CheckCircleOutlined className="w-7 h-7" />
+    },
+    {
+      title: "Pick Up Where You Left Off",
+      description: "If you close or refresh the page, your progress isn't lost. A \"Welcome Back\" prompt helps you continue right where you stopped.",
+      icon: <StarOutlined className="w-7 h-7" />
     }
   ]
 
@@ -39,47 +49,47 @@ const HeroSection = ({ onGetStarted, onViewDemo }) => {
       <div className="container mx-auto px-4 pt-20 pb-16 max-w-7xl">
 
         {/* Hero Content */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[60vh]">
-          {/* Left Column - Hero Text */}
-          <div className="space-y-8">
+        <div className="flex items-center justify-center min-h-[60vh]">
+          {/* Hero Text */}
+          <div className="space-y-8 text-center max-w-6xl mx-auto w-full px-4">
             <div className="space-y-6">
-            <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight archivo-black-regular">
-              Elevate your{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-purple-300">
-                tech interviews.
-              </span>
+            <h1 className="text-5xl lg:text-6xl font-bold text-black leading-tight archivo-black-regular flex flex-col text-center items-center">
+              <span>Smarter Interviews.</span>
+              <span>Fairer Evaluations.</span>
             </h1>
             
-            <p className="text-xl text-white/90 leading-relaxed max-w-lg">
+            <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto text-center">
               Master technical interviews with AI-powered feedback, realistic simulations, 
               and comprehensive performance analytics.
             </p>
             </div>
 
             {/* Feature Cards with Spotlight Effect */}
-            <div className="grid gap-6 max-w-2xl">
-              {features.map((feature, index) => (
-                <GlowCard 
-                  key={index} 
-                  glowColor={index === 0 ? 'blue' : 'purple'}
-                  customSize={true} 
-                  className="w-full h-32 bg-white/5 border-white/10"
-                >
-                  <div className="flex items-center space-x-4 text-white h-full">
-                    <div className="flex-shrink-0 text-white bg-primary/80 rounded-full p-3">
-                      {feature.icon}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+              {features.map((feature, index) => {
+                const colors = ['blue', 'purple', 'green', 'orange'];
+                return (
+                  <GlowCard 
+                    key={index} 
+                    glowColor={colors[index % colors.length]}
+                    customSize={true} 
+                    className="w-full h-80 bg-white/5 border-white/10 !block"
+                  >
+                    <div className="absolute inset-0 z-10 p-6 flex flex-col text-white justify-start items-center text-center">
+                      <div className="space-y-4 h-full flex flex-col">
+                        <h3 className="text-lg font-bold text-gray-700 leading-tight">{feature.title}</h3>
+                        <p className="text-white/90 text-sm leading-relaxed font-normal flex-1">
+                          {feature.description}
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-white mb-1">{feature.title}</h3>
-                      <p className="text-white/80 text-sm leading-relaxed">{feature.description}</p>
-                    </div>
-                  </div>
-                </GlowCard>
-              ))}
+                  </GlowCard>
+                );
+              })}
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
               <Button 
                 size="lg" 
                 onClick={onGetStarted}
@@ -101,76 +111,6 @@ const HeroSection = ({ onGetStarted, onViewDemo }) => {
             </div>
           </div>
 
-          {/* Right Column - Visual Element */}
-          <div className="relative lg:pl-8">
-            <div className="relative">
-              {/* Main Card */}
-              <Card className="border-0 shadow-2xl bg-white/80 backdrop-blur-sm transform rotate-2 hover:rotate-1 transition-transform duration-500">
-                <CardContent className="p-8">
-                  <div className="space-y-6">
-                    <div className="flex items-center justify-between">
-                      <Badge variant="success" className="px-3 py-1">
-                        <CheckCircleOutlined className="w-3 h-3 mr-1" />
-                        Interview Complete
-                      </Badge>
-                      <div className="text-right">
-                        <div className="text-2xl font-bold text-primary">87%</div>
-                        <div className="text-xs text-muted-foreground">Overall Score</div>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-3">
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm font-medium">Technical Knowledge</span>
-                        <div className="flex items-center space-x-2">
-                          <div className="w-20 h-2 bg-muted rounded-full">
-                            <div className="w-4/5 h-full bg-green-500 rounded-full"></div>
-                          </div>
-                          <span className="text-sm font-semibold">9/10</span>
-                        </div>
-                      </div>
-                      
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm font-medium">Communication</span>
-                        <div className="flex items-center space-x-2">
-                          <div className="w-20 h-2 bg-muted rounded-full">
-                            <div className="w-3/4 h-full bg-blue-500 rounded-full"></div>
-                          </div>
-                          <span className="text-sm font-semibold">8/10</span>
-                        </div>
-                      </div>
-                      
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm font-medium">Problem Solving</span>
-                        <div className="flex items-center space-x-2">
-                          <div className="w-20 h-2 bg-muted rounded-full">
-                            <div className="w-4/5 h-full bg-yellow-500 rounded-full"></div>
-                          </div>
-                          <span className="text-sm font-semibold">8/10</span>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="pt-4 border-t">
-                      <p className="text-xs text-muted-foreground">
-                        "Excellent technical foundation with clear communication. 
-                        Focus on optimizing algorithmic solutions for better performance."
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-green-100 rounded-full flex items-center justify-center transform -rotate-12">
-                <CheckCircleOutlined className="w-8 h-8 text-green-600" />
-              </div>
-              
-              <div className="absolute -bottom-6 -left-6 w-20 h-12 bg-blue-100 rounded-lg flex items-center justify-center transform rotate-12">
-                <span className="text-blue-600 font-bold text-sm">AI Powered</span>
-              </div>
-            </div>
-          </div>
         </div>
 
       </div>
