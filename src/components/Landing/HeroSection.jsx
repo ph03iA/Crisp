@@ -36,24 +36,6 @@ const HeroSection = ({ onGetStarted, onViewDemo }) => {
       veilOpacity="bg-black/20"
     >
       <div className="container mx-auto px-4 pt-20 pb-16 max-w-7xl">
-        {/* Header */}
-        <div className="flex items-center justify-between mb-16">
-          <div className="flex items-center space-x-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-              <RocketOutlined className="h-5 w-5" />
-            </div>
-            <span className="text-lg font-bold text-white tracking-wide">
-              AI INTERVIEW ASSISTANT
-            </span>
-          </div>
-          
-          <div className="hidden md:flex items-center space-x-4">
-            <Badge variant="secondary" className="px-3 py-1">
-              <StarOutlined className="w-3 h-3 mr-1" />
-              Free & Open Source
-            </Badge>
-          </div>
-        </div>
 
         {/* Hero Content */}
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[60vh]">
