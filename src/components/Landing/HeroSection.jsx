@@ -101,7 +101,7 @@ const HeroSection = ({ onGetStarted, onViewDemo }) => {
               <Button 
                 size="lg" 
                 onClick={onGetStarted}
-                className="bg-white text-black hover:bg-white/90 px-8 py-3 text-base shadow-lg"
+                className="bg-white text-black hover:bg-white/90 shadow-lg"
               >
                 <PlayCircleOutlined className="w-4 h-4 mr-2" />
                 Try it out
@@ -111,7 +111,7 @@ const HeroSection = ({ onGetStarted, onViewDemo }) => {
                 variant="outline" 
                 size="lg"
                 onClick={onViewDemo}
-                className="border-white/50 text-white hover:bg-white/10 px-8 py-3 text-base backdrop-blur-sm"
+                className="border-white/50 text-white hover:bg-white/10 backdrop-blur-sm"
               >
                 <GithubOutlined className="w-4 h-4 mr-2" />
                 Star on GitHub
