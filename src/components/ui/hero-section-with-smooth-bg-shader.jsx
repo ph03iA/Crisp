@@ -1,5 +1,6 @@
 import { MeshGradient } from "@paper-design/shaders-react"
 import { useEffect, useState } from "react"
+import { Button } from "./button"
 
 export function HeroSectionWithShader({
   title = "Intelligent AI Agents for",
@@ -76,12 +77,13 @@ export function HeroSectionWithShader({
             <p className={`text-lg sm:text-xl text-white text-pretty max-w-2xl mx-auto leading-relaxed mb-10 px-4 ${descriptionClassName}`}>
               {description}
             </p>
-            <button
+            <Button
               onClick={handleButtonClick}
+              size="lg"
               className={`px-6 py-4 sm:px-8 sm:py-6 rounded-full border-4 bg-[rgba(63,63,63,1)] border-card text-sm sm:text-base text-white hover:bg-[rgba(63,63,63,0.9)] transition-colors ${buttonClassName}`}
             >
               {buttonText}
-            </button>
+            </Button>
           </div>
         )}
       </div>

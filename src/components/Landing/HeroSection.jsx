@@ -28,7 +28,7 @@ const HeroSection = ({ onGetStarted, onViewDemo }) => {
 
   return (
     <HeroSectionWithShader
-      colors={["#3b82f6", "#1d4ed8", "#6366f1", "#8b5cf6", "#a855f7", "#c084fc"]}
+      colors={["#72b9bb", "#b5d9d9", "#ffd1bd", "#ffebe0", "#8cc5b8", "#dbf4a4"]}
       distortion={1.2}
       swirl={0.8}
       speed={0.5}
