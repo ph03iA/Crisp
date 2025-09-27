@@ -6,6 +6,7 @@
   "dependencies": {
     "@ant-design/icons": "^6.0.2",
     "@paper-design/shaders-react": "^0.0.55",
+    "@radix-ui/react-slot": "^1.2.3",
     "@reduxjs/toolkit": "^2.2.7",
     "antd": "^5.27.4",
     "class-variance-authority": "^0.7.1",
