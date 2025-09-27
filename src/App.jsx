@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { ConfigProvider, theme } from 'antd'
 import { setActiveTab, setShowWelcomeBack } from './features/uiSlice'
 import { broadcastManager } from './utils/broadcast'
 import TopNav from './components/Shared/TopNav'
@@ -34,18 +35,43 @@ const App = () => {
   }, [])
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <TopNav 
-        activeTab={activeTab} 
-        onTabChange={(tab) => dispatch(setActiveTab(tab))} 
-      />
+    <ConfigProvider
+      theme={{
+        algorithm: theme.defaultAlgorithm,
+        token: {
+          colorPrimary: '#3b82f6',
+          colorSuccess: '#10b981',
+          colorWarning: '#f59e0b',
+          colorError: '#ef4444',
+          borderRadius: 8,
+          fontFamily: 'system-ui, -apple-system, sans-serif',
+        },
+        components: {
+          Button: {
+            borderRadius: 8,
+          },
+          Input: {
+            borderRadius: 8,
+          },
+          Card: {
+            borderRadius: 12,
+          },
+        },
+      }}
+    >
+      <div className="min-h-screen bg-background">
+        <TopNav 
+          activeTab={activeTab} 
+          onTabChange={(tab) => dispatch(setActiveTab(tab))} 
+        />
 
-      <main className="container mx-auto px-4 py-8">
-        {activeTab === 'interviewee' ? <IntervieweeTab /> : <InterviewerTab />}
-      </main>
+        <main className="container mx-auto px-4 py-8 max-w-7xl">
+          {activeTab === 'interviewee' ? <IntervieweeTab /> : <InterviewerTab />}
+        </main>
 
-      {showWelcomeBack && <WelcomeBackModal />}
-    </div>
+        {showWelcomeBack && <WelcomeBackModal />}
+      </div>
+    </ConfigProvider>
   )
 }
 
