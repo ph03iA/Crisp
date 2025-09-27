@@ -1,11 +1,17 @@
 import React from 'react'
 import { Badge } from 'antd'
-import { UserOutlined, DashboardOutlined, InteractionOutlined } from '@ant-design/icons'
+import { UserOutlined, DashboardOutlined, InteractionOutlined, HomeOutlined } from '@ant-design/icons'
 import { Button } from '../ui/button'
 import { cn } from '../../lib/utils'
 
 const TopNav = ({ activeTab, onTabChange }) => {
   const navItems = [
+    {
+      key: 'home',
+      label: 'Home',
+      icon: <HomeOutlined className="w-4 h-4" />,
+      description: 'Welcome to AI Interview Assistant'
+    },
     {
       key: 'interviewee',
       label: 'Take Interview',
@@ -61,7 +67,8 @@ const TopNav = ({ activeTab, onTabChange }) => {
           <div className="flex items-center space-x-4">
             <div className="hidden sm:flex flex-col items-end">
               <div className="text-sm font-medium text-foreground">
-                {activeTab === 'interviewee' ? 'Interview Mode' : 'Review Mode'}
+                {activeTab === 'home' ? 'Welcome' : 
+                 activeTab === 'interviewee' ? 'Interview Mode' : 'Review Mode'}
               </div>
               <div className="text-xs text-muted-foreground">
                 {navItems.find(item => item.key === activeTab)?.description}

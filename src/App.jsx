@@ -5,6 +5,7 @@ import { setActiveTab, setShowWelcomeBack } from './features/uiSlice'
 import { broadcastManager } from './utils/broadcast'
 import TopNav from './components/Shared/TopNav'
 import WelcomeBackModal from './components/Shared/WelcomeBackModal'
+import LandingPage from './components/Landing/LandingPage'
 import IntervieweeTab from './components/IntervieweeChat/IntervieweeTab'
 import InterviewerTab from './components/InterviewerDashboard/InterviewerTab'
 
@@ -65,8 +66,9 @@ const App = () => {
           onTabChange={(tab) => dispatch(setActiveTab(tab))} 
         />
 
-        <main className="container mx-auto px-4 py-8 max-w-7xl">
-          {activeTab === 'interviewee' ? <IntervieweeTab /> : <InterviewerTab />}
+        <main className={activeTab === 'home' ? '' : 'container mx-auto px-4 py-8 max-w-7xl'}>
+          {activeTab === 'home' ? <LandingPage /> :
+           activeTab === 'interviewee' ? <IntervieweeTab /> : <InterviewerTab />}
         </main>
 
         {showWelcomeBack && <WelcomeBackModal />}

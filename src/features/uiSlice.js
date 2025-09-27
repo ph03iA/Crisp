@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  activeTab: 'interviewee',
+  activeTab: 'home',
   showWelcomeBack: false,
   searchQuery: '',
   sortBy: 'startedAt',
