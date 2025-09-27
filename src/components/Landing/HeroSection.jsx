@@ -2,6 +2,7 @@ import React from 'react'
 import { Button } from '../ui/button'
 import { Card, CardContent } from '../ui/card'
 import { Badge } from '../ui/badge'
+import { GlowCard } from '../ui/spotlight-card'
 import { HeroSectionWithShader } from '../ui/hero-section-with-smooth-bg-shader'
 import { 
   GithubOutlined, 
@@ -42,7 +43,7 @@ const HeroSection = ({ onGetStarted, onViewDemo }) => {
           {/* Left Column - Hero Text */}
           <div className="space-y-8">
             <div className="space-y-6">
-            <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
+            <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight archivo-black-regular">
               Elevate your{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-purple-300">
                 tech interviews.
@@ -55,26 +56,25 @@ const HeroSection = ({ onGetStarted, onViewDemo }) => {
             </p>
             </div>
 
-            {/* Feature Cards */}
-            <div className="grid gap-4 max-w-2xl">
+            {/* Feature Cards with Spotlight Effect */}
+            <div className="grid gap-6 max-w-2xl">
               {features.map((feature, index) => (
-                <Card key={index} className="border-0 shadow-sm bg-white/60 backdrop-blur-sm">
-                  <CardContent className="p-4">
-                    <div className="flex items-start space-x-3">
-                      <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
-                        {feature.icon}
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-slate-800 mb-1">
-                          {feature.title}
-                        </h3>
-                        <p className="text-sm text-slate-600 leading-relaxed">
-                          {feature.description}
-                        </p>
-                      </div>
+                <GlowCard 
+                  key={index} 
+                  glowColor={index === 0 ? 'blue' : 'purple'}
+                  customSize={true} 
+                  className="w-full h-32 bg-white/5 border-white/10"
+                >
+                  <div className="flex items-center space-x-4 text-white h-full">
+                    <div className="flex-shrink-0 text-white bg-primary/80 rounded-full p-3">
+                      {feature.icon}
                     </div>
-                  </CardContent>
-                </Card>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-semibold text-white mb-1">{feature.title}</h3>
+                      <p className="text-white/80 text-sm leading-relaxed">{feature.description}</p>
+                    </div>
+                  </div>
+                </GlowCard>
               ))}
             </div>
 

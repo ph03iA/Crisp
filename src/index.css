@@ -77,4 +77,11 @@
   .input-field {
     @apply w-full px-3 py-2 border border-input rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring;
   }
+
+  /* Google Font - Archivo Black */
+  .archivo-black-regular {
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
 }
