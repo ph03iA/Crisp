@@ -75,17 +75,19 @@ const InterviewerTab = () => {
 
   return (
     <div>
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold text-gray-900 mb-2">
-          Interview Dashboard
-        </h1>
-        <p className="text-gray-600">
+      <div className="mb-6 bg-black/20 backdrop-blur-sm rounded-2xl shadow-xl p-6">
+        <div className="flex flex-wrap items-center gap-2 mb-2">
+          <span className="text-lg font-bold text-white leading-tight drop-shadow-lg [text-shadow:_0_2px_4px_rgb(0_0_0_/_40%)]">
+            Interview Dashboard
+          </span>
+        </div>
+        <p className="text-white/90 text-lg leading-relaxed">
           View and analyze candidate interview results
         </p>
       </div>
 
       {/* Search and Filters */}
-      <div className="card p-4 mb-6">
+      <div className="bg-black/20 backdrop-blur-sm rounded-2xl shadow-xl p-4 mb-6">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
           <div className="flex-1 max-w-md">
             <div className="relative">
@@ -102,30 +104,32 @@ const InterviewerTab = () => {
                 placeholder="Search by name or email..."
                 value={searchQuery}
                 onChange={(e) => dispatch(setSearchQuery(e.target.value))}
-                className="pl-10 pr-4 py-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                className="pl-10 pr-4 py-2 w-full border border-white/30 rounded-lg bg-white/10 backdrop-blur-sm text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/50"
               />
             </div>
           </div>
 
-          <div className="flex items-center space-x-4">
-            <span className="text-sm text-gray-600">
-              {filteredAndSortedSessions.length} candidates
-            </span>
+        <div className="flex items-center space-x-4">
+          <span className="text-sm text-white/90 font-bold drop-shadow-lg [text-shadow:_0_2px_4px_rgb(0_0_0_/_40%)]">
+            {filteredAndSortedSessions.length} candidates
+          </span>
+          <div className="text-xs text-white/70">
+            {filteredAndSortedSessions.filter(s => s.status === 'finished').length} completed
+          </div>
           </div>
         </div>
       </div>
 
       {/* Results Table */}
-      <div className="card overflow-hidden">
+      <div className="bg-black/20 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden">
         {filteredAndSortedSessions.length === 0 ? (
           <div className="p-8 text-center">
-            <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
+            <div className="flex flex-wrap items-center gap-2 mb-2">
+              <span className="text-lg font-bold text-white leading-tight drop-shadow-lg [text-shadow:_0_2px_4px_rgb(0_0_0_/_40%)]">
+                No candidates yet!
+              </span>
             </div>
-            <h3 className="text-lg font-medium text-gray-900 mb-1">No candidates yet</h3>
-            <p className="text-gray-500">
+            <p className="text-white/90 text-lg leading-relaxed">
               {searchQuery ? 'No candidates match your search.' : 'Interview sessions will appear here once candidates complete them.'}
             </p>
           </div>

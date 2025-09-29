@@ -7,7 +7,7 @@ import {
   GithubOutlined
 } from '@ant-design/icons'
 
-const HeroSection = ({ onGetStarted, onViewDemo }) => {
+const HeroSection = ({ onGetStarted, onViewDemo, isTransitioning = false }) => {
 
   const introTexts = [
     "introducing",
@@ -87,10 +87,13 @@ const HeroSection = ({ onGetStarted, onViewDemo }) => {
               <Button
                 size="lg"
                 onClick={onGetStarted}
-                className="bg-white text-black hover:bg-white/90 shadow-lg rounded-full"
+                disabled={isTransitioning}
+                className={`bg-white text-black hover:bg-white/90 shadow-lg rounded-full transition-all duration-300 ${
+                  isTransitioning ? 'opacity-50 cursor-not-allowed' : ''
+                }`}
               >
-                Try it out
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {isTransitioning ? 'Loading...' : 'Try it out'}
+                <svg className={`w-4 h-4 ml-2 ${isTransitioning ? 'animate-pulse' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </Button>

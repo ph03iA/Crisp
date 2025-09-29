@@ -1,17 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Badge } from 'antd'
-import { UserOutlined, DashboardOutlined, InteractionOutlined, HomeOutlined } from '@ant-design/icons'
+import { UserOutlined, DashboardOutlined, InteractionOutlined, ArrowLeftOutlined } from '@ant-design/icons'
 import { Button } from '../ui/button'
 import { cn } from '../../lib/utils'
 
 const TopNav = ({ activeTab, onTabChange }) => {
+  const [isTransitioning, setIsTransitioning] = useState(false)
+  
   const navItems = [
-    {
-      key: 'home',
-      label: 'Home',
-      icon: <HomeOutlined className="w-4 h-4" />,
-      description: 'Welcome to AI Interview Assistant'
-    },
     {
       key: 'interviewee',
       label: 'Take Interview',
@@ -26,79 +22,80 @@ const TopNav = ({ activeTab, onTabChange }) => {
     }
   ]
 
+  const handleBackToHome = () => {
+    setIsTransitioning(true)
+    // Add a small delay for smooth transition
+    setTimeout(() => {
+      onTabChange('home')
+      setIsTransitioning(false)
+    }, 200)
+  }
+
   return (
-    <nav className="sticky top-0 z-50 w-full border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60">
+    <nav className="sticky top-0 z-50 w-full bg-transparent backdrop-blur-sm">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="flex h-16 items-center justify-between">
-          {/* Logo and Brand */}
-          <div className="flex items-center space-x-8">
-            <div className="flex items-center space-x-3">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-                <InteractionOutlined className="h-4 w-4" />
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-foreground">
-                  AI Interview Assistant
-                </h1>
-              </div>
-            </div>
-            
-            {/* Navigation Tabs */}
-            <div className="hidden md:flex items-center space-x-2">
+          {/* Back Button */}
+          <div className="flex items-center">
+            <button
+              onClick={handleBackToHome}
+              disabled={isTransitioning}
+              className={cn(
+                "w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300 ease-in-out",
+                isTransitioning && "opacity-50 cursor-not-allowed"
+              )}
+            >
+              <ArrowLeftOutlined className={cn("w-4 h-4", isTransitioning && "animate-pulse")} />
+            </button>
+          </div>
+
+          {/* Navigation Tabs */}
+          <div className="flex items-center space-x-2">
               {navItems.map((item) => (
                 <Button
                   key={item.key}
-                  variant={activeTab === item.key ? "default" : "ghost"}
+                  variant="ghost"
                   size="sm"
                   onClick={() => onTabChange(item.key)}
                   className={cn(
-                    "flex items-center space-x-2 h-9 px-3",
-                    activeTab === item.key && "bg-primary text-primary-foreground"
+                    "flex items-center space-x-2 h-9 px-3 text-white",
+                    activeTab === item.key && "bg-white/20 text-white"
                   )}
                 >
                   {item.icon}
                   <span className="hidden sm:inline">{item.label}</span>
                 </Button>
               ))}
-            </div>
           </div>
 
           {/* Right Side Actions */}
           <div className="flex items-center space-x-4">
-            <div className="hidden sm:flex flex-col items-end">
-              <div className="text-sm font-medium text-foreground">
-                {activeTab === 'home' ? 'Welcome' : 
-                 activeTab === 'interviewee' ? 'Interview Mode' : 'Review Mode'}
-              </div>
-              <div className="text-xs text-muted-foreground">
-                {navItems.find(item => item.key === activeTab)?.description}
-              </div>
-            </div>
-            
-            <Badge 
-              count={0} 
-              className="flex items-center"
-            >
-              <div className="h-8 w-8 rounded-full bg-muted flex items-center justify-center">
-                <UserOutlined className="h-4 w-4 text-muted-foreground" />
-              </div>
-            </Badge>
           </div>
         </div>
       </div>
 
       {/* Mobile Navigation */}
-      <div className="md:hidden border-t bg-card px-4 py-2">
+      <div className="md:hidden bg-transparent px-4 py-2">
         <div className="flex items-center justify-around space-x-2">
+          <button
+            onClick={handleBackToHome}
+            disabled={isTransitioning}
+            className={cn(
+              "w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300 ease-in-out",
+              isTransitioning && "opacity-50 cursor-not-allowed"
+            )}
+          >
+            <ArrowLeftOutlined className={cn("w-3 h-3", isTransitioning && "animate-pulse")} />
+          </button>
           {navItems.map((item) => (
             <Button
               key={item.key}
-              variant={activeTab === item.key ? "default" : "ghost"}
+              variant="ghost"
               size="sm"
               onClick={() => onTabChange(item.key)}
               className={cn(
-                "flex-1 flex items-center justify-center space-x-2 h-8",
-                activeTab === item.key && "bg-primary text-primary-foreground"
+                "flex-1 flex items-center justify-center space-x-2 h-8 text-white",
+                activeTab === item.key && "bg-white/20 text-white"
               )}
             >
               {item.icon}

@@ -3,7 +3,7 @@ import { Button } from '../ui/button'
 import { Input } from '../ui/input'
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card'
 
-const InfoCollector = ({ missingFields, currentInfo, onComplete }) => {
+const MissingFieldsCollector = ({ missingFields, currentInfo, onComplete }) => {
   const [formData, setFormData] = useState({
     name: currentInfo.name || '',
     email: currentInfo.email || '',
@@ -140,4 +140,4 @@ const InfoCollector = ({ missingFields, currentInfo, onComplete }) => {
   )
 }
 
-export default InfoCollector
+export default MissingFieldsCollector

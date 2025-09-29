@@ -50,8 +50,8 @@ const CandidateRow = ({ session, onView }) => {
     return dayjs(dateString).fromNow()
   }
 
-  const maxScore = session.questions?.length * 10 || 60
   const score = session.finalScore || 0
+  const maxScore = 100 // AI scores are out of 100
 
   return (
     <tr className="hover:bg-gray-50">
@@ -84,10 +84,10 @@ const CandidateRow = ({ session, onView }) => {
         {session.status === 'finished' ? (
           <div>
             <div className={`text-lg font-semibold ${getScoreColor(score, maxScore)}`}>
-              {score}/{maxScore}
+              {score}/100
             </div>
             <div className="text-sm text-gray-500">
-              {Math.round((score / maxScore) * 100)}%
+              AI Score
             </div>
           </div>
         ) : (

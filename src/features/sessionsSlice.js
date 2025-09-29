@@ -40,12 +40,25 @@ const sessionsSlice = createSlice({
     submitAnswer: (state, action) => {
       const session = state.sessions[action.payload.sessionId]
       if (session) {
-        session.answers.push(action.payload.answer)
+        const currentQuestion = session.questions[session.currentQuestionIndex]
+        const answerData = {
+          questionId: currentQuestion.id,
+          answer: action.payload.answer,
+          timeUsed: action.payload.timeUsed,
+          timeLimit: currentQuestion.timeLimit,
+          submittedAt: new Date().toISOString(),
+          score: action.payload.score || 0,
+          feedback: action.payload.feedback || '',
+          keywords: action.payload.keywords || []
+        }
+        
+        session.answers.push(answerData)
         session.currentQuestionIndex++
         
         // If all questions answered, mark as finished
         if (session.currentQuestionIndex >= session.questions.length) {
           session.status = 'finished'
+          session.completedAt = new Date().toISOString()
         }
       }
     },

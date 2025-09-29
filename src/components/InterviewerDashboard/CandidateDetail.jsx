@@ -1,11 +1,9 @@
 import React from 'react'
 import dayjs from 'dayjs'
-import { scoreAnswer } from '../../api/scoring'
 
 const CandidateDetail = ({ session }) => {
-  const maxScore = session.questions.length * 10
   const score = session.finalScore || 0
-  const percentage = Math.round((score / maxScore) * 100)
+  const percentage = score // AI scores are already percentages
 
   const getScoreColor = (percentage) => {
     if (percentage >= 80) return 'text-green-600 bg-green-50 border-green-200'
@@ -53,10 +51,10 @@ const CandidateDetail = ({ session }) => {
             <div className={`inline-flex items-center px-4 py-2 rounded-lg border-2 ${getScoreColor(percentage)}`}>
               <div>
                 <div className="text-2xl font-bold">
-                  {score}/{maxScore}
+                  {score}/100
                 </div>
                 <div className="text-sm">
-                  {percentage}% Overall
+                  AI Score
                 </div>
               </div>
             </div>
@@ -64,17 +62,49 @@ const CandidateDetail = ({ session }) => {
         </div>
       </div>
 
-      {/* Summary */}
+      {/* AI Summary */}
       {session.summary && (
         <div className="card p-6">
           <h2 className="text-lg font-semibold text-gray-900 mb-3">
-            Performance Summary
+            AI Performance Analysis
           </h2>
-          <div className="bg-gray-50 p-4 rounded-lg">
+          <div className="bg-gray-50 p-4 rounded-lg mb-4">
             <p className="text-gray-700 leading-relaxed">
               {session.summary}
             </p>
           </div>
+          
+          {session.strengths && session.strengths.length > 0 && (
+            <div className="bg-green-50 p-4 rounded-lg mb-4">
+              <h3 className="font-semibold mb-2 text-green-800">Strengths</h3>
+              <ul className="text-green-700">
+                {session.strengths.map((strength, index) => (
+                  <li key={index} className="mb-1">• {strength}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {session.areasForImprovement && session.areasForImprovement.length > 0 && (
+            <div className="bg-yellow-50 p-4 rounded-lg mb-4">
+              <h3 className="font-semibold mb-2 text-yellow-800">Areas for Improvement</h3>
+              <ul className="text-yellow-700">
+                {session.areasForImprovement.map((area, index) => (
+                  <li key={index} className="mb-1">• {area}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {session.recommendation && (
+            <div className="bg-blue-50 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2 text-blue-800">AI Recommendation</h3>
+              <p className="text-blue-700 font-medium mb-2">{session.recommendation}</p>
+              {session.reasoning && (
+                <p className="text-blue-600 text-sm">{session.reasoning}</p>
+              )}
+            </div>
+          )}
         </div>
       )}
 
@@ -86,8 +116,8 @@ const CandidateDetail = ({ session }) => {
         
         {session.questions.map((question, index) => {
           const answer = session.answers.find(a => a.questionId === question.id)
-          const questionScore = answer ? scoreAnswer(answer, question) : 0
-          const questionPercentage = (questionScore / 10) * 100
+          const questionScore = answer?.score || 0
+          const questionPercentage = questionScore
           
           return (
             <div key={question.id} className="card">
@@ -110,14 +140,14 @@ const CandidateDetail = ({ session }) => {
                   
                   <div className="text-right">
                     <div className={`text-lg font-semibold ${
-                      questionPercentage >= 70 ? 'text-green-600' : 
-                      questionPercentage >= 50 ? 'text-yellow-600' : 
+                      questionPercentage >= 80 ? 'text-green-600' : 
+                      questionPercentage >= 60 ? 'text-yellow-600' : 
                       'text-red-600'
                     }`}>
-                      {questionScore}/10
+                      {questionScore}/100
                     </div>
                     <div className="text-sm text-gray-500">
-                      {questionPercentage}%
+                      AI Score
                     </div>
                   </div>
                 </div>
@@ -153,32 +183,50 @@ const CandidateDetail = ({ session }) => {
                   )}
                 </div>
 
+                {/* AI Feedback */}
+                {answer && answer.feedback && (
+                  <div className="bg-blue-50 p-4 rounded-lg mb-4">
+                    <h4 className="font-medium text-blue-900 mb-2">AI Feedback:</h4>
+                    <p className="text-blue-700">{answer.feedback}</p>
+                  </div>
+                )}
+
                 {/* Answer Analysis */}
                 {answer && (
-                  <div className="bg-blue-50 p-4 rounded-lg">
-                    <h4 className="font-medium text-blue-900 mb-2">Analysis:</h4>
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <h4 className="font-medium text-gray-900 mb-2">Analysis:</h4>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                       <div>
-                        <span className="text-blue-700 font-medium">Length:</span>
-                        <span className="text-blue-600 ml-1">
+                        <span className="text-gray-700 font-medium">Length:</span>
+                        <span className="text-gray-600 ml-1">
                           {answer.text.trim().split(/\s+/).filter(w => w).length} words
                         </span>
                       </div>
                       <div>
-                        <span className="text-blue-700 font-medium">Time Efficiency:</span>
-                        <span className="text-blue-600 ml-1">
-                          {((answer.timeTakenSec / question.timeLimit) * 100).toFixed(0)}% used
+                        <span className="text-gray-700 font-medium">Time Used:</span>
+                        <span className="text-gray-600 ml-1">
+                          {answer.timeUsed || answer.timeTakenSec || 0}s / {question.timeLimit}s
                         </span>
                       </div>
                       <div>
-                        <span className="text-blue-700 font-medium">Keywords:</span>
-                        <span className="text-blue-600 ml-1">
-                          {question.keywords?.filter(keyword => 
-                            answer.text.toLowerCase().includes(keyword.toLowerCase())
-                          ).length || 0}/{question.keywords?.length || 0}
+                        <span className="text-gray-700 font-medium">Keywords Found:</span>
+                        <span className="text-gray-600 ml-1">
+                          {answer.keywords?.length || 0} detected
                         </span>
                       </div>
                     </div>
+                    {answer.keywords && answer.keywords.length > 0 && (
+                      <div className="mt-3">
+                        <span className="text-gray-700 font-medium">Key Terms:</span>
+                        <div className="flex flex-wrap gap-1 mt-1">
+                          {answer.keywords.map((keyword, idx) => (
+                            <span key={idx} className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">
+                              {keyword}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
@@ -191,3 +239,4 @@ const CandidateDetail = ({ session }) => {
 }
 
 export default CandidateDetail
+

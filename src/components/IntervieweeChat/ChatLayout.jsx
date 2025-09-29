@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { useDispatch } from 'react-redux'
 import { submitAnswer, finishSession } from '../../features/sessionsSlice'
-import { calculateFinalScore, generateSummary } from '../../api/scoring'
+import { scoreAnswer, generateFinalSummary } from '../../api/aiScoring'
 import Timer from './Timer'
 import QuestionCard from './QuestionCard'
 import { broadcastManager } from '../../utils/broadcast'
@@ -11,6 +11,7 @@ const ChatLayout = ({ session }) => {
   const [currentAnswer, setCurrentAnswer] = useState('')
   const [isTimerActive, setIsTimerActive] = useState(false)
   const [showResults, setShowResults] = useState(false)
+  const [isAIScoring, setIsAIScoring] = useState(false)
   const textareaRef = useRef(null)
   const [startTime, setStartTime] = useState(null)
 
@@ -35,52 +36,90 @@ const ChatLayout = ({ session }) => {
     handleSubmitAnswer(true)
   }
 
-  const handleSubmitAnswer = (autoSubmit = false) => {
+  const handleSubmitAnswer = async (autoSubmit = false) => {
     if (!currentQuestion || !startTime) return
 
-    const timeTakenSec = Math.floor((Date.now() - startTime) / 1000)
+    const timeUsed = Math.floor((Date.now() - startTime) / 1000)
     const answerText = currentAnswer.trim()
 
-    const answer = {
-      questionId: currentQuestion.id,
-      text: answerText,
-      timeTakenSec: Math.min(timeTakenSec, currentQuestion.timeLimit)
-    }
+    try {
+      setIsAIScoring(true)
+      // Get AI score for the answer
+      const scoringResult = await scoreAnswer(
+        currentQuestion,
+        answerText,
+        timeUsed,
+        currentQuestion.timeLimit
+      )
 
-    dispatch(submitAnswer({
-      sessionId: session.id,
-      answer
-    }))
-
-    // Broadcast update to other tabs
-    broadcastManager.broadcast('SESSION_UPDATE', {
-      sessionId: session.id,
-      type: 'answer_submitted'
-    })
-
-    // Check if this was the last question
-    if (isLastQuestion) {
-      // Calculate final score and finish session
-      const allAnswers = [...session.answers, answer]
-      const finalScore = calculateFinalScore(allAnswers, session.questions)
-      const summary = generateSummary(allAnswers, session.questions, finalScore, session.name)
-
-      dispatch(finishSession({
+      dispatch(submitAnswer({
         sessionId: session.id,
-        finalScore,
-        summary
+        answer: answerText,
+        timeUsed,
+        score: scoringResult.score,
+        feedback: scoringResult.feedback,
+        keywords: scoringResult.keywords,
+        strengths: scoringResult.strengths,
+        improvements: scoringResult.improvements
       }))
 
+      // Broadcast update to other tabs
       broadcastManager.broadcast('SESSION_UPDATE', {
         sessionId: session.id,
-        type: 'session_finished'
+        type: 'answer_submitted'
       })
-    }
 
-    // Reset for next question
-    setCurrentAnswer('')
-    setIsTimerActive(false)
-    setStartTime(null)
+      // Check if this was the last question
+      if (isLastQuestion) {
+        // Generate final AI summary
+        const updatedSession = {
+          ...session,
+          answers: [...session.answers, {
+            questionId: currentQuestion.id,
+            answer: answerText,
+            timeUsed,
+            score: scoringResult.score,
+            feedback: scoringResult.feedback,
+            keywords: scoringResult.keywords
+          }]
+        }
+        
+        const finalSummary = await generateFinalSummary(updatedSession)
+
+        dispatch(finishSession({
+          sessionId: session.id,
+          finalScore: finalSummary.overallScore,
+          summary: finalSummary.summary,
+          strengths: finalSummary.strengths,
+          areasForImprovement: finalSummary.areasForImprovement,
+          recommendation: finalSummary.recommendation,
+          reasoning: finalSummary.reasoning
+        }))
+
+        broadcastManager.broadcast('SESSION_UPDATE', {
+          sessionId: session.id,
+          type: 'session_finished'
+        })
+      }
+
+      // Reset for next question
+      setCurrentAnswer('')
+      setIsTimerActive(false)
+      setStartTime(null)
+    } catch (error) {
+      console.error('Error scoring answer:', error)
+      // Fallback to basic scoring
+      dispatch(submitAnswer({
+        sessionId: session.id,
+        answer: answerText,
+        timeUsed,
+        score: 50, // Default score
+        feedback: 'Answer submitted successfully',
+        keywords: []
+      }))
+    } finally {
+      setIsAIScoring(false)
+    }
   }
 
   const handleNextQuestion = () => {
@@ -116,17 +155,49 @@ const ChatLayout = ({ session }) => {
 
           <div className="mb-6">
             <div className="text-4xl font-bold text-primary-600 mb-2">
-              {session.finalScore || 0}/{session.questions.length * 10}
+              {session.finalScore || 0}/100
             </div>
             <div className="text-lg text-gray-600">
-              Overall Score ({Math.round(((session.finalScore || 0) / (session.questions.length * 10)) * 100)}%)
+              Overall Score ({session.finalScore || 0}%)
             </div>
           </div>
 
           {session.summary && (
             <div className="bg-gray-50 p-4 rounded-lg mb-6">
-              <h3 className="font-semibold mb-2">Summary</h3>
+              <h3 className="font-semibold mb-2">AI Summary</h3>
               <p className="text-gray-700">{session.summary}</p>
+            </div>
+          )}
+
+          {session.strengths && session.strengths.length > 0 && (
+            <div className="bg-green-50 p-4 rounded-lg mb-4">
+              <h3 className="font-semibold mb-2 text-green-800">Strengths</h3>
+              <ul className="text-green-700">
+                {session.strengths.map((strength, index) => (
+                  <li key={index} className="mb-1">• {strength}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {session.areasForImprovement && session.areasForImprovement.length > 0 && (
+            <div className="bg-yellow-50 p-4 rounded-lg mb-4">
+              <h3 className="font-semibold mb-2 text-yellow-800">Areas for Improvement</h3>
+              <ul className="text-yellow-700">
+                {session.areasForImprovement.map((area, index) => (
+                  <li key={index} className="mb-1">• {area}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {session.recommendation && (
+            <div className="bg-blue-50 p-4 rounded-lg mb-6">
+              <h3 className="font-semibold mb-2 text-blue-800">AI Recommendation</h3>
+              <p className="text-blue-700 font-medium mb-2">{session.recommendation}</p>
+              {session.reasoning && (
+                <p className="text-blue-600 text-sm">{session.reasoning}</p>
+              )}
             </div>
           )}
 
@@ -149,16 +220,16 @@ const ChatLayout = ({ session }) => {
   return (
     <div className="max-w-3xl mx-auto">
       {/* Progress Bar */}
-      <div className="mb-6">
+      <div className="mb-6 bg-black/20 backdrop-blur-sm rounded-2xl shadow-xl p-6">
         <div className="flex items-center justify-between mb-2">
-          <span className="text-sm font-medium text-gray-700">
+          <span className="text-sm font-medium text-white">
             Question {session.currentQuestionIndex + 1} of {session.questions.length}
           </span>
-          <span className="text-sm text-gray-500">
+          <span className="text-sm text-white/70">
             {currentQuestion.difficulty} • {currentQuestion.timeLimit}s
           </span>
         </div>
-        <div className="w-full bg-gray-200 rounded-full h-2">
+        <div className="w-full bg-gray-700 rounded-full h-2">
           <div
             className="bg-primary-600 h-2 rounded-full transition-all duration-300"
             style={{
@@ -171,19 +242,21 @@ const ChatLayout = ({ session }) => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Question and Answer Section */}
         <div className="lg:col-span-2">
-          <QuestionCard
-            question={currentQuestion}
-            answer={currentAnswer}
-            onAnswerChange={setCurrentAnswer}
-            onSubmit={() => handleSubmitAnswer(false)}
-            disabled={!isTimerActive}
-            textareaRef={textareaRef}
-          />
+          <div className="bg-black/20 backdrop-blur-sm rounded-2xl shadow-xl">
+            <QuestionCard
+              question={currentQuestion}
+              answer={currentAnswer}
+              onAnswerChange={setCurrentAnswer}
+              onSubmit={() => handleSubmitAnswer(false)}
+              disabled={!isTimerActive}
+              textareaRef={textareaRef}
+            />
+          </div>
         </div>
 
         {/* Timer and Status Section */}
         <div className="lg:col-span-1">
-          <div className="card p-6 text-center">
+          <div className="bg-black/20 backdrop-blur-sm rounded-2xl shadow-xl p-6 text-center">
             <Timer
               timeLimit={currentQuestion.timeLimit}
               isActive={isTimerActive}
@@ -193,10 +266,17 @@ const ChatLayout = ({ session }) => {
             <div className="mt-6 space-y-3">
               <button
                 onClick={() => handleSubmitAnswer(false)}
-                disabled={!currentAnswer.trim() || !isTimerActive}
+                disabled={!currentAnswer.trim() || !isTimerActive || isAIScoring}
                 className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isLastQuestion ? 'Finish Interview' : 'Submit & Next'}
+                {isAIScoring ? (
+                  <div className="flex items-center justify-center">
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                    AI Analyzing...
+                  </div>
+                ) : (
+                  isLastQuestion ? 'Finish Interview' : 'Submit & Next'
+                )}
               </button>
 
               <div className="text-xs text-gray-500">

@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { setActiveTab } from '../../features/uiSlice'
 import HeroSection from './HeroSection'
 
 const LandingPage = () => {
   const dispatch = useDispatch()
+  const [isTransitioning, setIsTransitioning] = useState(false)
 
   const handleGetStarted = () => {
-    dispatch(setActiveTab('interviewee'))
+    setIsTransitioning(true)
+    // Add a small delay for smooth transition
+    setTimeout(() => {
+      dispatch(setActiveTab('interviewee'))
+      setIsTransitioning(false)
+    }, 200)
   }
 
   const handleViewGitHub = () => {
@@ -19,6 +25,7 @@ const LandingPage = () => {
       <HeroSection 
         onGetStarted={handleGetStarted}
         onViewDemo={handleViewGitHub}
+        isTransitioning={isTransitioning}
       />
     </div>
   )

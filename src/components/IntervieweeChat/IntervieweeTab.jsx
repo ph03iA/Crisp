@@ -48,21 +48,25 @@ const IntervieweeTab = () => {
     <div className="max-w-4xl mx-auto">
       {stage === 'upload' && (
         <div className="flex flex-col items-center justify-center min-h-96">
-          <ResumeUploader onSuccess={handleUploadSuccess} />
+          <div className="bg-black/20 backdrop-blur-sm rounded-2xl shadow-xl p-8 w-full max-w-2xl">
+            <ResumeUploader onSuccess={handleUploadSuccess} />
+          </div>
         </div>
       )}
 
       {stage === 'info' && (
         <div className="flex flex-col items-center justify-center min-h-96">
-          <InfoCollector 
-            missingFields={missingFields}
-            currentInfo={currentSession ? {
-              name: currentSession.name,
-              email: currentSession.email,
-              phone: currentSession.phone
-            } : {}}
-            onComplete={handleInfoComplete}
-          />
+          <div className="bg-black/20 backdrop-blur-sm rounded-2xl shadow-xl p-8 w-full max-w-md">
+            <InfoCollector 
+              missingFields={missingFields}
+              currentInfo={currentSession ? {
+                name: currentSession.name,
+                email: currentSession.email,
+                phone: currentSession.phone
+              } : {}}
+              onComplete={handleInfoComplete}
+            />
+          </div>
         </div>
       )}
 
