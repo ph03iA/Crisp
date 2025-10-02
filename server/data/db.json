@@ -431,6 +431,22 @@
       "score": 33,
       "summary": "Needs improvement.",
       "sessionId": "s_1759424044161"
+    },
+    {
+      "id": "c_1759424995504",
+      "name": "Prajwal Chahande+91-9860738071",
+      "email": "prajwalchahande7@gmail.com",
+      "score": 0,
+      "summary": "Needs improvement.",
+      "sessionId": "s_1759424926729"
+    },
+    {
+      "id": "c_1759426000189",
+      "name": "Prajwal Chahande",
+      "email": "prajwalchahande7@gmail.com",
+      "score": 17,
+      "summary": "Needs improvement.",
+      "sessionId": "s_1759425939285"
     }
   ],
   "sessions": {
@@ -14234,6 +14250,342 @@
         }
       ],
       "answers": []
+    },
+    "s_1759424926729": {
+      "id": "s_1759424926729",
+      "candidate": {
+        "name": "Prajwal Chahande+91-9860738071",
+        "email": "prajwalchahande7@gmail.com"
+      },
+      "questions": [
+        {
+          "id": "1",
+          "text": "In the Payment Gateway project, which HTTP method would you typically use for the \"creating payments\" REST endpoint?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "RESTful APIs",
+            "Spring Boot",
+            "Payment Gateway"
+          ],
+          "options": [
+            "GET",
+            "POST",
+            "PUT",
+            "DELETE"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "2",
+          "text": "Which tool did you use for TDD implementation in the core service logic of the Library Management System?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "TDD",
+            "JUnit",
+            "Library Management System"
+          ],
+          "options": [
+            "Mockito for mocking dependencies",
+            "Apache Maven for build automation",
+            "JUnit for unit and integration testing",
+            "Jenkins for continuous integration"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "3",
+          "text": "How did your Event-Driven Order Processing System ensure \"at-least-once processing\" for Kafka consumers?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Event-Driven Systems",
+            "Apache Kafka",
+            "at-least-once processing",
+            "consumer groups"
+          ],
+          "options": [
+            "Disabling auto-commits for consumers",
+            "Using consumer groups with manual offset commits",
+            "Enabling exactly-once delivery guarantees",
+            "Implementing distributed transactions"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "4",
+          "text": "What was the main role of SockJS in your Real-Time Messaging Application's STOMP WebSocket configuration?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "WebSocket",
+            "STOMP",
+            "SockJS",
+            "Real-Time Messaging Application"
+          ],
+          "options": [
+            "Providing message serialization",
+            "Handling user authentication",
+            "Offering fallback options for browser compatibility",
+            "Managing database persistence"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "5",
+          "text": "Beyond \"at-least-once processing,\" how did your Event-Driven Order Processing System address failed events?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Event-Driven Systems",
+            "Apache Kafka",
+            "retry/backoff strategies",
+            "dead-letter topics"
+          ],
+          "options": [
+            "By immediately re-queueing to the original topic",
+            "Implementing retry/backoff strategies with dead-letter topics",
+            "Using synchronous rollback mechanisms",
+            "Ignoring all transient failures"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "6",
+          "text": "What was a key architectural benefit of separating OrderService, StockService, and EmailService in your Event-Driven system?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Microservices",
+            "Event-Driven Systems",
+            "OrderService",
+            "StockService",
+            "EmailService"
+          ],
+          "options": [
+            "Increased data redundancy across services",
+            "Simplified synchronous communication patterns",
+            "Enabling independent deployment and scaling",
+            "Reducing the need for event-driven communication"
+          ],
+          "correctIndex": 2
+        }
+      ],
+      "answers": [
+        {
+          "questionId": "1",
+          "answer": "DELETE",
+          "selectedIndex": 3,
+          "isCorrect": false,
+          "timeUsed": 10
+        },
+        {
+          "questionId": "2",
+          "answer": "Jenkins for continuous integration",
+          "selectedIndex": 3,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "3",
+          "answer": "Implementing distributed transactions",
+          "selectedIndex": 3,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "4",
+          "answer": "Managing database persistence",
+          "selectedIndex": 3,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "5",
+          "answer": "Ignoring all transient failures",
+          "selectedIndex": 3,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "6",
+          "answer": "Reducing the need for event-driven communication",
+          "selectedIndex": 3,
+          "isCorrect": false,
+          "timeUsed": 0
+        }
+      ]
+    },
+    "s_1759425939285": {
+      "id": "s_1759425939285",
+      "candidate": {
+        "name": "Prajwal Chahande",
+        "email": "prajwalchahande7@gmail.com"
+      },
+      "questions": [
+        {
+          "id": "1",
+          "text": "In the Reverie Diary project, Prajwal utilized LocalStorage for data persistence. What was the primary benefit of this choice for the application?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "LocalStorage",
+            "Reverie Diary",
+            "React.js"
+          ],
+          "options": [
+            "Stores real-time client-side data without a backend dependency.",
+            "Provides secure, encrypted storage for sensitive user credentials.",
+            "Enables server-side rendering for faster initial page loads.",
+            "Allows data synchronization across multiple user devices automatically."
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "2",
+          "text": "For the CryptoMetrics backend, Prajwal used MongoDB. What kind of data was primarily stored in this NoSQL database?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "MongoDB",
+            "CryptoMetrics",
+            "Node.js",
+            "Express.js"
+          ],
+          "options": [
+            "User authentication tokens and session data.",
+            "Structured relational data about crypto exchanges.",
+            "Real-time metrics like price, market cap, and volume for assets.",
+            "Logs for API requests and server errors."
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "3",
+          "text": "The DataAlchemist platform handled 1,000+ CSV rows efficiently with a responsive interface. What problem does virtualized rendering primarily solve in this scenario?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "DataAlchemist",
+            "Next.js",
+            "virtualized rendering",
+            "Tailwind CSS"
+          ],
+          "options": [
+            "Reducing the initial bundle size of the Next.js application.",
+            "Improving SEO by pre-rendering all rows on the server.",
+            "Optimizing rendering performance by showing only visible rows.",
+            "Enabling complex animations and transitions for large datasets."
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "4",
+          "text": "In the CryptoMetrics project, Prajwal employed NATS pub-sub messaging. What was the main purpose of integrating NATS into the backend system?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "NATS",
+            "CryptoMetrics",
+            "Node.js",
+            "Express.js",
+            "pub-sub"
+          ],
+          "options": [
+            "For persistent storage of cryptocurrency historical data.",
+            "To enable direct client-server RESTful communication.",
+            "To broadcast real-time data updates to connected services.",
+            "For orchestrating microservices deployments."
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "5",
+          "text": "For the MangaFlow Chrome extension, Prajwal utilized Manifest V3 and background service workers. What is a key architectural shift this enables for extension development?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "MangaFlow",
+            "Manifest V3",
+            "Chrome Extensions API",
+            "JavaScript",
+            "background service workers"
+          ],
+          "options": [
+            "Enforces synchronous blocking network requests for better security.",
+            "Replaces persistent background pages with event-driven service workers.",
+            "Mandates the use of WebAssembly for all core extension logic.",
+            "Restricts access to all host permissions for enhanced user privacy."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "6",
+          "text": "CryptoMetrics used cron-based syncing and retry logic to collect data from CoinGecko API. What specific challenge does this combination primarily address?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "CryptoMetrics",
+            "cron-based syncing",
+            "retry logic",
+            "CoinGecko API",
+            "API rate limits",
+            "Node.js"
+          ],
+          "options": [
+            "Preventing database deadlocks during high write loads.",
+            "Ensuring data freshness while respecting external API rate limits.",
+            "Enabling real-time, push-based data streaming to clients.",
+            "Securely encrypting sensitive API keys in transit."
+          ],
+          "correctIndex": 1
+        }
+      ],
+      "answers": [
+        {
+          "questionId": "1",
+          "answer": "Provides secure, encrypted storage for sensitive user credentials.",
+          "selectedIndex": 1,
+          "isCorrect": false,
+          "timeUsed": 1
+        },
+        {
+          "questionId": "2",
+          "answer": "User authentication tokens and session data.",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 1
+        },
+        {
+          "questionId": "3",
+          "answer": "Enabling complex animations and transitions for large datasets.",
+          "selectedIndex": 3,
+          "isCorrect": false,
+          "timeUsed": 1
+        },
+        {
+          "questionId": "4",
+          "answer": "To broadcast real-time data updates to connected services.",
+          "selectedIndex": 2,
+          "isCorrect": true,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "5",
+          "answer": "Enforces synchronous blocking network requests for better security.",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 1
+        },
+        {
+          "questionId": "6",
+          "answer": "Enabling real-time, push-based data streaming to clients.",
+          "selectedIndex": 2,
+          "isCorrect": false,
+          "timeUsed": 0
+        }
+      ]
     }
   }
 }
