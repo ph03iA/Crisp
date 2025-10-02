@@ -1,8 +1,4 @@
-// In-memory database for Vercel serverless
-let db = {
-  sessions: {},
-  candidates: []
-}
+import { getDb, getCandidate, getSession } from './lib/db.js'
 
 export default function handler(req, res) {
   if (req.method !== 'GET') {
@@ -10,10 +6,10 @@ export default function handler(req, res) {
   }
 
   const { id } = req.query
-  const candidate = db.candidates.find(c => c.id === id)
+  const candidate = getCandidate(id)
   if (!candidate) return res.status(404).json({ error: 'Candidate not found' })
   
-  const session = db.sessions[candidate.sessionId]
+  const session = getSession(candidate.sessionId)
   if (!session) return res.status(404).json({ error: 'Session not found' })
   
   return res.json({ candidate, session })

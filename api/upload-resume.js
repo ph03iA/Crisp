@@ -8,20 +8,8 @@ import mammoth from 'mammoth'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-// Configure multer for file uploads
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    const uploadDir = path.join(__dirname, 'uploads')
-    if (!fs.existsSync(uploadDir)) {
-      fs.mkdirSync(uploadDir, { recursive: true })
-    }
-    cb(null, uploadDir)
-  },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + '-' + Math.round(Math.random() * 1E9) + path.extname(file.originalname))
-  }
-})
-
+// Configure multer for Vercel serverless functions (memory storage)
+const storage = multer.memoryStorage()
 const upload = multer({ storage })
 
 export const config = {
@@ -42,14 +30,14 @@ export default async function handler(req, res) {
         return res.status(400).json({ error: 'File upload error' })
       }
 
-      const filePath = req.file?.path
-      if (!filePath) return res.status(400).json({ error: 'No file uploaded' })
+      const file = req.file
+      if (!file) return res.status(400).json({ error: 'No file uploaded' })
 
       let extracted = { name: '', email: '', phone: '' }
       let fullText = ''
       
-      if (req.file.mimetype === 'application/pdf') {
-        const buffer = fs.readFileSync(filePath)
+      if (file.mimetype === 'application/pdf') {
+        const buffer = file.buffer
         const parsed = await pdfParse(buffer)
         const text = parsed.text || ''
         const emailMatch = text.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi)
@@ -59,8 +47,8 @@ export default async function handler(req, res) {
         const firstLine = text.split('\n').map(l => l.trim()).find(l => l.length > 0)
         extracted.name = firstLine || ''
         fullText = text
-      } else if (req.file.mimetype === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
-        const buffer = fs.readFileSync(filePath)
+      } else if (file.mimetype === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
+        const buffer = file.buffer
         const result = await mammoth.extractRawText({ buffer })
         const text = result.value || ''
         const emailMatch = text.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi)
@@ -72,7 +60,7 @@ export default async function handler(req, res) {
         fullText = text
       }
 
-      return res.json({ ok: true, fields: extracted, text: fullText, fileId: path.basename(filePath) })
+      return res.json({ ok: true, fields: extracted, text: fullText, fileId: file.originalname })
     })
   } catch (err) {
     console.error(err)

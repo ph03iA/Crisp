@@ -1,10 +1,5 @@
 import { GoogleGenerativeAI } from '@google/generative-ai'
-
-// In-memory database for Vercel serverless
-let db = {
-  sessions: {},
-  candidates: []
-}
+import { getDb, getSession, addCandidate } from './lib/db.js'
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -12,7 +7,7 @@ export default async function handler(req, res) {
   }
 
   const { sessionId } = req.body || {}
-  const session = db.sessions[sessionId]
+  const session = getSession(sessionId)
   
   if (!session) return res.status(404).json({ error: 'Session not found' })
   
@@ -46,7 +41,7 @@ export default async function handler(req, res) {
       summary,
       sessionId
     }
-    db.candidates.push(candidate)
+    addCandidate(candidate)
     res.json({ candidate })
   }
 

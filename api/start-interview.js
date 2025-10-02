@@ -1,10 +1,5 @@
 import { GoogleGenerativeAI } from '@google/generative-ai'
-
-// In-memory database for Vercel serverless
-let db = {
-  sessions: {},
-  candidates: []
-}
+import { getDb, addSession } from './lib/db.js'
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -105,12 +100,12 @@ STRICT RULES:
     if (byDiff.Easy.length < 2 || byDiff.Medium.length < 2 || byDiff.Hard.length < 2) throw new Error('AI did not produce required difficulties')
     const questions = [...byDiff.Easy, ...byDiff.Medium, ...byDiff.Hard]
 
-    db.sessions[sessionId] = {
+    addSession(sessionId, {
       id: sessionId,
       candidate: { name: name || '', email: email || '' },
       questions,
       answers: []
-    }
+    })
 
     return res.json({ sessionId, questions, aiUsed: true })
   } catch (e) {
