@@ -1,0 +1,6 @@
+node_modules
+server
+.env.development
+test-empty-resume.txt
+uploads
+*.log

@@ -1,3 +1,4 @@
+// For Vercel deployment, use relative API paths
 let API_BASE = ''
 try {
   if (import.meta && import.meta.env && import.meta.env.VITE_API_BASE) {
@@ -8,6 +9,11 @@ try {
 }
 if (typeof process !== 'undefined' && process.env && process.env.VITE_API_BASE) {
   API_BASE = process.env.VITE_API_BASE
+}
+
+// For production, use relative paths
+if (!API_BASE) {
+  API_BASE = '/api'
 }
 
 let detectedBasePromise
