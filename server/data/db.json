@@ -335,6 +335,14 @@
       "score": 17,
       "summary": "Needs improvement.",
       "sessionId": "s_1759414769098"
+    },
+    {
+      "id": "c_1759415425876",
+      "name": "Prajwal Chahande",
+      "email": "prajwalchahande7@gmail.com",
+      "score": 33,
+      "summary": "Needs improvement.",
+      "sessionId": "s_1759415274417"
     }
   ],
   "sessions": {
@@ -11880,6 +11888,173 @@
           "selectedIndex": 3,
           "isCorrect": false,
           "timeUsed": 1
+        }
+      ]
+    },
+    "s_1759415274417": {
+      "id": "s_1759415274417",
+      "candidate": {
+        "name": "Prajwal Chahande",
+        "email": "prajwalchahande7@gmail.com"
+      },
+      "questions": [
+        {
+          "id": "1",
+          "text": "In the Payment Gateway Standalone project, which mechanism was primarily used to expose functionalities for creating and managing payments?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Payment Gateway",
+            "Spring Boot",
+            "RESTful APIs"
+          ],
+          "options": [
+            "SOAP web services",
+            "RESTful API endpoints",
+            "gRPC interfaces",
+            "Direct database access"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "2",
+          "text": "For the Library Management System, which framework was specifically mentioned for applying TDD to core service logic?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Library Management System",
+            "TDD",
+            "JUnit"
+          ],
+          "options": [
+            "Mockito",
+            "Selenium",
+            "JUnit",
+            "TestNG"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "3",
+          "text": "In the Event-Driven Order Processing System, how does implementing idempotency for Kafka consumers enhance system robustness with at-least-once delivery?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Event-Driven",
+            "Kafka",
+            "at-least-once",
+            "idempotency"
+          ],
+          "options": [
+            "It prevents messages from being processed at all.",
+            "It ensures each message is processed exactly once, even if delivered multiple times.",
+            "It guarantees message order within a topic partition.",
+            "It reduces the network overhead of message delivery."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "4",
+          "text": "In the Real-Time Messaging Application, what is a likely role for Redis when integrated with STOMP WebSockets?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Real-Time Messaging",
+            "WebSocket",
+            "STOMP",
+            "Redis"
+          ],
+          "options": [
+            "Primary persistent storage for chat history.",
+            "Caching user session data or transient message states.",
+            "Asynchronous message queuing for delayed delivery.",
+            "Managing long-running batch processing jobs."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "5",
+          "text": "For the Event-Driven Order Processing System, what is the primary benefit of dead-letter topics and retry/backoff strategies for failed Kafka events?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Event-Driven",
+            "Microservices",
+            "Kafka",
+            "dead-letter topics",
+            "retry/backoff"
+          ],
+          "options": [
+            "To increase the overall throughput of Kafka topics.",
+            "To enable synchronous communication between microservices.",
+            "To manage and isolate unprocessable events, preventing consumer paralysis.",
+            "To reduce the number of partitions required for high availability."
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "6",
+          "text": "When optimizing queries with DB indexes in the Library Management System using Hibernate, what is a key consideration for performance?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Library Management System",
+            "Hibernate",
+            "MySQL",
+            "DB indexes",
+            "optimized queries"
+          ],
+          "options": [
+            "Hibernate automatically creates optimal indexes for all entities.",
+            "Hibernate entity mapping for indexes directly ensures optimal DB indexing strategy.",
+            "While Hibernate can map indexes, their effectiveness depends on underlying SQL and query patterns.",
+            "Indexes are primarily for write operations, not for read-heavy paginated searches."
+          ],
+          "correctIndex": 2
+        }
+      ],
+      "answers": [
+        {
+          "questionId": "1",
+          "answer": "RESTful API endpoints",
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timeUsed": 4
+        },
+        {
+          "questionId": "2",
+          "answer": "Mockito",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 1
+        },
+        {
+          "questionId": "3",
+          "answer": "It reduces the network overhead of message delivery.",
+          "selectedIndex": 3,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "4",
+          "answer": "Caching user session data or transient message states.",
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timeUsed": 3
+        },
+        {
+          "questionId": "5",
+          "answer": "To reduce the number of partitions required for high availability.",
+          "selectedIndex": 3,
+          "isCorrect": false,
+          "timeUsed": 1
+        },
+        {
+          "questionId": "6",
+          "answer": "Hibernate entity mapping for indexes directly ensures optimal DB indexing strategy.",
+          "selectedIndex": 1,
+          "isCorrect": false,
+          "timeUsed": 0
         }
       ]
     }
