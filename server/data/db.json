@@ -327,6 +327,14 @@
       "score": 0,
       "summary": "Needs improvement.",
       "sessionId": "s_1759412981695"
+    },
+    {
+      "id": "c_1759414852103",
+      "name": "Prajwal Chahande",
+      "email": "prajwalchahande7@gmail.com",
+      "score": 17,
+      "summary": "Needs improvement.",
+      "sessionId": "s_1759414769098"
     }
   ],
   "sessions": {
@@ -11704,6 +11712,173 @@
         {
           "questionId": "2",
           "answer": "",
+          "timeUsed": 1
+        }
+      ]
+    },
+    "s_1759414769098": {
+      "id": "s_1759414769098",
+      "candidate": {
+        "name": "Prajwal Chahande",
+        "email": "prajwalchahande7@gmail.com"
+      },
+      "questions": [
+        {
+          "id": "1",
+          "text": "In Reverie Diary, what distinct styling elements were used alongside Tailwind CSS to craft the polished UI, as described in your project?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Reverie Diary",
+            "Tailwind CSS",
+            "UI"
+          ],
+          "options": [
+            "Glassmorphism and metal textures.",
+            "Skeuomorphism and pixel art.",
+            "Material Design and flat icons.",
+            "Neumorphism and gradients."
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "2",
+          "text": "Which specific database was utilized in your CryptoMetrics project to store real-time metrics for 50+ crypto assets?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "CryptoMetrics",
+            "MongoDB",
+            "database"
+          ],
+          "options": [
+            "MongoDB",
+            "MySQL",
+            "PostgreSQL",
+            "Redis"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "3",
+          "text": "For DataAlchemist, what was the primary reason for implementing virtualized rendering to handle 1,000+ rows efficiently?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "DataAlchemist",
+            "virtualized rendering",
+            "performance"
+          ],
+          "options": [
+            "To reduce initial page load time and improve UI responsiveness.",
+            "To enable server-side pagination for large datasets.",
+            "To optimize database query performance on the client.",
+            "To facilitate complex drag-and-drop operations."
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "4",
+          "text": "In CryptoMetrics, NATS pub-sub messaging was employed to broadcast updates. What critical problem did this primarily address for downstream services?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "CryptoMetrics",
+            "NATS",
+            "pub-sub",
+            "real-time"
+          ],
+          "options": [
+            "Ensuring services receive near real-time data updates efficiently.",
+            "Orchestrating complex microservice workflows.",
+            "Managing distributed transactions across multiple databases.",
+            "Providing a secure authentication layer for API access."
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "5",
+          "text": "MangaFlow utilized Manifest V3 and background service workers. What key architectural shift did this introduce for extension event handling compared to Manifest V2?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "MangaFlow",
+            "Manifest V3",
+            "background service workers",
+            "Chrome Extensions API",
+            "architecture"
+          ],
+          "options": [
+            "Service workers are ephemeral, allowing for more memory-efficient event processing.",
+            "Persistent background pages became the default for continuous operation.",
+            "Event listeners now exclusively require direct user interaction to trigger.",
+            "All network requests must be proxied through a mandatory remote server."
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "6",
+          "text": "The CryptoMetrics project used cron-based syncing and retry logic for the CoinGecko API. This implementation strongly indicates a focus on:",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "CryptoMetrics",
+            "cron-based syncing",
+            "retry logic",
+            "CoinGecko API",
+            "rate limits",
+            "reliability"
+          ],
+          "options": [
+            "Data freshness and fault tolerance against external API rate limits.",
+            "Horizontal scalability across multiple backend instances.",
+            "End-to-end encryption for sensitive data transfers.",
+            "Real-time analytics dashboards for system monitoring."
+          ],
+          "correctIndex": 0
+        }
+      ],
+      "answers": [
+        {
+          "questionId": "1",
+          "answer": "Skeuomorphism and pixel art.",
+          "selectedIndex": 1,
+          "isCorrect": false,
+          "timeUsed": 3
+        },
+        {
+          "questionId": "2",
+          "answer": "PostgreSQL",
+          "selectedIndex": 2,
+          "isCorrect": false,
+          "timeUsed": 1
+        },
+        {
+          "questionId": "3",
+          "answer": "To enable server-side pagination for large datasets.",
+          "selectedIndex": 1,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "4",
+          "answer": "Ensuring services receive near real-time data updates efficiently.",
+          "selectedIndex": 0,
+          "isCorrect": true,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "5",
+          "answer": "Persistent background pages became the default for continuous operation.",
+          "selectedIndex": 1,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "6",
+          "answer": "Real-time analytics dashboards for system monitoring.",
+          "selectedIndex": 3,
+          "isCorrect": false,
           "timeUsed": 1
         }
       ]
