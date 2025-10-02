@@ -306,26 +306,6 @@ const ChatLayout = ({ session, onStartNewInterview }) => {
 
   return (
     <div className="max-w-3xl mx-auto">
-      {/* Progress Bar */}
-      <div className="mb-6 bg-black/20 backdrop-blur-sm rounded-2xl shadow-xl p-6">
-        <div className="flex items-center justify-between mb-2">
-          <span className="text-sm font-medium text-white">
-            Question {session.currentQuestionIndex + 1} of {session.questions.length}
-          </span>
-          <span className="text-sm text-white/70">
-            {currentQuestion.difficulty} • {currentQuestion.timeLimit}s
-          </span>
-        </div>
-        <div className="w-full bg-gray-700 rounded-full h-2">
-          <div
-            className="bg-primary-600 h-2 rounded-full transition-all duration-300"
-            style={{
-              width: `${((session.currentQuestionIndex + 1) / session.questions.length) * 100}%`
-            }}
-          />
-        </div>
-      </div>
-
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Question and Answer Section */}
         <div className="lg:col-span-2">
@@ -337,6 +317,7 @@ const ChatLayout = ({ session, onStartNewInterview }) => {
               onSubmit={(selectedValue) => handleSubmitAnswer(false, selectedValue)}
               disabled={!isTimerActive}
               textareaRef={textareaRef}
+              questionNumber={session.currentQuestionIndex + 1}
             />
           </div>
         </div>

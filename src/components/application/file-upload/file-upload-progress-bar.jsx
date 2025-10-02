@@ -84,18 +84,7 @@ export const FileUploadProgressBar = ({ isDisabled = false, onFileUpload }) => {
   return (
     <FileUpload.Root>
       <FileUpload.DropZone isDisabled={isDisabled} onDropFiles={handleDropFiles} />
-
-      <FileUpload.List>
-        {uploadedFiles.map((file) => (
-          <FileUpload.ListItemProgressBar
-            key={file.id}
-            {...file}
-            size={file.size}
-            onDelete={() => handleDeleteFile(file.id)}
-            onRetry={() => handleRetryFile(file.id)}
-          />
-        ))}
-      </FileUpload.List>
+      {/* File list removed - no longer showing uploaded files */}
     </FileUpload.Root>
   )
 }

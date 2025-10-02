@@ -247,6 +247,86 @@
       "score": 0,
       "summary": "Needs improvement.",
       "sessionId": "s_1759367745349"
+    },
+    {
+      "id": "c_1759369912362",
+      "name": "Ethan Yang",
+      "email": "",
+      "score": 0,
+      "summary": "Needs improvement.",
+      "sessionId": "s_1759366050995"
+    },
+    {
+      "id": "c_1759369994039",
+      "name": "Prajwal Chahande",
+      "email": "prajwalchahande7@gmail.com",
+      "score": 33,
+      "summary": "Needs improvement.",
+      "sessionId": "s_1759369952498"
+    },
+    {
+      "id": "c_1759370327031",
+      "name": "Prajwal Chahande",
+      "email": "prajwalchahande7@gmail.com",
+      "score": 50,
+      "summary": "Needs improvement.",
+      "sessionId": "s_1759370256667"
+    },
+    {
+      "id": "c_1759370496184",
+      "name": "Prajwal Chahande+91-9860738071",
+      "email": "prajwalchahande7@gmail.com",
+      "score": 33,
+      "summary": "Needs improvement.",
+      "sessionId": "s_1759370427388"
+    },
+    {
+      "id": "c_1759411675025",
+      "name": "Prajwal Chahande+91-9860738071",
+      "email": "prajwalchahande7@gmail.com",
+      "score": 17,
+      "summary": "Needs improvement.",
+      "sessionId": "s_1759411588261"
+    },
+    {
+      "id": "c_1759412354294",
+      "name": "Ethan Yang",
+      "email": "",
+      "score": 0,
+      "summary": "Needs improvement.",
+      "sessionId": "s_1759412288920"
+    },
+    {
+      "id": "c_1759412702640",
+      "name": "Prajwal Chahande+91-9860738071",
+      "email": "prajwalchahande7@gmail.com",
+      "score": 0,
+      "summary": "Needs improvement.",
+      "sessionId": "s_1759412380229"
+    },
+    {
+      "id": "c_1759412800955",
+      "name": "Ethan Yang",
+      "email": "",
+      "score": 17,
+      "summary": "Needs improvement.",
+      "sessionId": "s_1759412739867"
+    },
+    {
+      "id": "c_1759412940070",
+      "name": "Prajwal Chahande+91-9860738071",
+      "email": "prajwalchahande7@gmail.com",
+      "score": 50,
+      "summary": "Needs improvement.",
+      "sessionId": "s_1759412862280"
+    },
+    {
+      "id": "c_1759413137288",
+      "name": "Ethan Yang",
+      "email": "",
+      "score": 0,
+      "summary": "Needs improvement.",
+      "sessionId": "s_1759412981695"
     }
   ],
   "sessions": {
@@ -9080,7 +9160,50 @@
           "correctIndex": 1
         }
       ],
-      "answers": []
+      "answers": [
+        {
+          "questionId": "1",
+          "answer": "Directly modify the Redux store state from each component.",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 7
+        },
+        {
+          "questionId": "2",
+          "answer": "PUT",
+          "selectedIndex": 1,
+          "isCorrect": false,
+          "timeUsed": 1
+        },
+        {
+          "questionId": "3",
+          "answer": "Disabling tree shaking for all modules.",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "4",
+          "answer": "Execute each operation independently and handle errors in application logic.",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "5",
+          "answer": "It forces the component to re-render more frequently.",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "6",
+          "answer": "Provisioning a large amount of memory to increase execution speed.",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 0
+        }
+      ]
     },
     "s_1759366640397": {
       "id": "s_1759366640397",
@@ -9849,6 +9972,1739 @@
           "selectedIndex": 1,
           "isCorrect": false,
           "timeUsed": 0
+        }
+      ]
+    },
+    "s_1759369952498": {
+      "id": "s_1759369952498",
+      "candidate": {
+        "name": "Prajwal Chahande",
+        "email": "prajwalchahande7@gmail.com"
+      },
+      "questions": [
+        {
+          "id": "1",
+          "text": "In Reverie Diary, which technology was key for crafting its polished UI with glassmorphism, metal textures, and animated loaders?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Reverie Diary",
+            "Tailwind CSS",
+            "UI"
+          ],
+          "options": [
+            "Chart.js",
+            "LocalStorage",
+            "Tailwind CSS",
+            "Google Gemini API"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "2",
+          "text": "For the CryptoMetrics project, which database was utilized to store real-time metrics like price and market cap for 50+ crypto assets?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "CryptoMetrics",
+            "MongoDB",
+            "database"
+          ],
+          "options": [
+            "MySQL",
+            "PostgreSQL",
+            "MongoDB",
+            "SQLite"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "3",
+          "text": "In MangaFlow, Manifest V3 and background service workers were key to enabling what type of architecture for the Chrome extension?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "MangaFlow",
+            "Manifest V3",
+            "service workers",
+            "Chrome Extensions API"
+          ],
+          "options": [
+            "Server-side rendering",
+            "Event-driven",
+            "Monolithic",
+            "Microservices"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "4",
+          "text": "CryptoMetrics employed NATS pub-sub messaging. What was its primary function within this Node.js/Express.js backend system?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "CryptoMetrics",
+            "NATS",
+            "pub-sub",
+            "Node.js",
+            "Express.js"
+          ],
+          "options": [
+            "As the main data persistence layer",
+            "To broadcast real-time updates to services",
+            "For managing scheduled cron jobs",
+            "To handle external API rate limits"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "5",
+          "text": "DataAlchemist utilized virtualized rendering to efficiently handle displaying 1,000+ rows. What is the primary benefit of this technique in a Next.js application?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "DataAlchemist",
+            "Next.js",
+            "virtualized rendering",
+            "performance"
+          ],
+          "options": [
+            "It speeds up server-side rendering for initial load.",
+            "It reduces DOM elements and significantly improves rendering performance.",
+            "It automatically synchronizes data with the backend.",
+            "It enables enhanced SEO capabilities for dynamic content."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "6",
+          "text": "In DataAlchemist, how did the integration of Google Gemini API complement Papa Parse for streamlining CSV-based workflows?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "DataAlchemist",
+            "Google Gemini API",
+            "Papa Parse",
+            "CSV",
+            "natural language"
+          ],
+          "options": [
+            "Gemini directly parsed the CSV files, replacing Papa Parse's role.",
+            "Gemini converted natural language rules into executable logic for parsed CSV data.",
+            "Gemini was used exclusively for visualizing the parsed CSV data.",
+            "Gemini provided cloud storage for the uploaded CSV documents."
+          ],
+          "correctIndex": 1
+        }
+      ],
+      "answers": [
+        {
+          "questionId": "1",
+          "answer": "Chart.js",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 2
+        },
+        {
+          "questionId": "2",
+          "answer": "MySQL",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "3",
+          "answer": "Event-driven",
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "4",
+          "answer": "For managing scheduled cron jobs",
+          "selectedIndex": 2,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "5",
+          "answer": "It reduces DOM elements and significantly improves rendering performance.",
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "6",
+          "answer": "Gemini was used exclusively for visualizing the parsed CSV data.",
+          "selectedIndex": 2,
+          "isCorrect": false,
+          "timeUsed": 0
+        }
+      ]
+    },
+    "s_1759370256667": {
+      "id": "s_1759370256667",
+      "candidate": {
+        "name": "Prajwal Chahande",
+        "email": "prajwalchahande7@gmail.com"
+      },
+      "questions": [
+        {
+          "id": "1",
+          "text": "In your Reverie Diary project, which browser API did you leverage for persistent client-side data storage, notably without relying on a backend?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Reverie Diary",
+            "LocalStorage",
+            "React.js"
+          ],
+          "options": [
+            "A. SessionStorage",
+            "B. IndexedDB",
+            "C. LocalStorage",
+            "D. Web SQL Database"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "2",
+          "text": "For your CryptoMetrics backend, which NoSQL database did you use to store real-time metrics like price, market cap, and volume for crypto assets?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "CryptoMetrics",
+            "MongoDB",
+            "Node.js",
+            "Express.js"
+          ],
+          "options": [
+            "A. MySQL",
+            "B. PostgreSQL",
+            "C. MongoDB",
+            "D. SQLite"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "3",
+          "text": "In DataAlchemist, how did Papa Parse directly contribute to automating logic mapping from uploaded CSVs, beyond basic file handling?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "DataAlchemist",
+            "Papa Parse",
+            "CSV",
+            "TypeScript"
+          ],
+          "options": [
+            "A. Encrypting sensitive CSV data before upload.",
+            "B. Parsing CSV content into a structured, consumable format.",
+            "C. Validating CSV schema against predefined rules.",
+            "D. Converting CSVs directly into executable logic."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "4",
+          "text": "To broadcast real-time crypto updates and enable near real-time service communication in CryptoMetrics, what messaging system did you implement?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "CryptoMetrics",
+            "NATS",
+            "pub-sub",
+            "Node.js"
+          ],
+          "options": [
+            "A. Apache Kafka for distributed streaming.",
+            "B. RabbitMQ for message queuing.",
+            "C. NATS for lightweight pub-sub messaging.",
+            "D. AWS SQS for managed queue services."
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "5",
+          "text": "MangaFlow utilized Manifest V3's background service workers. What key architectural characteristic do these offer that distinguishes them from V2's background pages?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "MangaFlow",
+            "Manifest V3",
+            "Service Workers",
+            "Chrome Extensions API"
+          ],
+          "options": [
+            "A. They are persistent across browser sessions and always active.",
+            "B. They can directly manipulate the DOM of the host page.",
+            "C. They are event-driven and terminate when idle to save resources.",
+            "D. Service workers introduce a synchronous API for blocking network requests."
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "6",
+          "text": "For DataAlchemist to efficiently display 1,000+ CSV rows, beyond responsive styling with Tailwind CSS, what advanced rendering technique did you implement?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "DataAlchemist",
+            "virtualized rendering",
+            "Next.js",
+            "Tailwind CSS"
+          ],
+          "options": [
+            "A. Extensive server-side rendering for every data row.",
+            "B. Infinite scrolling without any content virtualization.",
+            "C. Client-side caching of the entire dataset for faster access.",
+            "D. Virtualized rendering to display only the currently visible rows."
+          ],
+          "correctIndex": 3
+        }
+      ],
+      "answers": [
+        {
+          "questionId": "1",
+          "answer": "C. LocalStorage",
+          "selectedIndex": 2,
+          "isCorrect": true,
+          "timeUsed": 4
+        },
+        {
+          "questionId": "2",
+          "answer": "C. MongoDB",
+          "selectedIndex": 2,
+          "isCorrect": true,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "3",
+          "answer": "C. Validating CSV schema against predefined rules.",
+          "selectedIndex": 2,
+          "isCorrect": false,
+          "timeUsed": 4
+        },
+        {
+          "questionId": "4",
+          "answer": "C. NATS for lightweight pub-sub messaging.",
+          "selectedIndex": 2,
+          "isCorrect": true,
+          "timeUsed": 5
+        },
+        {
+          "questionId": "5",
+          "answer": "A. They are persistent across browser sessions and always active.",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 7
+        },
+        {
+          "questionId": "6",
+          "answer": "C. Client-side caching of the entire dataset for faster access.",
+          "selectedIndex": 2,
+          "isCorrect": false,
+          "timeUsed": 8
+        }
+      ]
+    },
+    "s_1759370427388": {
+      "id": "s_1759370427388",
+      "candidate": {
+        "name": "Prajwal Chahande+91-9860738071",
+        "email": "prajwalchahande7@gmail.com"
+      },
+      "questions": [
+        {
+          "id": "1",
+          "text": "In the Payment Gateway project, what primary framework was used to build the RESTful APIs for processing payments?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Spring Boot",
+            "RESTful APIs",
+            "Payment Gateway"
+          ],
+          "options": [
+            "React.js",
+            "Node.js",
+            "Spring Boot",
+            "P5.js"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "2",
+          "text": "For easy testing of the Payment Gateway's REST APIs, what was specifically provided alongside cURL examples for interaction?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "HTML client",
+            "RESTful APIs",
+            "Payment Gateway"
+          ],
+          "options": [
+            "A mobile application",
+            "An HTML client page",
+            "A desktop GUI tool",
+            "Swagger UI"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "3",
+          "text": "In the Event-Driven Order Processing System, how was at-least-once processing typically combined with idempotency using Kafka?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Apache Kafka",
+            "Event-Driven Systems",
+            "idempotency",
+            "microservices"
+          ],
+          "options": [
+            "Using a shared database lock for each event.",
+            "Implementing consumer groups with unique message IDs.",
+            "Skipping duplicate messages automatically.",
+            "Processing all events multiple times for consistency."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "4",
+          "text": "To optimize paginated search APIs with filters in the Library Management System, what was specifically used with MySQL?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "MySQL",
+            "DB indexes",
+            "query optimization",
+            "Library Management System"
+          ],
+          "options": [
+            "MongoDB aggregations",
+            "Appropriate DB indexes",
+            "Client-side caching with Redis",
+            "NoSQL document structuring"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "5",
+          "text": "In the Real-Time Messaging Application, what was the primary purpose of configuring STOMP over WebSocket with SockJS fallback?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "WebSocket",
+            "STOMP",
+            "SockJS",
+            "Real-Time Messaging Application"
+          ],
+          "options": [
+            "To encrypt all message payloads.",
+            "To provide a high-level messaging protocol and broad browser compatibility.",
+            "To manage database connections efficiently.",
+            "To implement server-side load balancing."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "6",
+          "text": "Beyond retry/backoff strategies, how did the Event-Driven Order Processing System manage persistent failures for events that couldn't be processed?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Event-Driven Systems",
+            "Apache Kafka",
+            "dead-letter topics",
+            "retry/backoff strategies"
+          ],
+          "options": [
+            "By automatically discarding failed events after all retries.",
+            "By routing them to dead-letter topics for later inspection.",
+            "By manually restarting the entire microservice.",
+            "By notifying the producer to resend the event indefinitely."
+          ],
+          "correctIndex": 1
+        }
+      ],
+      "answers": [
+        {
+          "questionId": "1",
+          "answer": "Node.js",
+          "selectedIndex": 1,
+          "isCorrect": false,
+          "timeUsed": 17
+        },
+        {
+          "questionId": "2",
+          "answer": "A mobile application",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 2
+        },
+        {
+          "questionId": "3",
+          "answer": "Implementing consumer groups with unique message IDs.",
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timeUsed": 2
+        },
+        {
+          "questionId": "4",
+          "answer": "Client-side caching with Redis",
+          "selectedIndex": 2,
+          "isCorrect": false,
+          "timeUsed": 1
+        },
+        {
+          "questionId": "5",
+          "answer": "To provide a high-level messaging protocol and broad browser compatibility.",
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timeUsed": 1
+        },
+        {
+          "questionId": "6",
+          "answer": "By automatically discarding failed events after all retries.",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 0
+        }
+      ]
+    },
+    "s_1759411588261": {
+      "id": "s_1759411588261",
+      "candidate": {
+        "name": "Prajwal Chahande+91-9860738071",
+        "email": "prajwalchahande7@gmail.com"
+      },
+      "questions": [
+        {
+          "id": "1",
+          "text": "In your Payment Gateway project, which core technologies were used for building the RESTful APIs and managing the backend database?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Spring Boot",
+            "RESTful APIs",
+            "MySQL"
+          ],
+          "options": [
+            "Node.js with MongoDB",
+            "Spring Boot with MySQL",
+            "React.js with Redis",
+            "P5.js with PostgreSQL"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "2",
+          "text": "In the Library Management System, what approach did you apply with JUnit to ensure the robustness of the core service logic?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "TDD",
+            "JUnit"
+          ],
+          "options": [
+            "Applied Agile methodologies to testing",
+            "Followed Test-Driven Development (TDD) principles",
+            "Integrated Mockito for UI testing",
+            "Used Jenkins for continuous integration"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "3",
+          "text": "In your Event-Driven Order Processing System, how did you ensure reliable communication and at-least-once processing between microservices?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Event-Driven",
+            "Apache Kafka",
+            "Microservices"
+          ],
+          "options": [
+            "Synchronous REST calls with transaction management",
+            "Batch processing via scheduled cron jobs",
+            "Event-driven communication using Kafka topics",
+            "Direct database writes from all services"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "4",
+          "text": "For your Real-Time Messaging Application, what technologies enabled real-time, event-driven message delivery with fallback?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "WebSocket",
+            "STOMP",
+            "SockJS",
+            "RabbitMQ"
+          ],
+          "options": [
+            "HTTP polling with JSON and MongoDB",
+            "SSE with a dedicated API Gateway",
+            "STOMP WebSocket with SockJS fallback and message broker",
+            "RESTful APIs with Redis caching"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "5",
+          "text": "In your Event-Driven Order Processing System, beyond at-least-once processing, how were event failures and potential duplicates specifically handled?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Apache Kafka",
+            "dead-letter topics",
+            "idempotency",
+            "retry/backoff"
+          ],
+          "options": [
+            "Automatic rollback of consumer transactions",
+            "Manual intervention for failed message reprocessing",
+            "Retry/backoff strategies and dead-letter topics, ensuring idempotency",
+            "Real-time alerts to immediately stop all processing"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "6",
+          "text": "In the Library Management System, what measures were implemented to optimize paginated searches with filters and secure different user roles?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Library Management System",
+            "paginated search",
+            "DB indexes",
+            "role-based access"
+          ],
+          "options": [
+            "Caching all search results and using client-side filtering",
+            "Optimized queries with DB indexes and role-based access control",
+            "Full-text search engine integration and API key authentication",
+            "Limiting search criteria to prevent large queries"
+          ],
+          "correctIndex": 1
+        }
+      ],
+      "answers": [
+        {
+          "questionId": "1",
+          "answer": "React.js with Redis",
+          "selectedIndex": 2,
+          "isCorrect": false,
+          "timeUsed": 7
+        },
+        {
+          "questionId": "2",
+          "answer": "Followed Test-Driven Development (TDD) principles",
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timeUsed": 3
+        },
+        {
+          "questionId": "3",
+          "answer": "Direct database writes from all services",
+          "selectedIndex": 3,
+          "isCorrect": false,
+          "timeUsed": 1
+        },
+        {
+          "questionId": "4",
+          "answer": "SSE with a dedicated API Gateway",
+          "selectedIndex": 1,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "5",
+          "answer": "Automatic rollback of consumer transactions",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "6",
+          "answer": "Full-text search engine integration and API key authentication",
+          "selectedIndex": 2,
+          "isCorrect": false,
+          "timeUsed": 1
+        }
+      ]
+    },
+    "s_1759412029978": {
+      "id": "s_1759412029978",
+      "candidate": {
+        "name": "Prajwal Chahande+91-9860738071",
+        "email": "prajwalchahande7@gmail.com"
+      },
+      "questions": [
+        {
+          "id": "1",
+          "text": "In the Payment Gateway Standalone project, which combination of technologies was primarily used for the backend application logic and database persistence?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Payment Gateway",
+            "Spring Boot",
+            "MySQL",
+            "RESTful APIs"
+          ],
+          "options": [
+            "Java, Spring Boot, MySQL",
+            "Python, Node.js, MongoDB",
+            "React.js, Spring, Redis",
+            "C++, Hibernate, RabbitMQ"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "2",
+          "text": "For asynchronous event processing in the Event-Driven Order Processing System, which specific messaging system was implemented between microservices?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Event-Driven Systems",
+            "Apache Kafka",
+            "Microservices"
+          ],
+          "options": [
+            "RabbitMQ",
+            "Apache Kafka",
+            "WebSocket (STOMP)",
+            "Redis Pub/Sub"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "3",
+          "text": "In the Library Management System, which ORM framework was used for database interaction, and which testing methodology was applied to core service logic?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Library Management System",
+            "Hibernate",
+            "TDD",
+            "JUnit"
+          ],
+          "options": [
+            "Spring Data JPA, Mockito",
+            "Hibernate, TDD (JUnit)",
+            "MyBatis, Agile",
+            "JDBC, Integration Testing"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "4",
+          "text": "For the Real-Time Messaging Application, how were real-time client communications configured, including fallbacks and message broker integration?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "WebSocket",
+            "STOMP",
+            "SockJS",
+            "RabbitMQ",
+            "Spring Boot"
+          ],
+          "options": [
+            "HTTP long polling with JSON",
+            "RESTful APIs with Redis caching",
+            "STOMP WebSockets with SockJS fallback and message broker",
+            "Server-Sent Events (SSE) with Kafka"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "5",
+          "text": "The Event-Driven Order Processing System used Kafka consumer groups and idempotency to ensure what specific processing guarantee for events?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Event-Driven Architecture",
+            "Apache Kafka",
+            "at-least-once",
+            "idempotency",
+            "Microservices"
+          ],
+          "options": [
+            "Exactly-once processing",
+            "At-most-once processing",
+            "At-least-once processing",
+            "Best-effort processing"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "6",
+          "text": "To enhance observability in the Event-Driven Order Processing System's microservices, what specific types of endpoints were included?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Microservices",
+            "Observability",
+            "Health",
+            "Metrics",
+            "Spring Boot",
+            "Docker"
+          ],
+          "options": [
+            "Debugging and logging endpoints",
+            "Health and metrics endpoints",
+            "Configuration and user management endpoints",
+            "Performance and security endpoints"
+          ],
+          "correctIndex": 1
+        }
+      ],
+      "answers": []
+    },
+    "s_1759412288920": {
+      "id": "s_1759412288920",
+      "candidate": {
+        "name": "Ethan Yang",
+        "email": ""
+      },
+      "questions": [
+        {
+          "id": "1",
+          "text": "When managing state in a React application using Redux, what is the primary role of a 'selector' in Ethan's architecture?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "React",
+            "Redux",
+            "state management"
+          ],
+          "options": [
+            "To dispatch actions to the store.",
+            "To define initial state for a reducer.",
+            "To extract specific pieces of state from the Redux store.",
+            "To combine multiple reducers into one root reducer."
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "2",
+          "text": "In an Express.js backend, if Ethan implemented a GET request to `/users/:id` for a user profile, what is `:id` primarily used for?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Express.js",
+            "REST API",
+            "Node.js"
+          ],
+          "options": [
+            "As a query parameter for filtering.",
+            "To specify the HTTP method.",
+            "To define a wildcard route.",
+            "As a route parameter to identify a specific user."
+          ],
+          "correctIndex": 3
+        },
+        {
+          "id": "3",
+          "text": "Ethan's Next.js application leverages Server-Side Rendering (SSR). What is a key benefit of this approach for SEO compared to Client-Side Rendering (CSR)?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Next.js",
+            "SSR",
+            "SEO",
+            "frontend performance"
+          ],
+          "options": [
+            "Reduces the overall bundle size of the application.",
+            "Allows search engine crawlers to easily index page content.",
+            "Eliminates the need for JavaScript on the client-side.",
+            "Improves client-side performance by offloading all computation to the server."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "4",
+          "text": "When deploying a microservice architecture on AWS, Ethan opted for Amazon ECS with Fargate. What specific operational challenge does Fargate primarily address?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "AWS",
+            "ECS",
+            "Fargate",
+            "Microservices"
+          ],
+          "options": [
+            "Managing the underlying EC2 instances for containers.",
+            "Orchestrating Kubernetes clusters.",
+            "Providing serverless database solutions.",
+            "Automating CI/CD pipelines."
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "5",
+          "text": "Ethan observed a React component re-rendering unnecessarily due to frequently changing props from its parent. To optimize this, which React hook or HOC would be most suitable?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "React",
+            "performance",
+            "memoization",
+            "hooks"
+          ],
+          "options": [
+            "`useEffect` with an empty dependency array.",
+            "`useRef` to store the previous props.",
+            "`React.memo` or `useMemo` for prop/value memoization.",
+            "`useContext` to avoid prop drilling."
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "6",
+          "text": "Ethan's PostgreSQL application handles complex financial transactions. To ensure data consistency across multiple operations (e.g., debiting one account, crediting another), which ACID property is crucial and how is it achieved?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "PostgreSQL",
+            "Transactions",
+            "ACID",
+            "data consistency"
+          ],
+          "options": [
+            "Durability, by ensuring all writes are immediately flushed to disk.",
+            "Isolation, by using transaction levels like `READ COMMITTED`.",
+            "Atomicity, by grouping operations into a single, indivisible transaction.",
+            "Consistency, by strictly enforcing foreign key constraints."
+          ],
+          "correctIndex": 2
+        }
+      ],
+      "answers": [
+        {
+          "questionId": "1",
+          "answer": "To dispatch actions to the store.",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 7
+        },
+        {
+          "questionId": "2",
+          "answer": "To specify the HTTP method.",
+          "selectedIndex": 1,
+          "isCorrect": false,
+          "timeUsed": 1
+        },
+        {
+          "questionId": "3",
+          "answer": "Eliminates the need for JavaScript on the client-side.",
+          "selectedIndex": 2,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "4",
+          "answer": "Orchestrating Kubernetes clusters.",
+          "selectedIndex": 1,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "5",
+          "answer": "`useEffect` with an empty dependency array.",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "6",
+          "answer": "Durability, by ensuring all writes are immediately flushed to disk.",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 1
+        }
+      ]
+    },
+    "s_1759412380229": {
+      "id": "s_1759412380229",
+      "candidate": {
+        "name": "Prajwal Chahande+91-9860738071",
+        "email": "prajwalchahande7@gmail.com"
+      },
+      "questions": [
+        {
+          "id": "1",
+          "text": "In the Payment Gateway Standalone project, which Spring Boot annotation primarily defines a class as a RESTful controller responsible for handling HTTP requests?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Spring Boot",
+            "RESTful APIs",
+            "Payment Gateway Standalone"
+          ],
+          "options": [
+            "`@Controller`",
+            "`@RestController`",
+            "`@Service`",
+            "`@Component`"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "2",
+          "text": "For the Library Management System, when implementing \"paginated search APIs\" with \"appropriate DB indexes\" using Hibernate and MySQL, what is a key benefit of indexes?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Library Management System",
+            "Hibernate",
+            "MySQL",
+            "DB indexes"
+          ],
+          "options": [
+            "To reduce the amount of data stored on disk.",
+            "To speed up data retrieval operations (e.g., search, filtering).",
+            "To enforce referential integrity constraints.",
+            "To encrypt sensitive data in the database."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "3",
+          "text": "In the Event-Driven Order Processing System, using Apache Kafka for \"at-least-once processing\" and \"idempotency,\" how would the StockService consumer primarily handle duplicate messages?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Event-Driven Order Processing System",
+            "Apache Kafka",
+            "idempotency",
+            "at-least-once processing"
+          ],
+          "options": [
+            "By configuring Kafka to only deliver messages once.",
+            "By implementing logic to track and disregard already processed message IDs.",
+            "By immediately sending the message to a dead-letter topic.",
+            "By acknowledging every message without validation."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "4",
+          "text": "For the Real-Time Messaging Application, given the optional use of RabbitMQ, how might Redis be integrated to manage user presence or session data efficiently?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Real-Time Messaging Application",
+            "WebSocket",
+            "Redis",
+            "session management"
+          ],
+          "options": [
+            "As a primary long-term storage for all chat messages.",
+            "To cache active user sessions or WebSocket connection metadata.",
+            "To serve as the main message broker for STOMP.",
+            "As a load balancer for incoming WebSocket connections."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "5",
+          "text": "In the Event-Driven Order Processing System, beyond simple retry/backoff, what is the primary architectural purpose of utilizing \"dead-letter topics\" for failed events?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Event-Driven Order Processing System",
+            "Apache Kafka",
+            "dead-letter topics",
+            "retry/backoff",
+            "microservices"
+          ],
+          "options": [
+            "To automatically fix schema errors in event payloads.",
+            "To re-queue messages for immediate processing without human intervention.",
+            "To isolate and store problematic messages for later analysis and manual resolution.",
+            "To reduce the overall latency of event processing."
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "6",
+          "text": "When applying \"TDD (JUnit)\" to the Library Management System's core service logic, how would Mockito be typically used to test a service method that depends on a repository?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Library Management System",
+            "TDD",
+            "JUnit",
+            "Mockito",
+            "core service logic"
+          ],
+          "options": [
+            "To establish a full database connection for the test.",
+            "To generate a proxy object for the repository that simulates its behavior.",
+            "To automatically write test assertions based on service method signatures.",
+            "To monitor the network traffic generated by the service calls."
+          ],
+          "correctIndex": 1
+        }
+      ],
+      "answers": [
+        {
+          "questionId": "1",
+          "answer": "",
+          "timeUsed": 20
+        },
+        {
+          "questionId": "2",
+          "answer": "",
+          "timeUsed": 1
+        },
+        {
+          "questionId": "3",
+          "answer": "",
+          "timeUsed": 60
+        },
+        {
+          "questionId": "4",
+          "answer": "",
+          "timeUsed": 1
+        },
+        {
+          "questionId": "5",
+          "answer": "",
+          "timeUsed": 65
+        },
+        {
+          "questionId": "6",
+          "answer": "",
+          "timeUsed": 1
+        }
+      ]
+    },
+    "s_1759412739867": {
+      "id": "s_1759412739867",
+      "candidate": {
+        "name": "Ethan Yang",
+        "email": ""
+      },
+      "questions": [
+        {
+          "id": "1",
+          "text": "If Ethan used React for the frontend, which lifecycle method or hook is best suited for fetching data immediately after a component mounts to the DOM?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "React",
+            "Frontend",
+            "Lifecycle",
+            "Data Fetching"
+          ],
+          "options": [
+            "useEffect with an empty dependency array",
+            "useMemo hook for data caching",
+            "The 'render' method directly",
+            "componentWillMount lifecycle method"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "2",
+          "text": "In a backend API developed by Ethan using Express.js, which HTTP method is typically used to create a new resource on the server?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Express.js",
+            "Backend",
+            "REST API",
+            "HTTP Methods"
+          ],
+          "options": [
+            "GET",
+            "POST",
+            "PUT",
+            "DELETE"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "3",
+          "text": "Assuming Ethan's application uses Redux for state management, what is the primary purpose of a 'selector' function within the Redux flow?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Redux",
+            "State Management",
+            "Frontend",
+            "Performance"
+          ],
+          "options": [
+            "To dispatch actions to the store",
+            "To define initial state for reducers",
+            "To compute derived data and memoize results for components",
+            "To handle asynchronous side effects"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "4",
+          "text": "If Ethan needed to design a scalable backend for file storage and retrieval on AWS, which service combination would be most appropriate for large objects?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "AWS",
+            "Backend",
+            "Scalability",
+            "File Storage"
+          ],
+          "options": [
+            "RDS for database storage",
+            "EC2 instance with local disk",
+            "S3 for object storage with CloudFront for delivery",
+            "DynamoDB for key-value storage"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "5",
+          "text": "Ethan implemented a Next.js application. To pre-render a page on each request, fetching dynamic data specific to that request on the server-side, which function is used?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Next.js",
+            "SSR",
+            "Frontend Architecture",
+            "Data Fetching"
+          ],
+          "options": [
+            "getStaticProps",
+            "getStaticPaths",
+            "getServerSideProps",
+            "useEffect with an API call"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "6",
+          "text": "Ethan designed a microservices architecture using Docker containers. For asynchronous communication between services, what robust pattern is typically employed to handle events?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Microservices",
+            "Docker",
+            "Asynchronous Communication",
+            "Backend Architecture"
+          ],
+          "options": [
+            "Direct HTTP synchronous calls",
+            "Shared database tables",
+            "Message queue or event streaming platform (e.g., Kafka)",
+            "Polling external APIs frequently"
+          ],
+          "correctIndex": 2
+        }
+      ],
+      "answers": [
+        {
+          "questionId": "1",
+          "answer": "useEffect with an empty dependency array",
+          "selectedIndex": 0,
+          "isCorrect": true,
+          "timeUsed": 6
+        },
+        {
+          "questionId": "2",
+          "answer": "GET",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "3",
+          "answer": "To dispatch actions to the store",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "4",
+          "answer": "RDS for database storage",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "5",
+          "answer": "getStaticProps",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "6",
+          "answer": "Direct HTTP synchronous calls",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 1
+        }
+      ]
+    },
+    "s_1759412862280": {
+      "id": "s_1759412862280",
+      "candidate": {
+        "name": "Prajwal Chahande+91-9860738071",
+        "email": "prajwalchahande7@gmail.com"
+      },
+      "questions": [
+        {
+          "id": "1",
+          "text": "In the \"Payment Gateway Standalone\" project, what framework was used to build the REST application for processing and managing payments?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Spring Boot",
+            "RESTful APIs",
+            "Payment Gateway"
+          ],
+          "options": [
+            "J2EE",
+            "Spring Boot",
+            "Node.js",
+            "React.js"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "2",
+          "text": "Which database was used in the \"Library Management System\" for managing books, users, and borrowing records?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Library Management System",
+            "MySQL",
+            "Database"
+          ],
+          "options": [
+            "MongoDB",
+            "Redis",
+            "MySQL",
+            "Apache Kafka"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "3",
+          "text": "The \"Event-Driven Order Processing System\" used Apache Kafka. What strategy ensured \"at-least-once processing\" with consumer groups?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Event-Driven",
+            "Apache Kafka",
+            "Idempotency",
+            "At-least-once processing"
+          ],
+          "options": [
+            "Manual acknowledgements",
+            "Idempotency",
+            "Synchronous API calls",
+            "Single consumer per topic"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "4",
+          "text": "When integrating Three.js into a React.js application, which React hook is typically used to manage the Three.js renderer lifecycle (e.g., initialization and cleanup)?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "React.js",
+            "Three.js",
+            "useEffect",
+            "Frontend"
+          ],
+          "options": [
+            "`useContext`",
+            "`useMemo`",
+            "`useState`",
+            "`useEffect`"
+          ],
+          "correctIndex": 3
+        },
+        {
+          "id": "5",
+          "text": "Considering the \"Real-Time Messaging Application\" with WebSocket (STOMP) and SockJS, what is the primary role of STOMP in this setup?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "WebSocket",
+            "STOMP",
+            "Real-Time Messaging",
+            "Messaging protocol"
+          ],
+          "options": [
+            "Handling HTTP requests",
+            "Providing a simple messaging protocol",
+            "Encrypting WebSocket traffic",
+            "Managing database connections"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "6",
+          "text": "Given Prajwal's experience with Node.js and Microservices, what architectural pattern often uses Node.js to aggregate backend services for a single frontend view?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Node.js",
+            "Microservices",
+            "BFF",
+            "Architectural Pattern",
+            "Frontend"
+          ],
+          "options": [
+            "Enterprise Service Bus",
+            "Monolithic API",
+            "Backend-for-Frontend (BFF)",
+            "Event Sourcing"
+          ],
+          "correctIndex": 2
+        }
+      ],
+      "answers": [
+        {
+          "questionId": "1",
+          "answer": "Spring Boot",
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timeUsed": 3
+        },
+        {
+          "questionId": "2",
+          "answer": "MySQL",
+          "selectedIndex": 2,
+          "isCorrect": true,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "3",
+          "answer": "Manual acknowledgements",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "4",
+          "answer": "`useState`",
+          "selectedIndex": 2,
+          "isCorrect": false,
+          "timeUsed": 1
+        },
+        {
+          "questionId": "5",
+          "answer": "Providing a simple messaging protocol",
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timeUsed": 1
+        },
+        {
+          "questionId": "6",
+          "answer": "Enterprise Service Bus",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 13
+        }
+      ]
+    },
+    "s_1759412981695": {
+      "id": "s_1759412981695",
+      "candidate": {
+        "name": "Ethan Yang",
+        "email": ""
+      },
+      "questions": [
+        {
+          "id": "1",
+          "text": "Given Ethan's experience in modern frontend development, which React hook is primarily used for managing component-level state in functional components?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "React",
+            "useState",
+            "Frontend Development"
+          ],
+          "options": [
+            "useEffect",
+            "useContext",
+            "useState",
+            "useReducer"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "2",
+          "text": "For a backend service likely interacting with a database like PostgreSQL, which SQL command is fundamentally used to retrieve data from one or more tables?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "PostgreSQL",
+            "SQL",
+            "Backend Service",
+            "Database"
+          ],
+          "options": [
+            "INSERT INTO",
+            "UPDATE SET",
+            "SELECT FROM",
+            "DELETE FROM"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "3",
+          "text": "Considering Ethan's professional experience building robust frontend applications, what is the primary purpose of a 'loader' in a Webpack configuration?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Webpack",
+            "Loader",
+            "Frontend Applications",
+            "Bundling"
+          ],
+          "options": [
+            "To run development servers locally.",
+            "To transform non-JavaScript files into modules.",
+            "To optimize image and font assets.",
+            "To manage application-wide state."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "4",
+          "text": "Based on descriptions of building backend services, what HTTP method is conventionally used by a client to create a new resource on the server via a RESTful API?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "REST API",
+            "HTTP Methods",
+            "Backend Services",
+            "Resource Creation"
+          ],
+          "options": [
+            "GET",
+            "PUT",
+            "POST",
+            "DELETE"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "5",
+          "text": "If Ethan implemented Redux for state management in a large React application, what mechanism ensures that only pure functions modify the application's central store state?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Redux",
+            "React",
+            "State Management",
+            "Reducers"
+          ],
+          "options": [
+            "Selectors",
+            "Middleware",
+            "Reducers",
+            "Actions"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "6",
+          "text": "When deploying containerized backend services using Docker, what specific Dockerfile instruction is used to copy files or directories from the build context into the image filesystem?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Docker",
+            "Containerization",
+            "Dockerfile",
+            "Deployment"
+          ],
+          "options": [
+            "RUN",
+            "CMD",
+            "COPY",
+            "EXPOSE"
+          ],
+          "correctIndex": 2
+        }
+      ],
+      "answers": [
+        {
+          "questionId": "1",
+          "answer": "",
+          "timeUsed": 20
+        },
+        {
+          "questionId": "2",
+          "answer": "",
+          "timeUsed": 1
+        },
+        {
+          "questionId": "3",
+          "answer": "",
+          "timeUsed": 60
+        },
+        {
+          "questionId": "4",
+          "answer": "",
+          "timeUsed": 1
+        },
+        {
+          "questionId": "5",
+          "answer": "Middleware",
+          "selectedIndex": 1,
+          "isCorrect": false,
+          "timeUsed": 14
+        },
+        {
+          "questionId": "6",
+          "answer": "CMD",
+          "selectedIndex": 1,
+          "isCorrect": false,
+          "timeUsed": 0
+        }
+      ]
+    },
+    "s_1759413399994": {
+      "id": "s_1759413399994",
+      "candidate": {
+        "name": "Prajwal Chahande",
+        "email": "prajwalchahande7@gmail.com"
+      },
+      "questions": [
+        {
+          "id": "1",
+          "text": "In your Payment Gateway project, which Spring Boot component primarily handles the incoming HTTP requests for creating payments?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Payment Gateway",
+            "Spring Boot",
+            "RESTful APIs",
+            "Controller"
+          ],
+          "options": [
+            "Controller",
+            "Service",
+            "Repository",
+            "Entity"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "2",
+          "text": "With your React.js experience, what is the main purpose of this library in web development?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "React.js",
+            "frontend"
+          ],
+          "options": [
+            "Managing databases",
+            "Building user interfaces",
+            "Server-side routing",
+            "Processing payments"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "3",
+          "text": "For \"at-least-once\" processing in your Kafka-based Order Processing System, what did consumer groups primarily enable?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Event-Driven Order Processing System",
+            "Apache Kafka",
+            "consumer groups",
+            "at-least-once processing"
+          ],
+          "options": [
+            "Distributing messages among consumers",
+            "Ensuring strict message ordering",
+            "Implementing exactly-once semantics",
+            "Facilitating transactional commits"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "4",
+          "text": "Your Real-Time Messaging App used SockJS fallback. What problem does SockJS primarily address for WebSocket clients?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Real-Time Messaging Application",
+            "SockJS",
+            "WebSocket"
+          ],
+          "options": [
+            "Enabling server-side message persistence",
+            "Providing fallback for older browsers",
+            "Encrypting WebSocket traffic",
+            "Managing user authentication"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "5",
+          "text": "Your Event-Driven Order Processing System used retry/backoff strategies and dead-letter topics. What architectural principle do these patterns primarily address?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Event-Driven Order Processing System",
+            "microservices",
+            "retry/backoff strategies",
+            "dead-letter topics",
+            "Fault tolerance"
+          ],
+          "options": [
+            "Idempotency",
+            "Observability",
+            "Service discovery",
+            "Fault tolerance"
+          ],
+          "correctIndex": 3
+        },
+        {
+          "id": "6",
+          "text": "Considering your use of Three.js and P5.js, what is a primary distinction in their common web development applications?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Three.js",
+            "P5.js",
+            "3D graphics",
+            "2D interactive art"
+          ],
+          "options": [
+            "Three.js for 3D graphics; P5.js for 2D interactive art",
+            "Three.js for UI components; P5.js for data visualization",
+            "Three.js for server-side rendering; P5.js for client-side routing",
+            "Three.js for physics simulations; P5.js for database interactions"
+          ],
+          "correctIndex": 0
+        }
+      ],
+      "answers": [
+        {
+          "questionId": "1",
+          "answer": "",
+          "timeUsed": 20
+        },
+        {
+          "questionId": "2",
+          "answer": "",
+          "timeUsed": 1
         }
       ]
     }

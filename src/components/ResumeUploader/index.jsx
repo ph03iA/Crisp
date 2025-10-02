@@ -1,18 +1,19 @@
 import React, { useState, useCallback } from 'react'
 import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { App, Alert } from 'antd'
 import { FileOutlined, CheckCircleOutlined } from '@ant-design/icons'
 import { Badge } from '../ui/badge'
 import { FileUploadProgressBar } from '../application/file-upload/file-upload-progress-bar'
 import { parseResume } from './parser'
-import { uploadResume, startInterview } from '../../api/backend'
-import { createSession } from '../../features/sessionsSlice'
+import { uploadResume } from '../../api/backend'
 
-const ResumeUploader = ({ onSuccess }) => {
+const ResumeUploader = () => {
   const [error, setError] = useState('')
   const [isProcessing, setIsProcessing] = useState(false)
   const [processingStep, setProcessingStep] = useState('')
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const { message } = App.useApp()
 
   const handleFileUpload = useCallback(async (file) => {
@@ -51,41 +52,27 @@ const ResumeUploader = ({ onSuccess }) => {
       message.loading({ content: 'Extracting information from resume...', key: 'upload' })
       const resumeData = { name: uploadRes.fields.name, email: uploadRes.fields.email, phone: uploadRes.fields.phone }
 
-      // Step 3: Generate interview questions
-      setProcessingStep('Generating personalized interview questions...')
-      message.loading({ content: 'Generating personalized interview questions...', key: 'upload' })
-      const start = await startInterview({ name: resumeData.name, email: resumeData.email, resumeText: uploadRes.text })
-      const questions = start.questions
-
-      // Step 4: Create session
-      setProcessingStep('Setting up your interview session...')
-      message.loading({ content: 'Setting up your interview session...', key: 'upload' })
-      const sessionId = start.sessionId
-
-      // Create new client session reflecting backend questions
-      const sessionAction = createSession({
-        name: resumeData.name,
-        email: resumeData.email,
-        phone: resumeData.phone,
-        resumeFileName: file.name,
-        questions,
-        serverSessionId: sessionId // Pass server session ID
-      })
-
-      dispatch(sessionAction)
-
-      // Step 5: Complete
-      setProcessingStep('Almost ready...')
+      // Step 3: Complete upload
+      setProcessingStep('Processing complete...')
       message.success({ content: 'Resume processed successfully!', key: 'upload' })
-      
-      // Store server sessionId in localStorage for persistence
-      localStorage.setItem('serverSessionId', sessionId)
 
       // Small delay to show completion
       setTimeout(() => {
         setIsProcessing(false)
         setProcessingStep('')
-        onSuccess(sessionId, [])
+        
+        // Navigate to edit info page with extracted data
+        navigate('/edit-info', {
+          state: {
+            extractedData: {
+              name: resumeData.name,
+              email: resumeData.email,
+              phone: resumeData.phone,
+              text: uploadRes.text,
+              fileName: file.name
+            }
+          }
+        })
       }, 800)
 
     } catch (err) {
@@ -109,7 +96,7 @@ const ResumeUploader = ({ onSuccess }) => {
       setError(errorMessage)
       message.error({ content: errorMessage, key: 'upload' })
     }
-  }, [dispatch, onSuccess])
+  }, [dispatch, navigate])
 
   return (
     <div className="w-full max-w-2xl mx-auto space-y-6 flex flex-col items-center justify-center">

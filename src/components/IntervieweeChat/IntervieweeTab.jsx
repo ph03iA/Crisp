@@ -42,9 +42,9 @@ const IntervieweeTab = () => {
   }
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="max-w-4xl mx-auto relative">
       {stage !== 'upload' && (
-        <div className="flex justify-end mb-2">
+        <div className="fixed top-4 right-4 z-[9999]">
           <button
             onClick={async () => {
               dispatch(discardUnfinishedSessions())
@@ -57,7 +57,7 @@ const IntervieweeTab = () => {
                 console.warn('Failed to purge persisted state:', error)
               }
             }}
-            className="bg-white text-black hover:bg-white/90 shadow-lg rounded-full px-6 py-2 text-sm font-medium transition-all duration-300"
+            className="bg-white text-black hover:bg-white/90 shadow-xl rounded-full px-6 py-2 text-sm font-medium transition-all duration-300 backdrop-blur-none"
           >
             Start Fresh
           </button>

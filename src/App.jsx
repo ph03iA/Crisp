@@ -1,17 +1,16 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import { ConfigProvider, theme, App as AntdApp } from 'antd'
 import { setActiveTab, setShowWelcomeBack } from './features/uiSlice'
 import { resumeSession } from './features/sessionsSlice'
 import { broadcastManager } from './utils/broadcast'
 import { ThemeProvider } from './components/theme-provider'
-import TopNav from './components/Shared/TopNav'
-import WelcomeBackModal from './components/Shared/WelcomeBackModal'
-import LandingPage from './components/Landing/LandingPage'
-import IntervieweeTab from './components/IntervieweeChat/IntervieweeTab'
-import InterviewerTab from './components/InterviewerDashboard/InterviewerTab'
-import { ConsistentBackground } from './components/ui/consistent-background'
+import LandingPage from './pages/LandingPage'
+import UploadPage from './pages/UploadPage'
+import EditInfoPage from './pages/EditInfoPage'
+import InterviewPage from './pages/InterviewPage'
 import { store, persistor } from './app/store'
 
 const AppContent = () => {
@@ -83,24 +82,13 @@ const AppContent = () => {
       }}
     >
       <AntdApp>
-        {activeTab === 'home' ? (
-          <LandingPage />
-        ) : (
-          <ConsistentBackground>
-            <div className="min-h-screen">
-              <TopNav 
-                activeTab={activeTab} 
-                onTabChange={(tab) => dispatch(setActiveTab(tab))} 
-              />
-
-              <main className="container mx-auto px-4 py-8 max-w-7xl">
-                {activeTab === 'interviewee' ? <IntervieweeTab /> : <InterviewerTab />}
-              </main>
-
-              {showWelcomeBack && <WelcomeBackModal />}
-            </div>
-          </ConsistentBackground>
-        )}
+        <Routes>
+          <Route path="/" element={<Navigate to="/landing" replace />} />
+          <Route path="/landing" element={<LandingPage />} />
+          <Route path="/upload" element={<UploadPage />} />
+          <Route path="/edit-info" element={<EditInfoPage />} />
+          <Route path="/interview" element={<InterviewPage />} />
+        </Routes>
       </AntdApp>
     </ConfigProvider>
   )

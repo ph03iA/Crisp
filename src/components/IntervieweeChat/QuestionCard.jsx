@@ -7,7 +7,8 @@ const QuestionCard = ({
   onAnswerChange, 
   onSubmit, 
   disabled,
-  textareaRef 
+  textareaRef,
+  questionNumber 
 }) => {
   useEffect(() => {
     if (textareaRef?.current && !disabled) {
@@ -81,7 +82,7 @@ const QuestionCard = ({
 
         <div className="mb-6">
           <h3 className="text-xl font-bold text-white mb-2">
-            Question
+            Q{questionNumber || 1}
           </h3>
           <p className="text-white/90 leading-relaxed text-lg">
             {question.text}
