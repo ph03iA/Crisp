@@ -447,6 +447,22 @@
       "score": 17,
       "summary": "Needs improvement.",
       "sessionId": "s_1759425939285"
+    },
+    {
+      "id": "c_1759426778683",
+      "name": "Prajwal Chahande",
+      "email": "prajwalchahande7@gmail.com",
+      "score": 50,
+      "summary": "Needs improvement.",
+      "sessionId": "s_1759426730986"
+    },
+    {
+      "id": "c_1759427079196",
+      "name": "Prajwal Chahande+91-9860738071",
+      "email": "prajwalchahande7@gmail.com",
+      "score": 17,
+      "summary": "Needs improvement.",
+      "sessionId": "s_1759427031581"
     }
   ],
   "sessions": {
@@ -14582,6 +14598,341 @@
           "questionId": "6",
           "answer": "Enabling real-time, push-based data streaming to clients.",
           "selectedIndex": 2,
+          "isCorrect": false,
+          "timeUsed": 0
+        }
+      ]
+    },
+    "s_1759426730986": {
+      "id": "s_1759426730986",
+      "candidate": {
+        "name": "Prajwal Chahande",
+        "email": "prajwalchahande7@gmail.com"
+      },
+      "questions": [
+        {
+          "id": "1",
+          "text": "In MangaFlow, why did you use background service workers with Manifest V3?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Manifest V3",
+            "background service workers",
+            "Chrome Extensions API",
+            "JavaScript"
+          ],
+          "options": [
+            "To handle event-driven tasks efficiently without blocking the UI.",
+            "To directly manipulate the DOM of the active tab for auto-scrolling.",
+            "To provide a persistent background process that runs indefinitely.",
+            "To store large amounts of user data securely on the client-side."
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "2",
+          "text": "For CryptoMetrics, what was the primary purpose of employing NATS pub-sub messaging?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "NATS",
+            "pub-sub messaging",
+            "Node.js",
+            "Express.js"
+          ],
+          "options": [
+            "To broadcast real-time crypto data updates to multiple subscribing services.",
+            "To establish a direct, request-response communication between two services.",
+            "To securely store historical crypto price data in a distributed ledger.",
+            "To perform complex analytical queries on crypto market trends."
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "3",
+          "text": "DataAlchemist handles 1,000+ rows efficiently. What core benefit does virtualized rendering provide?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "virtualized rendering",
+            "Next.js",
+            "Tailwind CSS",
+            "1,000+ rows"
+          ],
+          "options": [
+            "It renders only the rows currently visible in the viewport, improving performance.",
+            "It pre-renders all 1,000+ rows on the server for faster initial load.",
+            "It optimizes database queries to retrieve only visible data rows.",
+            "It compresses the CSV data before display to reduce memory usage."
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "4",
+          "text": "In CryptoMetrics, how did you maintain data freshness and handle API rate limits from CoinGecko?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "cron-based syncing",
+            "retry logic",
+            "API rate limits",
+            "CoinGecko API",
+            "Node.js"
+          ],
+          "options": [
+            "By implementing cron-based syncing and retry logic for fetching data.",
+            "By continuously polling the CoinGecko API in a tight loop for immediate updates.",
+            "By utilizing NATS to cache API responses and avoid repeated calls.",
+            "By distributing API requests across multiple IP addresses to bypass limits."
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "5",
+          "text": "Reverie Diary uses Google Gemini API. What's a key security concern integrating an AI API directly from the client-side without a backend proxy?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Google Gemini API",
+            "client-side",
+            "security",
+            "API key management"
+          ],
+          "options": [
+            "Exposure of the API key in client-side code to malicious users.",
+            "Increased network latency for AI responses.",
+            "Difficulty in monitoring API usage and costs.",
+            "Limited functionality of the Gemini API when called client-side."
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "6",
+          "text": "CryptoMetrics used PM2 and cron on Linux. What's PM2's primary role, distinct from cron's scheduling?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "PM2",
+            "cron-based job schedulers",
+            "Linux",
+            "Node.js",
+            "Express.js"
+          ],
+          "options": [
+            "To manage Node.js process lifecycles, load balancing, and ensure uptime.",
+            "To automate database backups and restore operations.",
+            "To provide a web-based interface for real-time data visualization.",
+            "To encrypt network traffic between the server and the CoinGecko API."
+          ],
+          "correctIndex": 0
+        }
+      ],
+      "answers": [
+        {
+          "questionId": "1",
+          "answer": "To directly manipulate the DOM of the active tab for auto-scrolling.",
+          "selectedIndex": 1,
+          "isCorrect": false,
+          "timeUsed": 2
+        },
+        {
+          "questionId": "2",
+          "answer": "To broadcast real-time crypto data updates to multiple subscribing services.",
+          "selectedIndex": 0,
+          "isCorrect": true,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "3",
+          "answer": "It renders only the rows currently visible in the viewport, improving performance.",
+          "selectedIndex": 0,
+          "isCorrect": true,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "4",
+          "answer": "By implementing cron-based syncing and retry logic for fetching data.",
+          "selectedIndex": 0,
+          "isCorrect": true,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "5",
+          "answer": "Increased network latency for AI responses.",
+          "selectedIndex": 1,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "6",
+          "answer": "To provide a web-based interface for real-time data visualization.",
+          "selectedIndex": 2,
+          "isCorrect": false,
+          "timeUsed": 0
+        }
+      ]
+    },
+    "s_1759427031581": {
+      "id": "s_1759427031581",
+      "candidate": {
+        "name": "Prajwal Chahande+91-9860738071",
+        "email": "prajwalchahande7@gmail.com"
+      },
+      "questions": [
+        {
+          "id": "1",
+          "text": "In your Payment Gateway project, which framework provided the core structure for creating RESTful APIs with a MySQL backend?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Payment Gateway",
+            "Spring Boot",
+            "RESTful APIs",
+            "MySQL"
+          ],
+          "options": [
+            "J2EE",
+            "Node.js",
+            "Spring Boot",
+            "Apache Kafka"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "2",
+          "text": "For the Event-Driven Order Processing System, what technology was primarily used to ensure asynchronous communication between microservices?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Event-Driven Order Processing System",
+            "Microservices",
+            "Apache Kafka"
+          ],
+          "options": [
+            "RESTful APIs",
+            "Apache Kafka",
+            "WebSocket (STOMP)",
+            "RabbitMQ"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "3",
+          "text": "In your Event-Driven Order Processing System, how did you address data consistency for consumers despite Kafka's \"at-least-once\" delivery semantics?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Event-Driven Order Processing System",
+            "Apache Kafka",
+            "at-least-once",
+            "idempotency"
+          ],
+          "options": [
+            "By using exclusive consumer groups.",
+            "Implementing retry/backoff strategies only.",
+            "Designing idempotent consumer operations.",
+            "Disabling message acknowledgements."
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "4",
+          "text": "For the Library Management System, what technique was specifically used to optimize paginated search APIs with filters like author or genre?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Library Management System",
+            "optimized queries",
+            "DB indexes",
+            "Hibernate",
+            "MySQL"
+          ],
+          "options": [
+            "By increasing server memory.",
+            "Implementing appropriate DB indexes.",
+            "Switching to an in-memory database.",
+            "Reducing the number of search filters."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "5",
+          "text": "In your Real-Time Messaging Application, what was the primary purpose of using SockJS in conjunction with STOMP WebSockets?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Real-Time Messaging Application",
+            "WebSocket",
+            "STOMP",
+            "SockJS"
+          ],
+          "options": [
+            "To provide persistent storage for chat messages.",
+            "To manage user authentication and authorization.",
+            "To enable fallback options for WebSocket unsupported browsers.",
+            "To implement a message queue for offline messages."
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "6",
+          "text": "If you were to integrate a complex 3D visualization using Three.js within a React application, what is a key challenge you might face?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "React.js",
+            "Three.js",
+            "3D visualization"
+          ],
+          "options": [
+            "Managing React component lifecycles with Three.js rendering loops.",
+            "Three.js not supporting standard CSS styling.",
+            "React's virtual DOM directly clashing with Three.js's canvas.",
+            "React's inherent inability to render WebGL content."
+          ],
+          "correctIndex": 0
+        }
+      ],
+      "answers": [
+        {
+          "questionId": "1",
+          "answer": "Node.js",
+          "selectedIndex": 1,
+          "isCorrect": false,
+          "timeUsed": 6
+        },
+        {
+          "questionId": "2",
+          "answer": "WebSocket (STOMP)",
+          "selectedIndex": 2,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "3",
+          "answer": "Disabling message acknowledgements.",
+          "selectedIndex": 3,
+          "isCorrect": false,
+          "timeUsed": 1
+        },
+        {
+          "questionId": "4",
+          "answer": "Implementing appropriate DB indexes.",
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "5",
+          "answer": "To provide persistent storage for chat messages.",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "6",
+          "answer": "Three.js not supporting standard CSS styling.",
+          "selectedIndex": 1,
           "isCorrect": false,
           "timeUsed": 0
         }
