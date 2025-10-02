@@ -407,6 +407,22 @@
       "score": 17,
       "summary": "Needs improvement.",
       "sessionId": "s_1759420148139"
+    },
+    {
+      "id": "c_1759421741881",
+      "name": "Prajwal Chahande+91-9860738071",
+      "email": "prajwalchahande7@gmail.com",
+      "score": 33,
+      "summary": "Needs improvement.",
+      "sessionId": "s_1759421651598"
+    },
+    {
+      "id": "c_1759424134173",
+      "name": "Atul Tiwari",
+      "email": "atultiwari00497@gmail.com",
+      "score": 33,
+      "summary": "Needs improvement.",
+      "sessionId": "s_1759421773906"
     }
   ],
   "sessions": {
@@ -13454,6 +13470,484 @@
           "selectedIndex": 1,
           "isCorrect": false,
           "timeUsed": 0
+        }
+      ]
+    },
+    "s_1759421651598": {
+      "id": "s_1759421651598",
+      "candidate": {
+        "name": "Prajwal Chahande+91-9860738071",
+        "email": "prajwalchahande7@gmail.com"
+      },
+      "questions": [
+        {
+          "id": "1",
+          "text": "In your Payment Gateway project, you mentioned validating requests using system-specific headers. What was the primary purpose of this validation approach?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Payment Gateway",
+            "RESTful APIs",
+            "Validation",
+            "Security",
+            "Spring Boot"
+          ],
+          "options": [
+            "To simplify client-side HTML testing page integration.",
+            "To ensure secure access to payment information and authenticate requests.",
+            "To reduce the overall size of the request body for faster processing.",
+            "To provide cURL examples for API interaction easily."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "2",
+          "text": "For the paginated search APIs in your Library Management System, which strategy did you use with MySQL to optimize query performance?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Library Management System",
+            "MySQL",
+            "Paginated Search",
+            "Optimization",
+            "Spring Boot"
+          ],
+          "options": [
+            "Storing all search results in Redis cache for quick retrieval.",
+            "Optimizing queries by implementing appropriate database indexes.",
+            "Performing all pagination logic after fetching the entire dataset.",
+            "Using Hibernate's default fetching strategy without modification."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "3",
+          "text": "Your Event-Driven Order Processing System utilized Apache Kafka. How did you specifically ensure at-least-once message processing by consumers?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Event-Driven Systems",
+            "Apache Kafka",
+            "Microservices",
+            "Reliability",
+            "Consumer Groups"
+          ],
+          "options": [
+            "By setting Kafka producers to send messages synchronously only.",
+            "Through the use of consumer groups and idempotent operations.",
+            "By configuring Kafka brokers to automatically retry all failed deliveries.",
+            "Ensuring each message had a unique ID for manual deduplication."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "4",
+          "text": "In your Real-Time Messaging Application, what mechanism allowed clients without native WebSocket support to still communicate in real-time?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Real-Time Messaging",
+            "WebSocket",
+            "STOMP",
+            "SockJS",
+            "Spring Boot"
+          ],
+          "options": [
+            "Forcing these clients to revert to standard HTTP GET/POST requests.",
+            "Leveraging STOMP over a persistent TCP connection.",
+            "Configuring SockJS as a fallback transport mechanism.",
+            "Implementing custom server-sent events (SSE) for non-WebSocket clients."
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "5",
+          "text": "To robustly handle transient failures and prevent data loss for failed events in your Kafka-based Order Processing System, what specific strategy did you implement?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Apache Kafka",
+            "Event-Driven Systems",
+            "Microservices",
+            "Dead-Letter Topics",
+            "Retry Strategy"
+          ],
+          "options": [
+            "Immediate manual re-submission of all failed events by an administrator.",
+            "Automatic deletion of failed events after a configured number of retries.",
+            "Retry/backoff strategies combined with dead-letter topics (DLT) for failures.",
+            "Converting failed events into synchronous REST API calls to the source service."
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "6",
+          "text": "You applied TDD to the core service logic of your Library Management System. Which combination of tools would be most fundamental for this test-driven approach in Java?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "TDD",
+            "JUnit",
+            "Mockito",
+            "Library Management System",
+            "Java",
+            "Spring Boot"
+          ],
+          "options": [
+            "Selenium for end-to-end UI testing and Jenkins for CI/CD.",
+            "Maven for build automation and Git for version control.",
+            "JUnit for writing unit tests and Mockito for mocking dependencies.",
+            "Postman for API integration testing and Swagger for documentation."
+          ],
+          "correctIndex": 2
+        }
+      ],
+      "answers": [
+        {
+          "questionId": "1",
+          "answer": "To reduce the overall size of the request body for faster processing.",
+          "selectedIndex": 2,
+          "isCorrect": false,
+          "timeUsed": 9
+        },
+        {
+          "questionId": "2",
+          "answer": "Optimizing queries by implementing appropriate database indexes.",
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "3",
+          "answer": "By setting Kafka producers to send messages synchronously only.",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "4",
+          "answer": "Configuring SockJS as a fallback transport mechanism.",
+          "selectedIndex": 2,
+          "isCorrect": true,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "5",
+          "answer": "Converting failed events into synchronous REST API calls to the source service.",
+          "selectedIndex": 3,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "6",
+          "answer": "Maven for build automation and Git for version control.",
+          "selectedIndex": 1,
+          "isCorrect": false,
+          "timeUsed": 0
+        }
+      ]
+    },
+    "s_1759421773906": {
+      "id": "s_1759421773906",
+      "candidate": {
+        "name": "Atul Tiwari",
+        "email": "atultiwari00497@gmail.com"
+      },
+      "questions": [
+        {
+          "id": "1",
+          "text": "For the ZVT Bi-Directional DC-DC converter PCB, which software tool did you use for schematic capture and layout?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "ZVT Bi-Directional DC-DC converter",
+            "PCB Design",
+            "Altium Designer",
+            "schematic capture",
+            "layout"
+          ],
+          "options": [
+            "Altium Designer",
+            "Autodesk Fusion 360",
+            "MATLAB",
+            "Simulink"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "2",
+          "text": "When implementing the PID control algorithm for motor speed synchronization on Arduino, which programming language was primarily used?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "PID Control",
+            "Motor Speed Synchronisation",
+            "Arduino",
+            "C++",
+            "firmware"
+          ],
+          "options": [
+            "C++",
+            "Python",
+            "Assembly",
+            "Java"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "3",
+          "text": "To generate four synchronized, high-precision control signals for the ZVT Bi-Directional DC-DC converter on Arduino Mega, what hardware feature was manipulated?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Arduino Mega",
+            "ZVT Bi-Directional DC-DC converter",
+            "low-level firmware",
+            "hardware timers",
+            "counters",
+            "synchronized control signals"
+          ],
+          "options": [
+            "Software polling loops",
+            "Interrupt Service Routines for GPIO",
+            "Hardware timers and counters",
+            "AnalogWrite() functions"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "4",
+          "text": "During prototyping the low-cost single-phase inverter, what critical timing consideration arises when implementing SPWM approaches to prevent device short circuits?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Inverter Design",
+            "SPWM",
+            "prototype PCBs",
+            "dead-time"
+          ],
+          "options": [
+            "PWM frequency modulation",
+            "Ensuring sufficient cooling",
+            "Implementing dead-time for switching devices",
+            "Adjusting filter capacitance"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "5",
+          "text": "For the Pure Sine Wave Inverter Board using the EG8010 IC, what type of feedback control loop is essential for maintaining stable output voltage and reducing distortion?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Pure Sine Wave Inverter Board",
+            "EG8010 IC",
+            "feedback control loops",
+            "stable output"
+          ],
+          "options": [
+            "Only output current feedback",
+            "Open-loop frequency control",
+            "Voltage and current dual-loop feedback",
+            "Temperature-compensated feedback"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "6",
+          "text": "When troubleshooting the DC battery charger prototype using an oscilloscope and logic analyzer, what key advantage does the logic analyzer offer for digital communication buses?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "DC battery charger",
+            "System Debugging",
+            "oscilloscope",
+            "logic analyzer",
+            "troubleshooting"
+          ],
+          "options": [
+            "Higher amplitude signal measurement",
+            "Precise analog waveform capture",
+            "Simultaneous multi-channel digital protocol decoding",
+            "Measuring power factor"
+          ],
+          "correctIndex": 2
+        }
+      ],
+      "answers": [
+        {
+          "questionId": "1",
+          "answer": "",
+          "timeUsed": 279
+        },
+        {
+          "questionId": "2",
+          "answer": "",
+          "timeUsed": 1
+        },
+        {
+          "questionId": "3",
+          "answer": "Hardware timers and counters",
+          "selectedIndex": 2,
+          "isCorrect": true,
+          "timeUsed": 1
+        },
+        {
+          "questionId": "4",
+          "answer": "Ensuring sufficient cooling",
+          "selectedIndex": 1,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "5",
+          "answer": "Only output current feedback",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "6",
+          "answer": "Simultaneous multi-channel digital protocol decoding",
+          "selectedIndex": 2,
+          "isCorrect": true,
+          "timeUsed": 0
+        }
+      ]
+    },
+    "s_1759424044161": {
+      "id": "s_1759424044161",
+      "candidate": {
+        "name": "Prajwal Chahande",
+        "email": "prajwalchahande7@gmail.com"
+      },
+      "questions": [
+        {
+          "id": "1",
+          "text": "In the Reverie Diary project, what frontend framework was primarily used to build the application's user interface?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Reverie Diary",
+            "React.js",
+            "Tailwind CSS"
+          ],
+          "options": [
+            "React.js",
+            "Next.js",
+            "Vue.js",
+            "Angular"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "2",
+          "text": "Which NoSQL database was utilized in the CryptoMetrics project for storing real-time metrics like price and market cap for crypto assets?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "CryptoMetrics",
+            "MongoDB",
+            "Node.js",
+            "Express.js"
+          ],
+          "options": [
+            "MySQL",
+            "PostgreSQL",
+            "MongoDB",
+            "SQLite"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "3",
+          "text": "To efficiently handle and display over 1,000 rows of data in DataAlchemist's responsive interface, what rendering technique was implemented?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "DataAlchemist",
+            "virtualized rendering",
+            "Next.js",
+            "Tailwind CSS"
+          ],
+          "options": [
+            "Server-side pagination",
+            "Infinite scrolling",
+            "Virtualized rendering",
+            "Client-side filtering"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "4",
+          "text": "In the CryptoMetrics backend, what specific pub-sub messaging system was employed to broadcast real-time updates to various services?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "CryptoMetrics",
+            "NATS",
+            "pub-sub",
+            "Node.js"
+          ],
+          "options": [
+            "Apache Kafka",
+            "RabbitMQ",
+            "NATS",
+            "Redis Pub/Sub"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "5",
+          "text": "For the MangaFlow Chrome Extension, how was an efficient and extensible event-driven architecture achieved using Manifest V3?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "MangaFlow",
+            "Chrome Extension",
+            "Manifest V3",
+            "background service workers",
+            "event-driven architecture"
+          ],
+          "options": [
+            "WebSockets for real-time events",
+            "IndexedDB for persistent event queues",
+            "Background service workers",
+            "Long-polling event streams"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "6",
+          "text": "How did the CryptoMetrics backend system address maintaining data freshness and managing CoinGecko API rate limits and potential failures?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "CryptoMetrics",
+            "CoinGecko API",
+            "cron-based syncing",
+            "retry logic",
+            "API rate limits"
+          ],
+          "options": [
+            "Real-time webhooks from CoinGecko",
+            "Client-side data caching strategies",
+            "Cron-based syncing with implemented retry logic",
+            "Server-side event streaming"
+          ],
+          "correctIndex": 2
+        }
+      ],
+      "answers": [
+        {
+          "questionId": "1",
+          "answer": "",
+          "timeUsed": 20
+        },
+        {
+          "questionId": "2",
+          "answer": "",
+          "timeUsed": 1
         }
       ]
     }

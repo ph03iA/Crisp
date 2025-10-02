@@ -7,34 +7,45 @@ let db = {
   candidates: []
 }
 
-export const getDb = () => db
+const getDb = () => db
 
-export const setDb = (newDb) => {
+const setDb = (newDb) => {
   db = newDb
 }
 
-export const addSession = (sessionId, session) => {
+const addSession = (sessionId, session) => {
   db.sessions[sessionId] = session
 }
 
-export const getSession = (sessionId) => {
+const getSession = (sessionId) => {
   return db.sessions[sessionId]
 }
 
-export const updateSession = (sessionId, updates) => {
+const updateSession = (sessionId, updates) => {
   if (db.sessions[sessionId]) {
     db.sessions[sessionId] = { ...db.sessions[sessionId], ...updates }
   }
 }
 
-export const addCandidate = (candidate) => {
+const addCandidate = (candidate) => {
   db.candidates.push(candidate)
 }
 
-export const getCandidates = () => {
+const getCandidates = () => {
   return db.candidates
 }
 
-export const getCandidate = (id) => {
+const getCandidate = (id) => {
   return db.candidates.find(c => c.id === id)
+}
+
+module.exports = {
+  getDb,
+  setDb,
+  addSession,
+  getSession,
+  updateSession,
+  addCandidate,
+  getCandidates,
+  getCandidate
 }

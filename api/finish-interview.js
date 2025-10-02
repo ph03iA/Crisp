@@ -1,7 +1,7 @@
-import { GoogleGenerativeAI } from '@google/generative-ai'
-import { getDb, getSession, addCandidate } from './lib/db.js'
+const { GoogleGenerativeAI } = require('@google/generative-ai')
+const { getDb, getSession, addCandidate } = require('./lib/db.js')
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   // Set CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*')
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS')

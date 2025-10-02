@@ -1,6 +1,6 @@
-import { getDb, getSession, updateSession } from './lib/db.js'
+const { getDb, getSession, updateSession } = require('./lib/db.js')
 
-export default function handler(req, res) {
+module.exports = function handler(req, res) {
   // Set CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*')
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS')
