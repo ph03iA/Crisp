@@ -383,6 +383,22 @@
       "score": 33,
       "summary": "Needs improvement.",
       "sessionId": "s_1759417845132"
+    },
+    {
+      "id": "c_1759418318173",
+      "name": "Prajwal Chahande",
+      "email": "prajwalchahande7@gmail.com",
+      "score": 0,
+      "summary": "Needs improvement.",
+      "sessionId": "s_1759418246043"
+    },
+    {
+      "id": "c_1759419524997",
+      "name": "Prajwal Chahande+91-9860738071",
+      "email": "prajwalchahande7@gmail.com",
+      "score": 17,
+      "summary": "Needs improvement.",
+      "sessionId": "s_1759419454070"
     }
   ],
   "sessions": {
@@ -12933,6 +12949,330 @@
           "selectedIndex": 0,
           "isCorrect": false,
           "timeUsed": 2
+        }
+      ]
+    },
+    "s_1759418246043": {
+      "id": "s_1759418246043",
+      "candidate": {
+        "name": "Prajwal Chahande",
+        "email": "prajwalchahande7@gmail.com"
+      },
+      "questions": [
+        {
+          "id": "1",
+          "text": "In your Payment Gateway project, which Spring Boot annotation typically defines a class handling REST requests?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Spring Boot",
+            "RESTful APIs",
+            "Payment Gateway Standalone"
+          ],
+          "options": [
+            "@Controller",
+            "@Service",
+            "@Repository",
+            "@RestController"
+          ],
+          "correctIndex": 3
+        },
+        {
+          "id": "2",
+          "text": "What is the primary benefit of using SockJS fallback in your Real-Time Messaging Application's WebSocket configuration?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "SockJS",
+            "WebSocket",
+            "Real-Time Messaging Application"
+          ],
+          "options": [
+            "Improves database performance",
+            "Allows older browsers to use WebSockets",
+            "Encrypts messages end-to-end",
+            "Reduces server CPU load"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "3",
+          "text": "In your Event-Driven Order Processing System, how did you ensure \"at-least-once processing\" with Kafka consumers?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Apache Kafka",
+            "Event-Driven Systems",
+            "microservices"
+          ],
+          "options": [
+            "Committing offsets after successful processing",
+            "Disabling Kafka consumer retries",
+            "Setting `acks=0` for producers",
+            "Using a single consumer instance per topic"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "4",
+          "text": "When applying TDD with JUnit to core service logic in your Library Management System, what was typically the first step?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "TDD",
+            "JUnit",
+            "Library Management System"
+          ],
+          "options": [
+            "Writing production code",
+            "Writing a failing test",
+            "Refactoring existing code",
+            "Designing the database schema"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "5",
+          "text": "In your Event-Driven Order Processing System, what is the primary purpose of combining retry/backoff strategies with dead-letter topics?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Apache Kafka",
+            "Event-Driven Systems",
+            "microservices",
+            "dead-letter topics"
+          ],
+          "options": [
+            "To re-process all failed events indefinitely",
+            "To ensure immediate message deletion",
+            "To handle transient failures and isolate permanently unprocessable messages",
+            "To distribute message load across consumers"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "6",
+          "text": "If RabbitMQ replaced an in-memory broker in your Real-Time Messaging App, how would it primarily impact scalability and message persistence?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "RabbitMQ",
+            "WebSocket",
+            "Spring Boot",
+            "Real-Time Messaging Application"
+          ],
+          "options": [
+            "No impact, as message brokers are interchangeable",
+            "Improves scalability and adds message persistence",
+            "Increases message throughput by default",
+            "Simplifies client-side WebSocket implementation"
+          ],
+          "correctIndex": 1
+        }
+      ],
+      "answers": [
+        {
+          "questionId": "1",
+          "answer": "@Controller",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 4
+        },
+        {
+          "questionId": "2",
+          "answer": "Improves database performance",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 1
+        },
+        {
+          "questionId": "3",
+          "answer": "Disabling Kafka consumer retries",
+          "selectedIndex": 1,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "4",
+          "answer": "Refactoring existing code",
+          "selectedIndex": 2,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "5",
+          "answer": "To re-process all failed events indefinitely",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "6",
+          "answer": "Increases message throughput by default",
+          "selectedIndex": 2,
+          "isCorrect": false,
+          "timeUsed": 2
+        }
+      ]
+    },
+    "s_1759419454070": {
+      "id": "s_1759419454070",
+      "candidate": {
+        "name": "Prajwal Chahande+91-9860738071",
+        "email": "prajwalchahande7@gmail.com"
+      },
+      "questions": [
+        {
+          "id": "1",
+          "text": "In the Payment Gateway Standalone project, which Spring Boot annotation would you primarily use to define an API endpoint for creating a new payment?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Spring Boot",
+            "RESTful APIs",
+            "Payment Gateway"
+          ],
+          "options": [
+            "A. @GetMapping",
+            "B. @PostMapping",
+            "C. @PutMapping",
+            "D. @DeleteMapping"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "2",
+          "text": "For the Library Management System, which tool from your resume did you primarily use to implement TDD for core service logic?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Library Management System",
+            "TDD",
+            "JUnit"
+          ],
+          "options": [
+            "A. Maven",
+            "B. Jenkins",
+            "C. JUnit",
+            "D. Mockito"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "3",
+          "text": "In the Event-Driven Order Processing System, to ensure \"at-least-once\" processing with consumer groups and maintain data integrity, what mechanism is key for handling duplicate events?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Event-Driven",
+            "Kafka",
+            "at-least-once",
+            "idempotency"
+          ],
+          "options": [
+            "A. Using unique Kafka topic names",
+            "B. Implementing idempotent consumers",
+            "C. Disabling consumer groups",
+            "D. Setting auto-commit to true"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "4",
+          "text": "For the Real-Time Messaging Application, what was the primary role of SockJS in conjunction with STOMP WebSockets, as configured in Spring Boot?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Real-Time Messaging",
+            "WebSocket",
+            "STOMP",
+            "SockJS"
+          ],
+          "options": [
+            "A. Encrypting messages for secure communication",
+            "B. Providing a fallback option for browsers without WebSocket support",
+            "C. Managing user authentication and authorization",
+            "D. Storing chat message history in MongoDB"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "5",
+          "text": "In the Event-Driven Order Processing System, when an event consistently fails despite retry/backoff strategies, what is the intended purpose of moving it to a dead-letter topic?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Event-Driven",
+            "Kafka",
+            "retry/backoff",
+            "dead-letter topics"
+          ],
+          "options": [
+            "A. To immediately reprocess the event with higher priority",
+            "B. To permanently discard the event from the system",
+            "C. To isolate problematic events for manual inspection and debugging",
+            "D. To forward the event to a different microservice for alternative processing"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "6",
+          "text": "The Payment Gateway Standalone project \"validated requests using system-specific headers and ensured secure access.\" What architectural pattern or principle does this most align with for API security and access control?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Payment Gateway",
+            "security",
+            "system-specific headers",
+            "secure access"
+          ],
+          "options": [
+            "A. OAuth2 for token-based authentication",
+            "B. Implementing a custom API Key or signature validation",
+            "C. Relying solely on network-level firewall rules",
+            "D. Using database encryption for all payment data"
+          ],
+          "correctIndex": 1
+        }
+      ],
+      "answers": [
+        {
+          "questionId": "1",
+          "answer": "",
+          "timeUsed": 21
+        },
+        {
+          "questionId": "2",
+          "answer": "",
+          "timeUsed": 1
+        },
+        {
+          "questionId": "3",
+          "answer": "C. Disabling consumer groups",
+          "selectedIndex": 2,
+          "isCorrect": false,
+          "timeUsed": 5
+        },
+        {
+          "questionId": "4",
+          "answer": "B. Providing a fallback option for browsers without WebSocket support",
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "5",
+          "answer": "B. To permanently discard the event from the system",
+          "selectedIndex": 1,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "6",
+          "answer": "A. OAuth2 for token-based authentication",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 0
         }
       ]
     }
