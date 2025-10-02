@@ -343,6 +343,14 @@
       "score": 33,
       "summary": "Needs improvement.",
       "sessionId": "s_1759415274417"
+    },
+    {
+      "id": "c_1759416081955",
+      "name": "Prajwal Chahande",
+      "email": "prajwalchahande7@gmail.com",
+      "score": 17,
+      "summary": "Needs improvement.",
+      "sessionId": "s_1759416002942"
     }
   ],
   "sessions": {
@@ -12054,6 +12062,171 @@
           "answer": "Hibernate entity mapping for indexes directly ensures optimal DB indexing strategy.",
           "selectedIndex": 1,
           "isCorrect": false,
+          "timeUsed": 0
+        }
+      ]
+    },
+    "s_1759416002942": {
+      "id": "s_1759416002942",
+      "candidate": {
+        "name": "Prajwal Chahande",
+        "email": "prajwalchahande7@gmail.com"
+      },
+      "questions": [
+        {
+          "id": "1",
+          "text": "In the Payment Gateway project, which Spring annotation primarily defines a class as a RESTful web service controller?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Spring Boot",
+            "RESTful APIs",
+            "Payment Gateway"
+          ],
+          "options": [
+            "@Service",
+            "@Component",
+            "@Repository",
+            "@RestController"
+          ],
+          "correctIndex": 3
+        },
+        {
+          "id": "2",
+          "text": "For the Library Management System, when using Hibernate, which annotation maps a specific entity field to a database table column?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Hibernate",
+            "MySQL",
+            "Library Management System"
+          ],
+          "options": [
+            "@Entity",
+            "@Table",
+            "@Id",
+            "@Column"
+          ],
+          "correctIndex": 3
+        },
+        {
+          "id": "3",
+          "text": "In the Event-Driven Order Processing System, what does \"at-least-once processing\" with Kafka consumer groups primarily imply?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Apache Kafka",
+            "Event-Driven Systems",
+            "Microservices"
+          ],
+          "options": [
+            "Each message is delivered exactly once to one consumer.",
+            "Messages are guaranteed to be processed by only one consumer.",
+            "A message might be processed multiple times by different consumers.",
+            "A message is delivered at least once, potentially multiple times, to one consumer."
+          ],
+          "correctIndex": 3
+        },
+        {
+          "id": "4",
+          "text": "The Real-Time Messaging Application used SockJS. What is the primary reason for configuring SockJS with WebSockets?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "WebSocket",
+            "SockJS",
+            "STOMP",
+            "Real-Time Messaging Application"
+          ],
+          "options": [
+            "To enable message persistence.",
+            "To provide fallback options for browsers without native WebSocket support.",
+            "To encrypt WebSocket communication.",
+            "To manage user authentication sessions."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "5",
+          "text": "If building an interactive 3D product configurator using React, which listed library would be most suitable for the 3D rendering component?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "React.js",
+            "Three.js",
+            "P5.js",
+            "Node.js"
+          ],
+          "options": [
+            "P5.js",
+            "Node.js",
+            "Three.js",
+            "React.js-dom"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "6",
+          "text": "When applying TDD to a microservice like the OrderService, how would Mockito typically be used during unit testing?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "TDD",
+            "JUnit",
+            "Mockito",
+            "Microservices",
+            "OrderService"
+          ],
+          "options": [
+            "To simulate network delays between services.",
+            "To mock external dependencies like database calls or other service interfaces.",
+            "To automatically generate test cases from API specifications.",
+            "To deploy and run tests in a containerized environment."
+          ],
+          "correctIndex": 1
+        }
+      ],
+      "answers": [
+        {
+          "questionId": "1",
+          "answer": "@Component",
+          "selectedIndex": 1,
+          "isCorrect": false,
+          "timeUsed": 3
+        },
+        {
+          "questionId": "2",
+          "answer": "@Table",
+          "selectedIndex": 1,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "3",
+          "answer": "A message might be processed multiple times by different consumers.",
+          "selectedIndex": 2,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "4",
+          "answer": "To enable message persistence.",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "5",
+          "answer": "Node.js",
+          "selectedIndex": 1,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "6",
+          "answer": "To mock external dependencies like database calls or other service interfaces.",
+          "selectedIndex": 1,
+          "isCorrect": true,
           "timeUsed": 0
         }
       ]
