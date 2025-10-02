@@ -1,16 +1,19 @@
 import React, { useState, useCallback } from 'react'
 import { useDispatch } from 'react-redux'
-import { message, Alert } from 'antd'
+import { App, Alert } from 'antd'
 import { FileOutlined, CheckCircleOutlined } from '@ant-design/icons'
 import { Badge } from '../ui/badge'
 import { FileUploadProgressBar } from '../application/file-upload/file-upload-progress-bar'
-import { parseResume, validateResumeData } from './parser'
-import { generateQuestionSet } from '../../api/questionBank'
+import { parseResume } from './parser'
+import { uploadResume, startInterview } from '../../api/backend'
 import { createSession } from '../../features/sessionsSlice'
 
 const ResumeUploader = ({ onSuccess }) => {
   const [error, setError] = useState('')
+  const [isProcessing, setIsProcessing] = useState(false)
+  const [processingStep, setProcessingStep] = useState('')
   const dispatch = useDispatch()
+  const { message } = App.useApp()
 
   const handleFileUpload = useCallback(async (file) => {
     if (!file) return
@@ -35,44 +38,61 @@ const ResumeUploader = ({ onSuccess }) => {
     }
 
     setError('')
+    setIsProcessing(true)
 
     try {
-      // Parse the resume
-      message.loading({ content: 'Processing your resume...', key: 'upload' })
-      console.log('Starting resume parsing for file:', file.name, 'Type:', file.type, 'Size:', file.size)
-      const resumeData = await parseResume(file)
-      console.log('Resume data extracted:', resumeData)
-      const validation = validateResumeData(resumeData)
-      console.log('Validation result:', validation)
+      // Step 1: Upload file
+      setProcessingStep('Uploading resume to server...')
+      message.loading({ content: 'Uploading resume to server...', key: 'upload' })
+      const uploadRes = await uploadResume(file)
+      
+      // Step 2: Parse resume data
+      setProcessingStep('Extracting information from resume...')
+      message.loading({ content: 'Extracting information from resume...', key: 'upload' })
+      const resumeData = { name: uploadRes.fields.name, email: uploadRes.fields.email, phone: uploadRes.fields.phone }
 
-      // Generate questions for the session
-      const questions = generateQuestionSet()
+      // Step 3: Generate interview questions
+      setProcessingStep('Generating personalized interview questions...')
+      message.loading({ content: 'Generating personalized interview questions...', key: 'upload' })
+      const start = await startInterview({ name: resumeData.name, email: resumeData.email, resumeText: uploadRes.text })
+      const questions = start.questions
 
-      // Create new session
+      // Step 4: Create session
+      setProcessingStep('Setting up your interview session...')
+      message.loading({ content: 'Setting up your interview session...', key: 'upload' })
+      const sessionId = start.sessionId
+
+      // Create new client session reflecting backend questions
       const sessionAction = createSession({
         name: resumeData.name,
         email: resumeData.email,
         phone: resumeData.phone,
         resumeFileName: file.name,
-        questions
+        questions,
+        serverSessionId: sessionId // Pass server session ID
       })
 
       dispatch(sessionAction)
 
+      // Step 5: Complete
+      setProcessingStep('Almost ready...')
       message.success({ content: 'Resume processed successfully!', key: 'upload' })
-
-      // Extract session ID (using a more reliable method)
-      const sessionId = sessionAction.payload.questions[0]?.id ? 
-        sessionAction.payload.questions[0].id.split('-')[0] : 
-        Date.now().toString()
+      
+      // Store server sessionId in localStorage for persistence
+      localStorage.setItem('serverSessionId', sessionId)
 
       // Small delay to show completion
       setTimeout(() => {
-        onSuccess(sessionId, validation.missing)
+        setIsProcessing(false)
+        setProcessingStep('')
+        onSuccess(sessionId, [])
       }, 800)
 
     } catch (err) {
       console.error('Resume parsing error:', err)
+      setIsProcessing(false)
+      setProcessingStep('')
+      
       let errorMessage = err instanceof Error ? err.message : 'Failed to process resume'
       
       // Provide more helpful error messages
@@ -92,18 +112,11 @@ const ResumeUploader = ({ onSuccess }) => {
   }, [dispatch, onSuccess])
 
   return (
-    <div className="w-full max-w-2xl mx-auto space-y-6">
-      {/* Debug Info */}
-      {process.env.NODE_ENV === 'development' && (
-        <div className="bg-yellow-100 p-4 rounded-lg text-sm">
-          <strong>Debug Mode:</strong> Check browser console for detailed PDF parsing logs
-        </div>
-      )}
-      
+    <div className="w-full max-w-2xl mx-auto space-y-6 flex flex-col items-center justify-center">
       {/* Header Section */}
       <div className="text-center space-y-4">
         <div className="space-y-2">
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap items-center justify-center gap-2">
             <span className="text-3xl font-bold text-white leading-tight drop-shadow-lg [text-shadow:_0_2px_4px_rgb(0_0_0_/_40%)]">
               Upload Your Resume
             </span>
@@ -128,9 +141,29 @@ const ResumeUploader = ({ onSuccess }) => {
 
       {/* File Upload Component */}
       <FileUploadProgressBar 
-        isDisabled={false}
+        isDisabled={isProcessing}
         onFileUpload={handleFileUpload}
       />
+
+      {/* Processing Indicator */}
+      {isProcessing && (
+        <div className="w-full max-w-md bg-black/20 backdrop-blur-sm rounded-2xl shadow-xl p-6">
+          <div className="flex items-center space-x-4">
+            <div className="flex-shrink-0">
+              <div className="w-8 h-8 border-4 border-primary/20 border-t-primary rounded-full animate-spin"></div>
+            </div>
+            <div className="flex-1">
+              <h3 className="text-lg font-semibold text-white mb-1">
+                Processing Resume
+              </h3>
+              <p className="text-white/80 text-sm">
+                {processingStep}
+              </p>
+            </div>
+          </div>
+          
+        </div>
+      )}
 
       {/* Error Display */}
       {error && (

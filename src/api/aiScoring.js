@@ -8,7 +8,7 @@ const genAI = new GoogleGenerativeAI(getApiKey())
 export const scoreAnswer = async (question, answer, timeUsed, timeLimit) => {
   try {
     // Use real AI for scoring
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" })
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" })
     
     const prompt = `
 You are an expert technical interviewer evaluating a candidate's answer. Please provide a comprehensive assessment.

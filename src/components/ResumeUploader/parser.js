@@ -65,32 +65,9 @@ export const extractTextFromPDF = async (file) => {
         } catch (disabledError) {
           console.warn('All PDF parsing methods failed, using fallback...')
           
-          // Fallback: Return sample resume data
-          const fallbackText = `
-John Doe
-Software Engineer
-john.doe@email.com
-(555) 123-4567
-
-Experience:
-- 5 years of software development
-- React, Node.js, JavaScript
-- Full-stack development
-- Team leadership
-
-Education:
-- Bachelor's in Computer Science
-- University of Technology
-
-Skills:
-- Programming Languages: JavaScript, Python, Java
-- Frameworks: React, Node.js, Express
-- Databases: MongoDB, PostgreSQL
-- Tools: Git, Docker, AWS
-          `
-          
-          console.log('Using fallback text for PDF parsing')
-          return fallbackText
+          // Fallback: no sample data; trigger missing-fields flow
+          console.log('Using empty fallback text for PDF parsing')
+          return ''
         }
       }
     }
@@ -116,30 +93,8 @@ Skills:
     }
     
     if (fullText.trim().length === 0) {
-      console.warn('No text extracted, using fallback...')
-      const fallbackText = `
-John Doe
-Software Engineer
-john.doe@email.com
-(555) 123-4567
-
-Experience:
-- 5 years of software development
-- React, Node.js, JavaScript
-- Full-stack development
-- Team leadership
-
-Education:
-- Bachelor's in Computer Science
-- University of Technology
-
-Skills:
-- Programming Languages: JavaScript, Python, Java
-- Frameworks: React, Node.js, Express
-- Databases: MongoDB, PostgreSQL
-- Tools: Git, Docker, AWS
-      `
-      return fallbackText
+      console.warn('No text extracted; returning empty to trigger missing-fields flow')
+      return ''
     }
     
     console.log('PDF text extraction completed successfully')

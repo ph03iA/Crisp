@@ -1,17 +1,57 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { setSearchQuery, setSortBy, toggleSortOrder } from '../../features/uiSlice'
 import CandidateRow from './CandidateRow'
 import CandidateDetail from './CandidateDetail'
+import { listCandidates, getCandidate } from '../../api/backend'
 
 const InterviewerTab = () => {
   const dispatch = useDispatch()
   const { searchQuery, sortBy, sortOrder } = useSelector(state => state.ui)
   const { sessions } = useSelector(state => state.sessions)
+  const [serverCandidates, setServerCandidates] = useState([])
+  const [serverSession, setServerSession] = useState(null)
   const [selectedSessionId, setSelectedSessionId] = useState(null)
 
+  const refreshServerCandidates = async () => {
+    try {
+      const res = await listCandidates()
+      setServerCandidates(res.candidates || [])
+    } catch {
+      setServerCandidates([])
+    }
+  }
+
+  useEffect(() => {
+    refreshServerCandidates()
+  }, [])
+
+  // Refresh data when tab becomes visible
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (!document.hidden) {
+        refreshServerCandidates()
+      }
+    }
+    
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+    return () => document.removeEventListener('visibilitychange', handleVisibilityChange)
+  }, [])
+
   const filteredAndSortedSessions = useMemo(() => {
-    let sessionsList = Object.values(sessions)
+    // Merge local sessions and server candidates for listing
+    const merged = [
+      ...Object.values(sessions),
+      ...serverCandidates.map(c => ({
+        id: c.sessionId,
+        name: c.name,
+        email: c.email,
+        finalScore: c.score,
+        status: 'finished',
+        startedAt: ''
+      }))
+    ]
+    let sessionsList = merged
 
     // Filter by search query
     if (searchQuery) {
@@ -44,7 +84,7 @@ const InterviewerTab = () => {
     })
 
     return sessionsList
-  }, [sessions, searchQuery, sortBy, sortOrder])
+  }, [sessions, serverCandidates, searchQuery, sortBy, sortOrder])
 
   const handleSort = (field) => {
     if (sortBy === field) {
@@ -54,16 +94,55 @@ const InterviewerTab = () => {
     }
   }
 
-  const selectedSession = selectedSessionId ? sessions[selectedSessionId] : null
+  const selectedSession = selectedSessionId ? (sessions[selectedSessionId] || serverSession) : null
+
+  useEffect(() => {
+    if (selectedSessionId && !sessions[selectedSessionId]) {
+      (async () => {
+        try {
+          const detail = await getCandidate(serverCandidates.find(c => c.sessionId === selectedSessionId)?.id)
+          const s = detail.session
+          setServerSession({
+            id: s.id,
+            name: s.candidate?.name,
+            email: s.candidate?.email,
+            phone: '',
+            resumeFileName: '',
+            answers: s.answers.map(a => {
+              console.log('Server answer data:', a)
+              return {
+                questionId: a.questionId,
+                answer: a.answer,
+                timeUsed: a.timeUsed,
+                selectedIndex: a.selectedIndex,
+                isCorrect: a.isCorrect,
+                score: 0,
+                feedback: '',
+                keywords: []
+              }
+            }),
+            currentQuestionIndex: s.questions.length,
+            status: 'finished',
+            startedAt: '',
+            questions: s.questions,
+            finalScore: detail.candidate?.score,
+            summary: detail.candidate?.summary
+          })
+        } catch {
+          setServerSession(null)
+        }
+      })()
+    }
+  }, [selectedSessionId, sessions, serverCandidates])
 
   if (selectedSession) {
     return (
       <div>
         <button
           onClick={() => setSelectedSessionId(null)}
-          className="mb-4 flex items-center text-primary-600 hover:text-primary-700"
+          className="mb-6 inline-flex items-center px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 rounded-lg text-white font-medium transition-all duration-200 backdrop-blur-sm shadow-lg hover:shadow-xl"
         >
-          <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
           </svg>
           Back to Dashboard
@@ -76,14 +155,18 @@ const InterviewerTab = () => {
   return (
     <div>
       <div className="mb-6 bg-black/20 backdrop-blur-sm rounded-2xl shadow-xl p-6">
-        <div className="flex flex-wrap items-center gap-2 mb-2">
-          <span className="text-lg font-bold text-white leading-tight drop-shadow-lg [text-shadow:_0_2px_4px_rgb(0_0_0_/_40%)]">
-            Interview Dashboard
-          </span>
+        <div className="flex items-center justify-between mb-4">
+          <div>
+            <div className="flex flex-wrap items-center gap-2 mb-2">
+              <span className="text-lg font-bold text-white leading-tight drop-shadow-lg [text-shadow:_0_2px_4px_rgb(0_0_0_/_40%)]">
+                Interview Dashboard
+              </span>
+            </div>
+            <p className="text-white/90 text-lg leading-relaxed">
+              View and analyze candidate interview results
+            </p>
+          </div>
         </div>
-        <p className="text-white/90 text-lg leading-relaxed">
-          View and analyze candidate interview results
-        </p>
       </div>
 
       {/* Search and Filters */}

@@ -15,7 +15,7 @@ localForage.config({
 const persistConfig = {
   key: 'root',
   storage: localForage,
-  whitelist: ['sessions'], // Only persist sessions, not UI state
+  whitelist: ['sessions', 'ui'], // Persist both sessions and UI state
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

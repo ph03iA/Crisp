@@ -14,6 +14,7 @@ const sessionsSlice = createSlice({
       const sessionId = uuidv4()
       const newSession = {
         id: sessionId,
+        serverSessionId: action.payload.serverSessionId, // Store server session ID
         name: action.payload.name,
         email: action.payload.email,
         phone: action.payload.phone,
@@ -45,6 +46,8 @@ const sessionsSlice = createSlice({
           questionId: currentQuestion.id,
           answer: action.payload.answer,
           timeUsed: action.payload.timeUsed,
+          selectedIndex: action.payload.selectedIndex,
+          isCorrect: action.payload.isCorrect,
           timeLimit: currentQuestion.timeLimit,
           submittedAt: new Date().toISOString(),
           score: action.payload.score || 0,
@@ -90,6 +93,30 @@ const sessionsSlice = createSlice({
     setCurrentSession: (state, action) => {
       state.currentSessionId = action.payload
     },
+
+    discardSession: (state, action) => {
+      const sessionId = action.payload || state.currentSessionId
+      if (!sessionId) return
+      if (state.sessions[sessionId]) {
+        delete state.sessions[sessionId]
+      }
+      if (state.currentSessionId === sessionId) {
+        state.currentSessionId = undefined
+      }
+    },
+
+    discardUnfinishedSessions: (state) => {
+      const ids = Object.keys(state.sessions)
+      for (const id of ids) {
+        const s = state.sessions[id]
+        if (s && s.status !== 'finished') {
+          delete state.sessions[id]
+        }
+      }
+      if (state.currentSessionId && !state.sessions[state.currentSessionId]) {
+        state.currentSessionId = undefined
+      }
+    },
   },
 })
 
@@ -101,6 +128,8 @@ export const {
   resumeSession,
   finishSession,
   setCurrentSession,
+  discardSession,
+  discardUnfinishedSessions,
 } = sessionsSlice.actions
 
 export default sessionsSlice.reducer
