@@ -399,6 +399,14 @@
       "score": 17,
       "summary": "Needs improvement.",
       "sessionId": "s_1759419454070"
+    },
+    {
+      "id": "c_1759420211431",
+      "name": "Prajwal Chahande",
+      "email": "prajwalchahande7@gmail.com",
+      "score": 17,
+      "summary": "Needs improvement.",
+      "sessionId": "s_1759420148139"
     }
   ],
   "sessions": {
@@ -13271,6 +13279,179 @@
           "questionId": "6",
           "answer": "A. OAuth2 for token-based authentication",
           "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 0
+        }
+      ]
+    },
+    "s_1759420148139": {
+      "id": "s_1759420148139",
+      "candidate": {
+        "name": "Prajwal Chahande",
+        "email": "prajwalchahande7@gmail.com"
+      },
+      "questions": [
+        {
+          "id": "1",
+          "text": "In DataAlchemist, what was the primary reason for using virtualized rendering with Tailwind CSS for efficiently handling 1,000+ rows?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "DataAlchemist",
+            "virtualized rendering",
+            "Tailwind CSS",
+            "Next.js"
+          ],
+          "options": [
+            "To reduce the number of DOM elements rendered at once, improving performance.",
+            "To enable server-side pagination for faster data retrieval.",
+            "To apply complex animations efficiently to large datasets.",
+            "To ensure responsive layout adaptation across different screen sizes."
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "2",
+          "text": "For CryptoMetrics, Prajwal employed NATS pub-sub messaging. What was its main role in broadcasting real-time updates to services?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "CryptoMetrics",
+            "NATS",
+            "pub-sub",
+            "Node.js",
+            "Express.js"
+          ],
+          "options": [
+            "To facilitate real-time, decoupled communication between services.",
+            "To establish secure, end-to-end encrypted connections.",
+            "To store historical market data for analytics.",
+            "To manage user authentication and authorization flows."
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "3",
+          "text": "In MangaFlow, how did Manifest V3's background service workers contribute to the extension's architecture for efficient event handling?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "MangaFlow",
+            "Manifest V3",
+            "Chrome Extensions API",
+            "JavaScript"
+          ],
+          "options": [
+            "By providing an event-driven model that activates only when needed, conserving resources.",
+            "By enabling persistent, long-running background pages for complex logic.",
+            "By allowing declarative net request rules to modify network requests more securely.",
+            "By facilitating direct DOM manipulation of any web page without content scripts."
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "4",
+          "text": "CryptoMetrics used cron-based syncing and retry logic. What specific challenge did this address when interacting with the CoinGecko API?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "CryptoMetrics",
+            "cron-based syncing",
+            "retry logic",
+            "CoinGecko API",
+            "API rate limits"
+          ],
+          "options": [
+            "Maintaining data freshness while managing external API rate limits.",
+            "Ensuring data consistency across multiple MongoDB replicas.",
+            "Reducing the overall latency of API responses.",
+            "Encrypting sensitive data before transmission to the database."
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "5",
+          "text": "Prajwal used Google Gemini API for 'executable logic' in DataAlchemist vs. 'interpretations' in Reverie Diary. What's a key difference in frontend architectural impact?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "DataAlchemist",
+            "Reverie Diary",
+            "Google Gemini API",
+            "Next.js",
+            "React.js",
+            "frontend architecture"
+          ],
+          "options": [
+            "DataAlchemist likely requires more robust client-side validation and execution for generated logic.",
+            "Reverie Diary's integration demands real-time streaming of interpretations, unlike DataAlchemist's batch processing.",
+            "DataAlchemist relies on server-side rendering for all Gemini API calls, while Reverie is purely client-side.",
+            "Reverie Diary requires complex data transformation on the client for interpretations; DataAlchemist handles it server-side."
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "6",
+          "text": "For CryptoMetrics' real-time crypto data, what's a strong reason MongoDB was chosen over a relational database like MySQL?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "CryptoMetrics",
+            "MongoDB",
+            "MySQL",
+            "real-time data",
+            "Node.js",
+            "Express.js"
+          ],
+          "options": [
+            "Its flexible schema accommodates rapidly evolving crypto data structures more easily.",
+            "MongoDB's strong ACID compliance is crucial for financial data integrity.",
+            "Native support for complex SQL joins simplifies querying across diverse metrics.",
+            "Superior performance for complex analytical queries with aggregated financial functions."
+          ],
+          "correctIndex": 0
+        }
+      ],
+      "answers": [
+        {
+          "questionId": "1",
+          "answer": "To apply complex animations efficiently to large datasets.",
+          "selectedIndex": 2,
+          "isCorrect": false,
+          "timeUsed": 7
+        },
+        {
+          "questionId": "2",
+          "answer": "To store historical market data for analytics.",
+          "selectedIndex": 2,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "3",
+          "answer": "By enabling persistent, long-running background pages for complex logic.",
+          "selectedIndex": 1,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "4",
+          "answer": "Maintaining data freshness while managing external API rate limits.",
+          "selectedIndex": 0,
+          "isCorrect": true,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "5",
+          "answer": "DataAlchemist relies on server-side rendering for all Gemini API calls, while Reverie is purely client-side.",
+          "selectedIndex": 2,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "6",
+          "answer": "MongoDB's strong ACID compliance is crucial for financial data integrity.",
+          "selectedIndex": 1,
           "isCorrect": false,
           "timeUsed": 0
         }
