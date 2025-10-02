@@ -1,4 +1,4 @@
-const { getDb, getCandidate, getSession } = require('../lib/db.js')
+const { getDb, getCandidate, getSession } = require('./lib/db.js')
 
 module.exports = function handler(req, res) {
   // Set CORS headers
@@ -18,10 +18,9 @@ module.exports = function handler(req, res) {
   const { id } = req.query
   const candidate = getCandidate(id)
   if (!candidate) return res.status(404).json({ error: 'Candidate not found' })
-  
+
   const session = getSession(candidate.sessionId)
   if (!session) return res.status(404).json({ error: 'Session not found' })
-  
+
   return res.json({ candidate, session })
 }
-

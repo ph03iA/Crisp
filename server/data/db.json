@@ -423,6 +423,14 @@
       "score": 33,
       "summary": "Needs improvement.",
       "sessionId": "s_1759421773906"
+    },
+    {
+      "id": "c_1759424775928",
+      "name": "Prajwal Chahande",
+      "email": "prajwalchahande7@gmail.com",
+      "score": 33,
+      "summary": "Needs improvement.",
+      "sessionId": "s_1759424044161"
     }
   ],
   "sessions": {
@@ -13948,8 +13956,284 @@
           "questionId": "2",
           "answer": "",
           "timeUsed": 1
+        },
+        {
+          "questionId": "3",
+          "answer": "Virtualized rendering",
+          "selectedIndex": 2,
+          "isCorrect": true,
+          "timeUsed": 1
+        },
+        {
+          "questionId": "4",
+          "answer": "NATS",
+          "selectedIndex": 2,
+          "isCorrect": true,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "5",
+          "answer": "IndexedDB for persistent event queues",
+          "selectedIndex": 1,
+          "isCorrect": false,
+          "timeUsed": 0
+        },
+        {
+          "questionId": "6",
+          "answer": "Real-time webhooks from CoinGecko",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 0
         }
       ]
+    },
+    "s_1759424707192": {
+      "id": "s_1759424707192",
+      "candidate": {
+        "name": "Prajwal Chahande+91-9860738071",
+        "email": "prajwalchahande7@gmail.com"
+      },
+      "questions": [
+        {
+          "id": "1",
+          "text": "In the 'Payment Gateway Standalone' project, which technologies were primarily used to implement REST endpoints and manage payment data?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Payment Gateway Standalone",
+            "Spring Boot",
+            "MySQL",
+            "RESTful APIs"
+          ],
+          "options": [
+            "Node.js & MongoDB",
+            "Spring Boot & MySQL",
+            "React.js & Redis",
+            "J2EE & RabbitMQ"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "2",
+          "text": "For the 'Library Management System', which methodology and framework were applied to ensure robust core service logic?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Library Management System",
+            "TDD",
+            "JUnit"
+          ],
+          "options": [
+            "Agile and Mockito",
+            "TDD and JUnit",
+            "Waterfall and Hibernate",
+            "Scrum and Redis"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "3",
+          "text": "In the 'Event-Driven Order Processing System', what combination of Kafka features contributed to reliable and robust event handling?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Event-Driven Order Processing System",
+            "Apache Kafka",
+            "at-least-once processing",
+            "idempotency",
+            "dead-letter topics"
+          ],
+          "options": [
+            "At-most-once delivery and synchronous acknowledgement",
+            "At-least-once delivery, idempotency, and dead-letter topics",
+            "Unordered event streams and in-memory caching",
+            "RESTful polling for event status updates"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "4",
+          "text": "For the 'Real-Time Messaging Application', what combination of technologies enabled real-time communication with a fallback option?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Real-Time Messaging Application",
+            "WebSocket (STOMP)",
+            "SockJS",
+            "RabbitMQ"
+          ],
+          "options": [
+            "RESTful APIs and polling",
+            "GraphQL and HTTP/2",
+            "WebSocket (STOMP) and SockJS",
+            "SMTP and WebRTC"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "5",
+          "text": "In the 'Event-Driven Order Processing System', how did the system address operational concerns for its microservices, beyond asynchronous processing?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Event-Driven Order Processing System",
+            "Microservices",
+            "Docker",
+            "health and metrics endpoints",
+            "observability"
+          ],
+          "options": [
+            "Implemented a monolithic architecture and serverless functions",
+            "Utilized centralized SQL and cron jobs",
+            "Added health/metrics endpoints and Docker for deployment",
+            "Employed SOAP APIs and XML payloads"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "6",
+          "text": "If developing a modern browser-based frontend for the 'Real-Time Messaging Application' to dynamically render chat messages, which listed skill is most suitable?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Real-Time Messaging Application",
+            "React.js",
+            "frontend",
+            "dynamic UI"
+          ],
+          "options": [
+            "Java Server Pages (JSP)",
+            "React.js components",
+            "Spring Boot Thymeleaf",
+            "Three.js for 3D graphics"
+          ],
+          "correctIndex": 1
+        }
+      ],
+      "answers": []
+    },
+    "s_1759424884623": {
+      "id": "s_1759424884623",
+      "candidate": {
+        "name": "Prajwal Chahande+91-9860738071",
+        "email": "prajwalchahande7@gmail.com"
+      },
+      "questions": [
+        {
+          "id": "1",
+          "text": "In your Payment Gateway Standalone project, how did you enable easy testing and interaction with the REST endpoints?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Payment Gateway Standalone",
+            "HTML client",
+            "cURL",
+            "RESTful APIs"
+          ],
+          "options": [
+            "Used Postman for all API interactions.",
+            "Provided a dedicated HTML client page and cURL examples.",
+            "Implemented a command-line interface for testing.",
+            "Relied solely on Swagger UI for documentation."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "2",
+          "text": "For the Library Management System, how did you ensure reliability and correctness of the core service logic?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Library Management System",
+            "TDD",
+            "JUnit"
+          ],
+          "options": [
+            "By conducting extensive manual testing after development.",
+            "Applying Test-Driven Development (TDD) with JUnit.",
+            "Using only integration tests for verification.",
+            "Relying on database constraints for validation."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "3",
+          "text": "In your Event-Driven Order Processing System, how did you handle failed events to prevent data loss or processing issues?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Event-Driven Order Processing System",
+            "Apache Kafka",
+            "retry/backoff strategies",
+            "dead-letter topics"
+          ],
+          "options": [
+            "Implemented synchronous error callbacks.",
+            "Used a manual re-processing queue for failures.",
+            "Applied retry/backoff strategies and dead-letter topics.",
+            "Switched to a transactional queue for all events."
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "4",
+          "text": "For your Real-Time Messaging Application, what combination did you use to configure real-time client communication with WebSocket?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Real-Time Messaging Application",
+            "WebSocket (STOMP)",
+            "SockJS"
+          ],
+          "options": [
+            "RESTful APIs with client-side polling.",
+            "HTTP long polling with Spring WebFlux.",
+            "STOMP WebSocket endpoints with SockJS fallback.",
+            "Server-Sent Events (SSE) only for one-way communication."
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "5",
+          "text": "In the Event-Driven Order Processing System, how did you ensure event integrity against potential duplicates from \"at-least-once\" delivery?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Event-Driven Order Processing System",
+            "Apache Kafka",
+            "idempotency",
+            "consumer groups",
+            "at-least-once processing"
+          ],
+          "options": [
+            "Relying on Kafka's automatic deduplication features.",
+            "Implementing idempotent consumer logic within consumer groups.",
+            "Using an external transaction coordinator for event commits.",
+            "Configuring Kafka for \"at-most-once\" delivery."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "6",
+          "text": "To optimize paginated search APIs with filters like `author`, `genre`, and `availability` in your Library Management System, what database approach was used?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Library Management System",
+            "MySQL",
+            "DB indexes",
+            "paginated search APIs"
+          ],
+          "options": [
+            "Caching all potential search results in Redis.",
+            "Performing full table scans on every search query.",
+            "Optimizing queries with appropriate database indexes.",
+            "Switching to a NoSQL document database like MongoDB."
+          ],
+          "correctIndex": 2
+        }
+      ],
+      "answers": []
     }
   }
 }

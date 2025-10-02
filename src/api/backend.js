@@ -108,7 +108,7 @@ export const listCandidates = async () => {
 }
 
 export const getCandidate = async (id) => {
-  return fetchJson(`/candidate/${id}`)
+  return fetchJson(`/candidate-detail?id=${id}`)
 }
 
 
