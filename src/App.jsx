@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
 import { Routes, Route, Navigate } from 'react-router-dom'
-import { ConfigProvider, theme, App as AntdApp } from 'antd'
+import { ConfigProvider, theme, App as AntdApp, Modal } from 'antd'
 import { setActiveTab, setShowWelcomeBack } from './features/uiSlice'
 import { resumeSession } from './features/sessionsSlice'
 import { broadcastManager } from './utils/broadcast'
 import { ThemeProvider } from './components/theme-provider'
+import { readJson } from './utils/clientStorage'
 import LandingPage from './pages/LandingPage'
 import UploadPage from './pages/UploadPage'
 import EditInfoPage from './pages/EditInfoPage'
@@ -17,8 +18,32 @@ const AppContent = () => {
   const dispatch = useDispatch()
   const { activeTab, showWelcomeBack } = useSelector(state => state.ui)
   const { sessions, currentSessionId } = useSelector(state => state.sessions)
+  const [welcomeBackModal, setWelcomeBackModal] = useState(false)
 
-  // Track if this is a page reload
+  // Check for unfinished sessions on app load
+  useEffect(() => {
+    const db = readJson();
+    const unfinished = Object.values(db.sessions).some(s => s.answers?.length < 6);
+    
+    if (unfinished) {
+      setWelcomeBackModal(true);
+    }
+  }, []);
+
+  // Handle welcome back modal actions
+  const handleWelcomeBackOk = () => {
+    setWelcomeBackModal(false);
+    // Navigate to interview page or resume session
+    // You can add navigation logic here if needed
+  };
+
+  const handleWelcomeBackCancel = () => {
+    setWelcomeBackModal(false);
+    // Clear localStorage to start fresh
+    localStorage.removeItem('crisp-db');
+  };
+
+  // Track if this is a page reload (keeping existing logic for Redux)
   useEffect(() => {
     // Check if this is a page reload by looking for a session storage flag
     const isPageReload = !sessionStorage.getItem('app-initialized')
@@ -89,6 +114,19 @@ const AppContent = () => {
           <Route path="/edit-info" element={<EditInfoPage />} />
           <Route path="/interview" element={<InterviewPage />} />
         </Routes>
+        
+        {/* Welcome Back Modal */}
+        <Modal
+          title="Welcome Back!"
+          open={welcomeBackModal}
+          onOk={handleWelcomeBackOk}
+          onCancel={handleWelcomeBackCancel}
+          okText="Resume Interview"
+          cancelText="Start Fresh"
+          centered
+        >
+          <p>You have an unfinished interview. Would you like to resume where you left off?</p>
+        </Modal>
       </AntdApp>
     </ConfigProvider>
   )

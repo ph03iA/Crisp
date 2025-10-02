@@ -20,10 +20,10 @@ A modern React-based interview platform with AI-powered resume analysis and auto
 ## 🛠️ Tech Stack
 
 - **Frontend**: React 18, Redux Toolkit, Tailwind CSS
-- **Backend**: Node.js, Express.js
-- **AI**: Google Gemini API for question generation and scoring
-- **File Processing**: PDF.js, Mammoth.js for resume parsing
-- **Storage**: JSON database with file uploads
+- **AI**: Google Gemini API (client-side)
+- **File Processing**: PDF.js, Mammoth.js (client-side)
+- **Storage**: localStorage (client-side persistence)
+- **Deployment**: Vercel (static hosting)
 
 ## 📦 Quick Start
 
@@ -34,19 +34,20 @@ cd Crisp
 npm install
 ```
 
-2. **Start Backend**
+2. **Set Environment Variables**
 ```bash
-cd server
-npm install
-npm start
+# Create .env file
+echo "VITE_GOOGLE_API_KEY=your_google_ai_api_key_here" > .env
 ```
 
-3. **Start Frontend**
+3. **Start Development Server**
 ```bash
 npm run dev
 ```
 
-4. **Open** [http://localhost:3001](http://localhost:3001)
+The app runs entirely on port 3000 - no backend server needed!
+
+4. **Open** [http://localhost:3000](http://localhost:3000)
 
 ## 🎯 How It Works
 

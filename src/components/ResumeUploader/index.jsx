@@ -5,7 +5,6 @@ import { App, Alert } from 'antd'
 import { FileOutlined, CheckCircleOutlined } from '@ant-design/icons'
 import { Badge } from '../ui/badge'
 import { FileUploadProgressBar } from '../application/file-upload/file-upload-progress-bar'
-import { parseResume } from './parser'
 import { uploadResume } from '../../api/backend'
 
 const ResumeUploader = () => {

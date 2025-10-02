@@ -10,4 +10,11 @@ export default defineConfig({
   build: {
     outDir: 'dist',
   },
+  optimizeDeps: {
+    include: ['@google/generative-ai', 'mammoth', 'pdfjs-dist']
+  },
+  worker: {
+    format: 'es'
+  },
+  assetsInclude: ['**/*.worker.js', '**/*.worker.min.js']
 })
