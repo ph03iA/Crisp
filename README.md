@@ -1,5 +1,9 @@
 # AI Interview Assistant
 
+<p align="center">
+  <img src="https://drive.google.com/uc?id=1DE_TGsQVJLghb5gROzee1LpHBBN2Eu2N" alt="AI Interview Assistant Screenshot" width="500"/>
+</p>
+
 A modern React-based interview platform with AI-powered resume analysis and automated interview generation.
 
 ## 🚀 Features
