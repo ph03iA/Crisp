@@ -1,7 +1,7 @@
-const { GoogleGenerativeAI } = require('@google/generative-ai')
-const { getDb, getSession, addCandidate } = require('./lib/db.js')
+import { GoogleGenerativeAI } from '@google/generative-ai'
+import { getDb, getSession, addCandidate } from './lib/db.js'
 
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   // Set CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*')
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS')
@@ -91,5 +91,12 @@ module.exports = async function handler(req, res) {
     const summary = overall >= 80 ? 'Excellent performance.' : overall >= 60 ? 'Good performance.' : 'Needs improvement.'
     respond(overall, summary)
   }
+}
+
+// Vercel serverless function configuration
+export const config = {
+  api: {
+    bodyParser: true,
+  },
 }
 

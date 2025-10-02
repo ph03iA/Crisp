@@ -39,7 +39,7 @@ const getCandidate = (id) => {
   return db.candidates.find(c => c.id === id)
 }
 
-module.exports = {
+export {
   getDb,
   setDb,
   addSession,

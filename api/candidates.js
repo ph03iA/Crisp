@@ -1,6 +1,6 @@
-const { getCandidates } = require('./lib/db.js')
+import { getCandidates } from './lib/db.js'
 
-module.exports = function handler(req, res) {
+export default function handler(req, res) {
   // Set CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*')
   res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS')
@@ -16,5 +16,12 @@ module.exports = function handler(req, res) {
   }
 
   return res.json({ candidates: getCandidates() })
+}
+
+// Vercel serverless function configuration
+export const config = {
+  api: {
+    bodyParser: true,
+  },
 }
 

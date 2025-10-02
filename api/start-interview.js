@@ -1,7 +1,7 @@
-const { GoogleGenerativeAI } = require('@google/generative-ai')
-const { getDb, addSession } = require('./lib/db.js')
+import { GoogleGenerativeAI } from '@google/generative-ai'
+import { getDb, addSession } from './lib/db.js'
 
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   // Set CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*')
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS')
@@ -122,5 +122,12 @@ STRICT RULES:
     console.error('AI question generation failed:', e?.message || e)
     return res.status(500).json({ error: 'Failed to generate AI questions' })
   }
+}
+
+// Vercel serverless function configuration
+export const config = {
+  api: {
+    bodyParser: true,
+  },
 }
 

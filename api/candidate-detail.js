@@ -1,6 +1,6 @@
-const { getDb, getCandidate, getSession } = require('./lib/db.js')
+import { getDb, getCandidate, getSession } from './lib/db.js'
 
-module.exports = function handler(req, res) {
+export default function handler(req, res) {
   // Set CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*')
   res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS')
@@ -23,4 +23,11 @@ module.exports = function handler(req, res) {
   if (!session) return res.status(404).json({ error: 'Session not found' })
 
   return res.json({ candidate, session })
+}
+
+// Vercel serverless function configuration
+export const config = {
+  api: {
+    bodyParser: true,
+  },
 }

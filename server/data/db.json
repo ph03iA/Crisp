@@ -463,6 +463,22 @@
       "score": 17,
       "summary": "Needs improvement.",
       "sessionId": "s_1759427031581"
+    },
+    {
+      "id": "c_1759427289647",
+      "name": "Prajwal Chahande+91-9860738071",
+      "email": "prajwalchahande7@gmail.com",
+      "score": 67,
+      "summary": "Good performance.",
+      "sessionId": "s_1759427225037"
+    },
+    {
+      "id": "c_1759429177165",
+      "name": "Prajwal Chahande",
+      "email": "prajwalchahande7@gmail.com",
+      "score": 33,
+      "summary": "Needs improvement.",
+      "sessionId": "s_1759429105993"
     }
   ],
   "sessions": {
@@ -14935,6 +14951,342 @@
           "selectedIndex": 1,
           "isCorrect": false,
           "timeUsed": 0
+        }
+      ]
+    },
+    "s_1759427225037": {
+      "id": "s_1759427225037",
+      "candidate": {
+        "name": "Prajwal Chahande+91-9860738071",
+        "email": "prajwalchahande7@gmail.com"
+      },
+      "questions": [
+        {
+          "id": "1",
+          "text": "From your 'Payment Gateway Standalone' project, what core technologies did you use for developing REST APIs and persistence?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "Spring Boot",
+            "RESTful APIs",
+            "MySQL"
+          ],
+          "options": [
+            "Node.js and MongoDB",
+            "React.js and PostgreSQL",
+            "Spring Boot and MySQL",
+            "J2EE and Redis"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "2",
+          "text": "In your 'Library Management System' project, which specific framework did you explicitly use for applying TDD to the core service logic?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "TDD",
+            "JUnit",
+            "Library Management System"
+          ],
+          "options": [
+            "Mockito",
+            "Selenium",
+            "JUnit",
+            "TestNG"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "3",
+          "text": "In your 'Event-Driven Order Processing System', how did you prevent duplicate database writes after a consumer restart, especially when ensuring 'at-least-once processing' with idempotency?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Event-Driven",
+            "Kafka",
+            "idempotency",
+            "MongoDB",
+            "at-least-once processing"
+          ],
+          "options": [
+            "Using a unique message ID for operations",
+            "Increasing the consumer group size",
+            "Reducing the Kafka topic partitions",
+            "Disabling auto-commits for Kafka consumers"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "4",
+          "text": "For your 'Real-Time Messaging Application', which specific messaging protocol was configured for real-time client communication with SockJS fallback?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "WebSocket",
+            "STOMP",
+            "SockJS",
+            "RabbitMQ"
+          ],
+          "options": [
+            "HTTP/2 Push",
+            "AMQP",
+            "STOMP over WebSocket",
+            "gRPC Streaming"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "5",
+          "text": "Regarding your 'Event-Driven Order Processing System', what is the primary purpose of a dead-letter topic when handling failed events with retry/backoff strategies?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "Event-Driven",
+            "Kafka",
+            "retry/backoff",
+            "dead-letter topics",
+            "Microservices"
+          ],
+          "options": [
+            "To immediately re-process failed messages",
+            "To store messages that cannot be processed after retries",
+            "To monitor Kafka broker health metrics",
+            "For real-time analytics on event failures"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "6",
+          "text": "In your 'Library Management System', when might a MySQL index on a frequently updated column, like `borrow_date`, NOT significantly improve query performance?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "MySQL",
+            "DB indexes",
+            "performance",
+            "optimization",
+            "Library Management System"
+          ],
+          "options": [
+            "When performing range searches on the column",
+            "If the column is frequently updated with new values",
+            "When querying only a tiny fraction of total rows",
+            "If used in an `ORDER BY` clause for sorting results"
+          ],
+          "correctIndex": 1
+        }
+      ],
+      "answers": [
+        {
+          "questionId": "1",
+          "answer": "React.js and PostgreSQL",
+          "selectedIndex": 1,
+          "isCorrect": false,
+          "timeUsed": 1
+        },
+        {
+          "questionId": "2",
+          "answer": "JUnit",
+          "selectedIndex": 2,
+          "isCorrect": true,
+          "timeUsed": 1
+        },
+        {
+          "questionId": "3",
+          "answer": "Using a unique message ID for operations",
+          "selectedIndex": 0,
+          "isCorrect": true,
+          "timeUsed": 1
+        },
+        {
+          "questionId": "4",
+          "answer": "STOMP over WebSocket",
+          "selectedIndex": 2,
+          "isCorrect": true,
+          "timeUsed": 3
+        },
+        {
+          "questionId": "5",
+          "answer": "For real-time analytics on event failures",
+          "selectedIndex": 3,
+          "isCorrect": false,
+          "timeUsed": 2
+        },
+        {
+          "questionId": "6",
+          "answer": "If the column is frequently updated with new values",
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timeUsed": 1
+        }
+      ]
+    },
+    "s_1759429105993": {
+      "id": "s_1759429105993",
+      "candidate": {
+        "name": "Prajwal Chahande",
+        "email": "prajwalchahande7@gmail.com"
+      },
+      "questions": [
+        {
+          "id": "1",
+          "text": "In DataAlchemist, what was the key benefit of implementing virtualized rendering for handling CSV-based workflows?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "DataAlchemist",
+            "virtualized rendering",
+            "Next.js",
+            "Tailwind CSS"
+          ],
+          "options": [
+            "To reduce initial page load time.",
+            "To efficiently display and manage 1,000+ data rows.",
+            "To improve search engine optimization (SEO).",
+            "To enable offline data access for users."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "2",
+          "text": "Which database was specifically chosen in the CryptoMetrics backend system to store real-time crypto asset metrics?",
+          "difficulty": "Easy",
+          "timeLimit": 20,
+          "keywords": [
+            "CryptoMetrics",
+            "MongoDB",
+            "Node.js",
+            "Express.js"
+          ],
+          "options": [
+            "MySQL for structured relational data.",
+            "PostgreSQL for advanced querying.",
+            "MongoDB for flexible document storage.",
+            "Redis for in-memory caching."
+          ],
+          "correctIndex": 2
+        },
+        {
+          "id": "3",
+          "text": "How did the Reverie Diary application achieve real-time, persistent client-side data storage without a backend dependency?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "Reverie Diary",
+            "LocalStorage",
+            "React.js",
+            "Tailwind CSS"
+          ],
+          "options": [
+            "By using IndexedDB for complex structured data.",
+            "By leveraging the browser's LocalStorage API.",
+            "By integrating a GraphQL client for state management.",
+            "By making frequent API calls to a public cloud endpoint."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "4",
+          "text": "In CryptoMetrics, what specific technology was employed to broadcast real-time crypto data updates to services in near real-time?",
+          "difficulty": "Medium",
+          "timeLimit": 60,
+          "keywords": [
+            "CryptoMetrics",
+            "NATS",
+            "pub-sub",
+            "Node.js"
+          ],
+          "options": [
+            "Direct WebSocket connections.",
+            "NATS pub-sub messaging.",
+            "Polling via the CoinGecko REST API.",
+            "Server-Sent Events (SSE)."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "5",
+          "text": "For the MangaFlow Chrome extension, what was the core architectural benefit of using Manifest V3 and background service workers?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "MangaFlow",
+            "Manifest V3",
+            "background service workers",
+            "Chrome Extensions API"
+          ],
+          "options": [
+            "To enable complex UI animations and transitions.",
+            "To achieve an efficient and extensible event-driven architecture.",
+            "To directly manipulate DOM elements on secure web pages.",
+            "To integrate with cloud-based AI processing services."
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "6",
+          "text": "What strategy did the CryptoMetrics backend employ to maintain data freshness and handle CoinGecko API rate limits effectively?",
+          "difficulty": "Hard",
+          "timeLimit": 120,
+          "keywords": [
+            "CryptoMetrics",
+            "cron-based syncing",
+            "retry logic",
+            "API rate limits",
+            "CoinGecko API"
+          ],
+          "options": [
+            "Implementing serverless functions with exponential backoff.",
+            "Relying solely on client-side caching mechanisms.",
+            "Utilizing cron-based syncing and robust retry logic.",
+            "Fetching all historical data in a single, large request."
+          ],
+          "correctIndex": 2
+        }
+      ],
+      "answers": [
+        {
+          "questionId": "1",
+          "answer": "To efficiently display and manage 1,000+ data rows.",
+          "selectedIndex": 1,
+          "isCorrect": true,
+          "timeUsed": 12
+        },
+        {
+          "questionId": "2",
+          "answer": "MongoDB for flexible document storage.",
+          "selectedIndex": 2,
+          "isCorrect": true,
+          "timeUsed": 4
+        },
+        {
+          "questionId": "3",
+          "answer": "By integrating a GraphQL client for state management.",
+          "selectedIndex": 2,
+          "isCorrect": false,
+          "timeUsed": 5
+        },
+        {
+          "questionId": "4",
+          "answer": "Direct WebSocket connections.",
+          "selectedIndex": 0,
+          "isCorrect": false,
+          "timeUsed": 4
+        },
+        {
+          "questionId": "5",
+          "answer": "To directly manipulate DOM elements on secure web pages.",
+          "selectedIndex": 2,
+          "isCorrect": false,
+          "timeUsed": 1
+        },
+        {
+          "questionId": "6",
+          "answer": "Relying solely on client-side caching mechanisms.",
+          "selectedIndex": 1,
+          "isCorrect": false,
+          "timeUsed": 1
         }
       ]
     }

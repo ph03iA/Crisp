@@ -1,9 +1,11 @@
-const formidable = require('formidable')
-const fs = require('fs')
-const pdfParse = require('pdf-parse')
-const mammoth = require('mammoth')
+import formidable from 'formidable'
+import fs from 'fs'
+import pdfParse from 'pdf-parse'
+import mammoth from 'mammoth'
+import os from 'os'
+import path from 'path'
 
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   // Set comprehensive CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*')
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS')
@@ -40,9 +42,11 @@ module.exports = async function handler(req, res) {
       url: req.url
     })
 
-    // Parse the form data using formidable
+    // Parse the form data using formidable with Vercel temp directory
     const form = formidable({
       maxFileSize: 10 * 1024 * 1024, // 10MB limit
+      uploadDir: os.tmpdir(), // Use Vercel's temporary directory
+      keepExtensions: true,
       filter: ({ mimetype }) => {
         console.log('File type check:', mimetype)
         return mimetype === 'application/pdf' || 
@@ -69,12 +73,16 @@ module.exports = async function handler(req, res) {
     let extracted = { name: '', email: '', phone: '' }
     let fullText = ''
     
-    // Read file buffer
+    // Read file buffer from temporary file
     const buffer = fs.readFileSync(resumeFile.filepath)
+    console.log('File buffer size:', buffer.length, 'bytes')
     
     if (resumeFile.mimetype === 'application/pdf') {
+      console.log('Processing PDF file')
       const parsed = await pdfParse(buffer)
       const text = parsed.text || ''
+      console.log('PDF text extracted, length:', text.length)
+      
       const emailMatch = text.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi)
       const phoneMatch = text.match(/(\+?\d[\d\s-]{7,}\d)/g)
       extracted.email = emailMatch?.[0] || ''
@@ -83,8 +91,11 @@ module.exports = async function handler(req, res) {
       extracted.name = firstLine || ''
       fullText = text
     } else if (resumeFile.mimetype === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
+      console.log('Processing DOCX file')
       const result = await mammoth.extractRawText({ buffer })
       const text = result.value || ''
+      console.log('DOCX text extracted, length:', text.length)
+      
       const emailMatch = text.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi)
       const phoneMatch = text.match(/(\+?\d[\d\s-]{7,}\d)/g)
       extracted.email = emailMatch?.[0] || ''
@@ -125,5 +136,12 @@ module.exports = async function handler(req, res) {
       details: process.env.NODE_ENV === 'development' ? err.stack : undefined
     })
   }
+}
+
+// Vercel serverless function configuration
+export const config = {
+  api: {
+    bodyParser: false, // Disable body parsing for file uploads
+  },
 }
 
