@@ -34,13 +34,15 @@ const TopNav = ({ activeTab, onTabChange }) => {
                   key={item.key}
                   variant="outline"
                   size="sm"
+                  aria-current={activeTab === item.key ? 'page' : undefined}
                   onClick={() => onTabChange(item.key)}
                   className={cn(
-                    "flex items-center space-x-2 h-9 px-3 text-white bg-black/90 border-black/90 hover:bg-black hover:border-black shadow-xl rounded-full backdrop-blur-none",
-                    activeTab === item.key && "bg-black text-white"
+                    "flex items-center space-x-2 h-9 px-3 rounded-full backdrop-blur-none transition-colors",
+                    activeTab === item.key
+                      ? "bg-white text-black border-white shadow-xl"
+                      : "text-white bg-black/70 border-black/70 hover:bg-black hover:border-black shadow"
                   )}
                 >
-                  {item.icon}
                   <span className="hidden sm:inline">{item.label}</span>
                 </Button>
               ))}
@@ -57,12 +59,14 @@ const TopNav = ({ activeTab, onTabChange }) => {
               variant="outline"
               size="sm"
               onClick={() => onTabChange(item.key)}
+              aria-current={activeTab === item.key ? 'page' : undefined}
               className={cn(
-                "flex-1 flex items-center justify-center space-x-2 h-8 text-white bg-black/90 border-black/90 hover:bg-black hover:border-black shadow-xl rounded-full backdrop-blur-none",
-                activeTab === item.key && "bg-black text-white"
+                "flex-1 flex items-center justify-center space-x-2 h-8 rounded-full backdrop-blur-none transition-colors",
+                activeTab === item.key
+                  ? "bg-white text-black border-white shadow-xl"
+                  : "text-white bg-black/70 border-black/70 hover:bg-black hover:border-black shadow"
               )}
             >
-              {item.icon}
               <span className="text-xs">{item.label}</span>
             </Button>
           ))}

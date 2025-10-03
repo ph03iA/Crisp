@@ -16,6 +16,14 @@ const QuestionCard = ({
     }
   }, [question.id, disabled])
 
+  // Clear any stale selection highlight when question changes
+  useEffect(() => {
+    if (answer) {
+      onAnswerChange('')
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [question.id])
+
   // If no options provided, attempt to fetch 4 options from server
   const [fetchedOptions, setFetchedOptions] = useState([])
   const [isGenerating, setIsGenerating] = useState(false)
@@ -67,8 +75,8 @@ const QuestionCard = ({
   }
 
   return (
-    <div className="card">
-      <div className="p-6">
+    <div className="bg-black/20 backdrop-blur-sm rounded-2xl shadow-xl p-8 w-full">
+      <div>
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center space-x-2">
             <span className={`px-2 py-1 rounded-full text-xs font-medium ${getDifficultyColor(question.difficulty)}`}>
@@ -94,17 +102,13 @@ const QuestionCard = ({
             <h3 className="text-lg font-semibold text-white">
               {Array.isArray(question.options) && question.options.length > 0 ? 'Choose an option' : 'Your Answer'}
             </h3>
-            {disabled && (
-              <span className="text-sm text-red-600">
-                Time's up!
-              </span>
-            )}
+            {/* Removed time's up text per requirements */}
           </div>
 
           {(hasOptions || fetchedOptions.length === 4) ? (
             <div className="space-y-3">
               {(hasOptions ? question.options : fetchedOptions).map((opt, idx) => (
-                <label key={idx} className={`flex items-start space-x-3 p-3 border rounded-lg cursor-pointer transition-colors ${answer === opt ? 'border-primary-500 bg-white/10' : 'border-white/30 hover:bg-white/10'}`}>
+                <label key={idx} className={`flex items-start space-x-3 p-3 border rounded-lg cursor-pointer transition-colors ${answer === opt ? 'border-primary-500 bg-white/10' : 'border-white/20 hover:bg-white/10'}`}>
                   <input
                     type="radio"
                     name={`q_${question.id}`}

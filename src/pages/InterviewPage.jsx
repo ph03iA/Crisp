@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { ArrowLeftOutlined } from '@ant-design/icons'
 import { Button } from '../components/ui/button'
 import { setActiveTab } from '../features/uiSlice'
+import { discardUnfinishedSessions } from '../features/sessionsSlice'
+import { persistor } from '../app/store'
 import TopNav from '../components/Shared/TopNav'
 import WelcomeBackModal from '../components/Shared/WelcomeBackModal'
 import IntervieweeTab from '../components/IntervieweeChat/IntervieweeTab'
@@ -17,37 +19,40 @@ const InterviewPage = () => {
 
   return (
     <ConsistentBackground>
-      {/* Back Button - Hidden on small screens to avoid overlap; fixed on md+ */}
-      <div className="hidden md:block fixed top-4 left-4 z-[9999]">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => navigate('/landing')}
-          className="bg-black/90 border-black/90 text-white hover:bg-black hover:border-black shadow-xl rounded-full backdrop-blur-none"
-        >
-          <ArrowLeftOutlined className="w-4 h-4 mr-2" />
-          Back to Landing
-        </Button>
-      </div>
-
       <div className="min-h-screen">
+        {/* Header actions above nav bar */}
+        <div className="container mx-auto px-4 pt-4 max-w-7xl">
+          <div className="flex items-center justify-between gap-3">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => navigate('/landing')}
+              className="bg-black/90 border-black/90 text-white hover:bg-black hover:border-black shadow-xl rounded-full backdrop-blur-none min-w-[160px] justify-center"
+            >
+              <ArrowLeftOutlined className="w-4 h-4 mr-2" />
+              Back to Landing
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={async () => {
+                try {
+                  dispatch(discardUnfinishedSessions())
+                  await persistor.purge()
+                } catch (e) {
+                  console.warn('Failed to purge persisted state:', e)
+                }
+              }}
+              className="bg-black/90 border-black/90 text-white hover:bg-black hover:border-black shadow-xl rounded-full backdrop-blur-none min-w-[160px] justify-center"
+            >
+              Start Fresh
+            </Button>
+          </div>
+        </div>
         <TopNav 
           activeTab={activeTab} 
           onTabChange={(tab) => dispatch(setActiveTab(tab))} 
         />
-
-        {/* Mobile Back Button inside flow (non-fixed) */}
-        <div className="md:hidden container mx-auto px-4 mt-4">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => navigate('/landing')}
-            className="bg-black/90 border-black/90 text-white hover:bg-black hover:border-black shadow-xl rounded-full backdrop-blur-none w-full"
-          >
-            <ArrowLeftOutlined className="w-4 h-4 mr-2" />
-            Back to Landing
-          </Button>
-        </div>
 
         <main className="container mx-auto px-4 py-8 max-w-7xl">
           {activeTab === 'interviewee' ? <IntervieweeTab /> : <InterviewerTab />}

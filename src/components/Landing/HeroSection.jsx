@@ -72,28 +72,28 @@ const HeroSection = ({ onGetStarted, onViewDemo, isTransitioning = false }) => {
               </p>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            {/* CTA Buttons - keep side-by-side on small screens by reducing size */}
+            <div className="flex flex-row gap-3 pt-4">
               <Button
                 variant="outline"
-                size="lg"
+                size="sm"
                 onClick={onViewDemo}
-                className="bg-black/80 border-black/80 text-white hover:bg-black hover:border-black shadow-lg rounded-full"
+                className="bg-black/80 border-black/80 text-white hover:bg-black hover:border-black shadow-lg rounded-full text-xs px-3 py-2 md:text-sm md:px-5 md:py-3 min-w-[140px] justify-center"
               >
                 <GithubOutlined className="w-4 h-4 mr-2" />
                 Star on GitHub
               </Button>
 
               <Button
-                size="lg"
+                size="sm"
                 onClick={onGetStarted}
                 disabled={isTransitioning}
-                className={`bg-white text-black hover:bg-white/90 shadow-lg rounded-full transition-all duration-300 ${
+                className={`bg-white text-black hover:bg-white/90 shadow-lg rounded-full transition-all duration-300 text-xs px-3 py-2 md:text-sm md:px-5 md:py-3 min-w-[140px] justify-center ${
                   isTransitioning ? 'opacity-50 cursor-not-allowed' : ''
                 }`}
               >
                 {isTransitioning ? 'Loading...' : 'Try it out'}
-                <svg className={`w-4 h-4 ml-2 ${isTransitioning ? 'animate-pulse' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className={`w-3 h-3 md:w-4 md:h-4 ml-2 ${isTransitioning ? 'animate-pulse' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </Button>

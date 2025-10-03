@@ -52,6 +52,9 @@ const ChatLayout = ({ session, onStartNewInterview }) => {
       return
     }
 
+    // Stop timer immediately to avoid brief "Time's up!" flicker on manual submit
+    setIsTimerActive(false)
+
     const timeUsed = Math.floor((Date.now() - startTime) / 1000)
     // Use selectedValue if provided (from MCQ), otherwise use currentAnswer
     const answerText = (selectedValue || currentAnswer).trim()
@@ -316,6 +319,7 @@ const ChatLayout = ({ session, onStartNewInterview }) => {
         <div className="lg:col-span-2">
           <div className="bg-black/20 backdrop-blur-sm rounded-2xl shadow-xl">
             <QuestionCard
+              key={currentQuestion.id}
               question={currentQuestion}
               answer={currentAnswer}
               onAnswerChange={setCurrentAnswer}
@@ -330,12 +334,14 @@ const ChatLayout = ({ session, onStartNewInterview }) => {
         {/* Timer and Status Section */}
         <div className="lg:col-span-1">
           <div className="bg-black/20 backdrop-blur-sm rounded-2xl shadow-xl p-4 sm:p-6 text-center">
-            <Timer
-              key={currentQuestion.id}
-              timeLimit={effectiveTimeLimit}
-              isActive={isTimerActive}
-              onTimeUp={handleTimeUp}
-            />
+            {isTimerActive && (
+              <Timer
+                key={currentQuestion.id}
+                timeLimit={effectiveTimeLimit}
+                isActive={isTimerActive}
+                onTimeUp={handleTimeUp}
+              />
+            )}
 
             <div className="mt-6 space-y-3">
               {!(Array.isArray(currentQuestion.options) && currentQuestion.options.length > 0) && (

@@ -23,12 +23,13 @@ const Timer = ({
       onTick?.(newTime)
       
       if (newTime <= 0) {
-        onTimeUp()
+        // Only fire time up when actively counting down
+        if (isActive) onTimeUp()
         return 0
       }
       return newTime
     })
-  }, [onTimeUp, onTick])
+  }, [onTimeUp, onTick, isActive])
 
   useEffect(() => {
     setRemainingTime(timeLimit)
@@ -73,7 +74,8 @@ const Timer = ({
   }
 
   const getStatusText = () => {
-    if (remainingTime <= 0) return 'Time\'s up!'
+    // Do not render any "time's up" message per requirements
+    if (remainingTime <= 0) return ''
     if (isCritical) return 'Time running out!'
     if (isWarning) return 'Warning: Low time'
     return 'Time remaining'
@@ -127,11 +129,13 @@ const Timer = ({
             )}
           </div>
 
-          {/* Status Badge */}
-          <Badge variant={getStatusVariant()} className="px-3 py-1">
-            <ClockCircleOutlined className="w-3 h-3 mr-1" />
-            {getStatusText()}
-          </Badge>
+          {/* Status Badge (hidden when time is up or inactive) */}
+          {remainingTime > 0 && (
+            <Badge variant={getStatusVariant()} className="px-3 py-1">
+              <ClockCircleOutlined className="w-3 h-3 mr-1" />
+              {getStatusText()}
+            </Badge>
+          )}
         </div>
 
         {/* Linear Progress Bar */}

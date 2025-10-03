@@ -44,26 +44,7 @@ const IntervieweeTab = () => {
 
   return (
     <div className="max-w-4xl mx-auto relative">
-      {stage !== 'upload' && (
-        <div className="fixed top-4 right-4 z-[9999]">
-          <button
-            onClick={async () => {
-              dispatch(discardUnfinishedSessions())
-              setStage('upload')
-              
-              // Purge persisted state after dispatch to avoid serialization warning
-              try { 
-                await persistor.purge() 
-              } catch (error) {
-                console.warn('Failed to purge persisted state:', error)
-              }
-            }}
-            className="bg-white text-black hover:bg-white/90 shadow-xl rounded-full px-6 py-2 text-sm font-medium transition-all duration-300 backdrop-blur-none"
-          >
-            Start Fresh
-          </button>
-        </div>
-      )}
+      {/* Start Fresh button moved to Interview header */}
       {stage === 'upload' && (
         <div className="flex flex-col items-center justify-center min-h-96">
           <div className="bg-black/20 backdrop-blur-sm rounded-2xl shadow-xl p-8 w-full max-w-2xl">
