@@ -16,6 +16,8 @@ const InterviewPage = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const { activeTab, showWelcomeBack } = useSelector(state => state.ui)
+  const { currentSessionId, sessions } = useSelector(state => state.sessions)
+  const currentSession = currentSessionId ? sessions[currentSessionId] : null
 
   return (
     <ConsistentBackground>
@@ -32,7 +34,7 @@ const InterviewPage = () => {
               <ArrowLeftOutlined className="w-4 h-4 mr-2" />
               Back to Landing
             </Button>
-            {activeTab === 'interviewee' && (
+            {activeTab === 'interviewee' && currentSession && (
               <Button
                 variant="outline"
                 size="sm"
