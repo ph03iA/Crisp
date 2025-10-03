@@ -32,21 +32,23 @@ const InterviewPage = () => {
               <ArrowLeftOutlined className="w-4 h-4 mr-2" />
               Back to Landing
             </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={async () => {
-                try {
-                  dispatch(discardUnfinishedSessions())
-                  await persistor.purge()
-                } catch (e) {
-                  console.warn('Failed to purge persisted state:', e)
-                }
-              }}
-              className="bg-black/90 border-black/90 text-white hover:bg-black hover:border-black shadow-xl rounded-full backdrop-blur-none min-w-[160px] justify-center"
-            >
-              Start Fresh
-            </Button>
+            {activeTab === 'interviewee' && (
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={async () => {
+                  try {
+                    dispatch(discardUnfinishedSessions())
+                    await persistor.purge()
+                  } catch (e) {
+                    console.warn('Failed to purge persisted state:', e)
+                  }
+                }}
+                className="bg-black/90 border-black/90 text-white hover:bg-black hover:border-black shadow-xl rounded-full backdrop-blur-none min-w-[160px] justify-center"
+              >
+                Start Fresh
+              </Button>
+            )}
           </div>
         </div>
         <TopNav 

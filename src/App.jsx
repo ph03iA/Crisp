@@ -11,6 +11,7 @@ import UploadPage from './pages/UploadPage'
 import EditInfoPage from './pages/EditInfoPage'
 import InterviewPage from './pages/InterviewPage'
 import { persistor } from './app/store'
+import PageTransition from './components/Shared/PageTransition'
 
 const AppContent = () => {
   const dispatch = useDispatch()
@@ -80,13 +81,15 @@ const AppContent = () => {
       }}
     >
       <AntdApp>
-        <Routes>
-          <Route path="/" element={<Navigate to="/landing" replace />} />
-          <Route path="/landing" element={<LandingPage />} />
-          <Route path="/upload" element={<UploadPage />} />
-          <Route path="/edit-info" element={<EditInfoPage />} />
-          <Route path="/interview" element={<InterviewPage />} />
-        </Routes>
+        <PageTransition>
+          <Routes>
+            <Route path="/" element={<Navigate to="/landing" replace />} />
+            <Route path="/landing" element={<LandingPage />} />
+            <Route path="/upload" element={<UploadPage />} />
+            <Route path="/edit-info" element={<EditInfoPage />} />
+            <Route path="/interview" element={<InterviewPage />} />
+          </Routes>
+        </PageTransition>
       </AntdApp>
     </ConfigProvider>
   )

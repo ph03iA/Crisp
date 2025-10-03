@@ -18,7 +18,7 @@ export function ConsistentBackground({ children, className = "" }) {
   }, [])
 
   return (
-    <div className={`relative w-full min-h-screen overflow-hidden ${className}`}>
+    <div className={`relative w-full min-h-screen overflow-hidden will-change-transform will-change-opacity ${className}`}>
       <div className="fixed inset-0 w-screen h-screen">
         {mounted && (
           <>
