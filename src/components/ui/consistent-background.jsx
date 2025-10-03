@@ -16,6 +16,7 @@ export function ConsistentBackground({ children, className = "" }) {
     const observeContent = () => {
       if (!contentRef.current) return
       const measure = () => {
+        if (!contentRef.current) return
         const rect = contentRef.current.getBoundingClientRect()
         // Add some padding to cover below-the-fold overscroll
         setContentHeight(Math.max(document.documentElement.scrollHeight, rect.height + 200))
