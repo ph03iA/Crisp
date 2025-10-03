@@ -9,12 +9,12 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.js';
 // Initialize Google AI
 const getGenAI = () => {
   const apiKey = import.meta.env.VITE_GOOGLE_API_KEY;
-  console.log('Environment check:', {
+  /* console.log('Environment check:', {
     hasEnv: !!import.meta.env.VITE_GOOGLE_API_KEY,
     envValue: import.meta.env.VITE_GOOGLE_API_KEY ? '***' + import.meta.env.VITE_GOOGLE_API_KEY.slice(-4) : 'undefined',
     allEnv: Object.keys(import.meta.env),
     allEnvValues: import.meta.env
-  });
+  }); */
   
   if (!apiKey) {
     throw new Error('AI key missing. Set VITE_GOOGLE_API_KEY in environment.');
@@ -30,12 +30,12 @@ export const uploadResume = async (file) => {
     
     // Extract text using appropriate method
     if (file.type === 'application/pdf') {
-      console.log('Processing PDF file with PDF.js...');
+      // console.log('Processing PDF file with PDF.js...');
       
       try {
         // Load the PDF document
         const pdf = await pdfjsLib.getDocument({ data: buffer }).promise;
-        console.log(`PDF loaded: ${pdf.numPages} pages`);
+        // console.log(`PDF loaded: ${pdf.numPages} pages`);
         
         // Extract text from all pages
         for (let i = 1; i <= pdf.numPages; i++) {
@@ -45,11 +45,11 @@ export const uploadResume = async (file) => {
           fullText += pageText + '\n';
         }
         
-        console.log('PDF text extracted:', fullText.substring(0, 200) + '...');
+        // console.log('PDF text extracted:', fullText.substring(0, 200) + '...');
         
         // Use AI to extract structured information from PDF text
         if (fullText.length > 50) {
-          console.log('Using AI to extract resume information from PDF...');
+          // console.log('Using AI to extract resume information from PDF...');
           const genAI = getGenAI();
           const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
           
@@ -91,7 +91,7 @@ Return only the JSON object, no other text.`;
             };
           }
         } else {
-          console.log('Insufficient text in PDF - returning empty fields');
+          // console.log('Insufficient text in PDF - returning empty fields');
           extracted = { 
             name: '', 
             email: '', 
@@ -109,14 +109,14 @@ Return only the JSON object, no other text.`;
       }
       
     } else if (file.type.includes('word') || file.type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
-      console.log('Processing DOCX file with AI...');
+      // console.log('Processing DOCX file with AI...');
       const result = await mammoth.extractRawText({ arrayBuffer: buffer });
       fullText = result.value || '';
-      console.log('DOCX text extracted:', fullText.substring(0, 200) + '...');
+      // console.log('DOCX text extracted:', fullText.substring(0, 200) + '...');
       
       // Use AI to extract structured information from DOCX
       if (fullText.length > 50) {
-        console.log('Using AI to extract resume information from DOCX...');
+        // console.log('Using AI to extract resume information from DOCX...');
         const genAI = getGenAI();
         const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
         
@@ -158,7 +158,7 @@ Return only the JSON object, no other text.`;
           };
         }
       } else {
-        console.log('Insufficient text in DOCX - returning empty fields');
+        // console.log('Insufficient text in DOCX - returning empty fields');
         extracted = { 
           name: '', 
           email: '', 
@@ -178,7 +178,7 @@ Return only the JSON object, no other text.`;
     
     const fileId = uuidv4() + (file.type === 'application/pdf' ? '.pdf' : '.docx');
     
-    console.log('Extraction complete:', { extracted: finalExtracted, textLength: fullText.length });
+    // console.log('Extraction complete:', { extracted: finalExtracted, textLength: fullText.length });
     
     return { 
       ok: true, 

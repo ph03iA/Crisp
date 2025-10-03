@@ -39,9 +39,9 @@ const AppContent = () => {
 
   // Set up cross-tab synchronization
   useEffect(() => {
-    const unsubscribe = broadcastManager.subscribe((message) => {
+    const unsubscribe = broadcastManager.subscribe((_message) => {
       // Handle broadcast messages here if needed
-      console.log('Received broadcast:', message)
+      // Logging disabled for performance
     })
 
     return unsubscribe

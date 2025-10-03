@@ -78,34 +78,20 @@ const ChatLayout = ({ session, onStartNewInterview }) => {
       selectedIndex = undefined
     }
     
-    // Debug logging
-    console.log('Submitting answer:', {
-      questionId: currentQuestion.id,
-      answerText,
-      selectedIndex,
-      hasMcq,
-      options: currentQuestion.options,
-      currentAnswer,
-      selectedValue,
-      comparison: currentQuestion.options.map((opt, idx) => ({
-        index: idx,
-        option: opt,
-        matches: opt === (selectedValue || currentAnswer),
-        selectedValue: selectedValue || currentAnswer
-      }))
-    })
+    // Debug logging removed for performance
 
     try {
       setIsAIScoring(true)
       // Submit to backend (scoring handled server-side later or fallback here)
-      console.log('Sending to server:', {
+      // Debug: sending payload (disabled in production for performance)
+      /* console.log('Sending to server:', {
         sessionId: session.serverSessionId,
         questionId: currentQuestion.id,
         answer: answerText,
         timeUsed,
         selectedIndex,
         selectedIndexType: typeof selectedIndex
-      })
+      }) */
       
       await submitAnswerApi({
         sessionId: session.serverSessionId, // Use server session ID
