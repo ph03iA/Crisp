@@ -17,8 +17,8 @@ const InterviewPage = () => {
 
   return (
     <ConsistentBackground>
-      {/* Back Button - Fixed position top left */}
-      <div className="fixed top-4 left-4 z-[9999]">
+      {/* Back Button - Hidden on small screens to avoid overlap; fixed on md+ */}
+      <div className="hidden md:block fixed top-4 left-4 z-[9999]">
         <Button
           variant="outline"
           size="sm"
@@ -35,6 +35,19 @@ const InterviewPage = () => {
           activeTab={activeTab} 
           onTabChange={(tab) => dispatch(setActiveTab(tab))} 
         />
+
+        {/* Mobile Back Button inside flow (non-fixed) */}
+        <div className="md:hidden container mx-auto px-4 mt-4">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => navigate('/landing')}
+            className="bg-black/90 border-black/90 text-white hover:bg-black hover:border-black shadow-xl rounded-full backdrop-blur-none w-full"
+          >
+            <ArrowLeftOutlined className="w-4 h-4 mr-2" />
+            Back to Landing
+          </Button>
+        </div>
 
         <main className="container mx-auto px-4 py-8 max-w-7xl">
           {activeTab === 'interviewee' ? <IntervieweeTab /> : <InterviewerTab />}

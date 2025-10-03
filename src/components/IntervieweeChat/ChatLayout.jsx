@@ -18,6 +18,11 @@ const ChatLayout = ({ session, onStartNewInterview }) => {
   const [startTime, setStartTime] = useState(null)
 
   const currentQuestion = session.questions[session.currentQuestionIndex]
+  const effectiveTimeLimit = currentQuestion
+    ? (typeof currentQuestion.timeLimit === 'number' && currentQuestion.timeLimit > 0
+        ? currentQuestion.timeLimit
+        : (currentQuestion.difficulty === 'Easy' ? 20 : currentQuestion.difficulty === 'Medium' ? 60 : 120))
+    : 60
   const isLastQuestion = session.currentQuestionIndex === session.questions.length - 1
   const isFinished = session.status === 'finished'
 
@@ -305,8 +310,8 @@ const ChatLayout = ({ session, onStartNewInterview }) => {
   }
 
   return (
-    <div className="max-w-3xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <div className="max-w-3xl mx-auto px-4 sm:px-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
         {/* Question and Answer Section */}
         <div className="lg:col-span-2">
           <div className="bg-black/20 backdrop-blur-sm rounded-2xl shadow-xl">
@@ -324,9 +329,10 @@ const ChatLayout = ({ session, onStartNewInterview }) => {
 
         {/* Timer and Status Section */}
         <div className="lg:col-span-1">
-          <div className="bg-black/20 backdrop-blur-sm rounded-2xl shadow-xl p-6 text-center">
+          <div className="bg-black/20 backdrop-blur-sm rounded-2xl shadow-xl p-4 sm:p-6 text-center">
             <Timer
-              timeLimit={currentQuestion.timeLimit}
+              key={currentQuestion.id}
+              timeLimit={effectiveTimeLimit}
               isActive={isTimerActive}
               onTimeUp={handleTimeUp}
             />

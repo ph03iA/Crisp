@@ -98,7 +98,7 @@ const ResumeUploader = () => {
   }, [dispatch, navigate])
 
   return (
-    <div className="w-full max-w-2xl mx-auto space-y-6 flex flex-col items-center justify-center">
+    <div className="w-full max-w-2xl mx-auto space-y-6 flex flex-col items-center justify-center px-4 sm:px-6">
       {/* Header Section */}
       <div className="text-center space-y-4">
         <div className="space-y-2">

@@ -26,9 +26,9 @@ const TopNav = ({ activeTab, onTabChange }) => {
   return (
     <nav className="sticky top-0 z-50 w-full bg-transparent backdrop-blur-sm">
       <div className="container mx-auto px-4 max-w-7xl">
-        <div className="flex h-16 items-center justify-center">
+        <div className="hidden md:flex h-16 items-center justify-center">
           {/* Navigation Tabs */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 overflow-x-auto no-scrollbar max-w-full">
               {navItems.map((item) => (
                 <Button
                   key={item.key}
@@ -50,7 +50,7 @@ const TopNav = ({ activeTab, onTabChange }) => {
 
       {/* Mobile Navigation */}
       <div className="md:hidden bg-transparent px-4 py-2">
-        <div className="flex items-center justify-around space-x-2">
+        <div className="flex items-center justify-around space-x-2 overflow-x-auto no-scrollbar">
           {navItems.map((item) => (
             <Button
               key={item.key}

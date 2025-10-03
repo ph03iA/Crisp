@@ -8,9 +8,10 @@ import { persistor } from '../../app/store'
 const IntervieweeTab = () => {
   const dispatch = useDispatch()
   const { currentSessionId, sessions } = useSelector(state => state.sessions)
-  const [stage, setStage] = useState('upload') // 'upload', 'interview'
-
   const currentSession = currentSessionId ? sessions[currentSessionId] : null
+  const [stage, setStage] = useState(() => (currentSession ? 'interview' : 'upload')) // 'upload', 'interview'
+
+  
 
   useEffect(() => {
     if (currentSession) {

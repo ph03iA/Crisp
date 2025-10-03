@@ -42,16 +42,16 @@ const HeroSection = ({ onGetStarted, onViewDemo, isTransitioning = false }) => {
       offsetX={0.1}
       veilOpacity="bg-black/20"
     >
-      <div className="container mx-auto pl-4 lg:pl-0 pr-0 py-4 max-w-full h-screen flex items-center justify-center">
+      <div className="container mx-auto px-4 lg:px-0 py-6 max-w-full min-h-screen flex items-center justify-center">
 
         {/* Hero Content - Two Column Layout */}
-        <div className="grid lg:grid-cols-[1fr,2fr] gap-64 items-center w-full">
+        <div className="grid lg:grid-cols-[1fr,2fr] gap-8 md:gap-16 lg:gap-32 items-center w-full">
 
           {/* Left Column - Main Content */}
-          <div className="space-y-10 text-left -ml-12 lg:-ml-20">
+          <div className="space-y-8 md:space-y-10 text-left -ml-2 md:-ml-8 lg:-ml-20">
             <div className="space-y-8">
 
-              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-black leading-tight archivo-black-regular flex flex-col items-start max-w-xl">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-black leading-tight archivo-black-regular flex flex-col items-start max-w-xl">
                 <div className="flex flex-wrap items-center gap-2 mb-2.2">
                   <span className="text-lg font-bold text-white leading-tight drop-shadow-lg [text-shadow:_0_2px_4px_rgb(0_0_0_/_40%)]">
                     *introducing, Crisp!
@@ -66,7 +66,7 @@ const HeroSection = ({ onGetStarted, onViewDemo, isTransitioning = false }) => {
                 <span style={{ color: '#2d5085' }}>Fairer Evaluations.</span>
               </h1>
 
-              <p className="text-xl lg:text-2xl text-white/90 leading-relaxed max-w-xl">
+              <p className="text-base md:text-xl lg:text-2xl text-white/90 leading-relaxed max-w-xl">
                 Master technical interviews with AI-powered feedback, realistic simulations,
                 and comprehensive performance analytics.
               </p>
